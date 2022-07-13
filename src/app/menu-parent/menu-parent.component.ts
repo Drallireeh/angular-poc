@@ -11,14 +11,14 @@ export class MenuParentComponent implements OnInit {
 		{
 			label: "test",
 			htmlId: "test",
-			icone: "aucune",
+			icone: "faCapsule",
 			url: "https://",
 			partial: true
 		},
 		{
 			label: "Label 2",
 			htmlId: "Label 2",
-			icone: "",
+			icone: "faUser",
 			url: "https://",
 			partial: false
 		}

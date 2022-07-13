@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { faBars, faCapsules, faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-menu-item',
@@ -12,6 +13,10 @@ export class MenuItemComponent implements OnInit {
   @Input() htmlId!: string;
   @Input() partial!: boolean;
   // item!: MenuItemInterface;
+
+  faBars = faBars;
+	faCapsules = faCapsules;
+	faUser = faUser;
 
   constructor() { }
 
