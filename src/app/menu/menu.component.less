@@ -1,0 +1,106 @@
+#menu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 43px;
+    display: block;
+
+    >ul {
+        border-bottom-color: #b2e6f3;
+        border: 0 none;
+        list-style-type: none;
+        float: left;
+        margin: 0;
+        position: relative;
+        left: -197px;
+        padding: 0;
+        width: 240px;
+        color: #fff;
+        -ms-transition: left ease-in-out 0.3s;
+        -moz-transition: left ease-in-out 0.3s;
+        -o-transition: left ease-in-out 0.3s;
+        -webkit-transition: left ease-in-out 0.3s;
+        transition: left ease-in-out 0.3s;
+        border-bottom: 1px solid transparent;
+
+        >li {
+            min-height: 40px;
+            line-height: 40px;
+
+            .next-icon {
+                float: right;
+                width: 40px;
+                height: calc(40px - 2px);
+                font-size: 24px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 6px;
+                position: relative;
+                top: 1px;
+                font-family: 'WebIconCEGI';
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+
+        >li.menu-header::after {
+            background-color: #ffb41d;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 6px;
+            height: 100%;
+            -ms-transition: background-color ease-out 0.2s;
+            -moz-transition: background-color ease-out 0.2s;
+            -o-transition: background-color ease-out 0.2s;
+            -webkit-transition: background-color ease-out 0.2s;
+            transition: background-color ease-out 0.2s;
+        }
+
+        >li.menu-header {
+            color: #424242;
+            background-color: #ffcc65;
+            height: 40px;
+            background-color: #fff;
+            cursor: pointer;
+            -ms-transition: background-color ease-out 0.2s;
+            -moz-transition: background-color ease-out 0.2s;
+            -o-transition: background-color ease-out 0.2s;
+            -webkit-transition: background-color ease-out 0.2s;
+            transition: background-color ease-out 0.2s;
+            position: relative;
+
+            >label {
+                font-size: medium;
+                font-weight: bold;
+                margin-bottom: 0;
+                padding-left: 5px;
+                cursor: pointer;
+                min-height: 20px;
+                display: inline-block;
+                max-width: 100%;
+            }
+
+            .next-icon {
+                font-size: 32px;
+                margin-right: 0;
+                padding-right: 6px;
+                z-index: 2;
+            }
+        }
+    }
+
+    .menu-parent {
+        background-color: #5e5e5e;
+        min-height: 20px;
+        line-height: 20px;
+    }
+}

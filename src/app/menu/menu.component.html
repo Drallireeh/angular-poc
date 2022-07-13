@@ -1,1 +1,11 @@
-<p>menu works!</p>
+<nav id="menu" role="menu">
+    <ul>
+        <li class="menu-header" title="Ouvrir / Fermer le menu">
+            <span class="next-icon next-icon-ouvrir-menu" data-pin="false" title="Ouvrir / Fermer le menu"></span>
+            <label>Menu</label>
+        </li>
+        <li *ngFor="let parent of menuParents" class="menu-parent">
+            <app-menu-parent></app-menu-parent>
+        </li>    
+    </ul>
+</nav>

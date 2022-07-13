@@ -1,0 +1,10 @@
+<!-- <li class="menu-parent">
+    
+</li> -->
+<label></label>
+<ul>
+    <li *ngFor="let item of menuItems">
+        <app-menu-item [label]="item.label" [icone]="item.icone" [url]="item.url" [partial]="item.partial"></app-menu-item>
+        <!-- <app-menu-item [item]="item"></app-menu-item> -->
+    </li>
+</ul>
