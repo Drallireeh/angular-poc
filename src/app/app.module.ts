@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderModule} from './header/header.module';
 import { MenuModule } from './menu/menu.module';
+import { PanelBodyComponent } from './panel-body/panel-body.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    PanelBodyComponent,
     
   ],
   imports: [
