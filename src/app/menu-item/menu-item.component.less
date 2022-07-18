@@ -48,6 +48,29 @@
             -moz-osx-font-smoothing: grayscale;
         }
     }
+
+    a:after {
+        background-color: #b2e6f3;
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 6px;
+        height: 100%;
+        -ms-transition: background-color ease-out 0.2s;
+        -moz-transition: background-color ease-out 0.2s;
+        -o-transition: background-color ease-out 0.2s;
+        -webkit-transition: background-color ease-out 0.2s;
+        transition: background-color ease-out 0.2s;
+    }
+}
+
+.menu-item:hover {
+    background-color: #b2e6f3;
+
+    a:after {
+        background-color: #95bcfc;
+    }
 }
 
 .menu-item.active {
