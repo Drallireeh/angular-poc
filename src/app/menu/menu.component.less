@@ -1,4 +1,11 @@
-.fixed-menu #menu {
+:host {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: block;
+}
+
+#menu.fixed-menu {
     width: 240px;
 
     >ul {
@@ -7,11 +14,7 @@
 }
 
 #menu {
-    position: absolute;
-    top: 0;
-    bottom: 0;
     width: 43px;
-    display: block;
 
     >ul {
         border-bottom-color: #b2e6f3;

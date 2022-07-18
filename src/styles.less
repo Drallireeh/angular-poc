@@ -6,10 +6,63 @@ body {
     position: fixed;
     font-size: 14px;
     font-weight: 500;
+    margin: 0;
 }
 
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+.next-icon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'WebIconCEGI';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flex-row {
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+.flex-grow-1 {
+    -ms-flex-positive: 1;
+    -moz-flex-grow: 1;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+
+.no-display {
+    display: none !important;
+}
+
+@icon-style {
+    -ms-flex-positive: 0;
+    -moz-flex-grow: 0;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    -ms-flex-negative: 0;
+    -moz-flex-shrink: 0;
+    -webkit-box-shrink: 0;
+    flex-shrink: 0;
+    width: 60px;
+    font-size: 36px;
+    color: #fff;
 }
