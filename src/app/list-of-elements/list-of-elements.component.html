@@ -1,0 +1,8 @@
+<div class="flex-basis-none flex-grow-1 overflow patientSejourAllergies">
+    <div class="allergies-liste-ctn">
+        <div class="allergie-regroup" *ngFor="let category of listCategories">
+            <p>{{category.categoryName}}</p>
+            <app-element-from-list *ngFor="let element of category.elements" [element]="element"></app-element-from-list>
+        </div>
+    </div>
+</div>

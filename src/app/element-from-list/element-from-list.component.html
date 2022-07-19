@@ -1,0 +1,18 @@
+<div class="allergies-ctn" attr.data-id={{element.data_id}} attr.data-sejour-id={{element.data_sejour_id}}>
+    <div class="border-div border-div-Hypersensibilite"></div>
+    <div class="flex flex-align-items-center flex-justify-content-center">
+        <div class="col-md-10 col-lg-10 col-sm-10 flex flex-col flex-justify-content-center">
+            <p>{{element.label}}</p>
+            <p *ngIf="element.commentaire !== ''" class="info-secondaire">{{element.commentaire}}</p>
+        </div>
+        <div class="col-md-2 col-lg-2 col-sm-2 flex flex-col flex-justify-content-center">
+            <p>{{element.date}} <a class="code">{{element.code}}</a></p>
+        </div>
+    </div>
+    <div class="container-btn">
+        <button class="btn btn-primary modifier-btn" title="Modifier l'allergie"><span
+                class="next-icon next-icon-edition"></span></button>
+        <button class="btn btn-primary supprimer-btn" title="Supprimer l'allergie"><span
+                class="next-icon next-icon-supprimer"></span></button>
+    </div>
+</div>

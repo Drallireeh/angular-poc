@@ -1,0 +1,84 @@
+.allergies-ctn {
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    border-bottom: 1px solid lightgrey;
+
+    p {
+        margin: 0;
+    }
+
+    .info-secondaire {
+        color: #AAAAAA;
+        font-size: 12px;
+    }
+
+    .code {
+        background-color: darkgrey;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    width: 50px;
+    cursor: default;
+    text-decoration: none;
+    }
+
+    >div:first-of-type {
+        width: 15px;
+        cursor: pointer;
+        background-color: grey;
+    }
+
+    >div:nth-of-type(2) {
+        padding: 0 10px;
+        flex: 1;
+
+        > div:nth-of-type(1) > p{
+            overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+        }
+
+        > div:nth-of-type(2) p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    >div:nth-of-type(3) {
+        margin-left: auto;
+        display: -moz-box;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -moz-box-align: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        -moz-box-pack: end;
+        -webkit-box-pack: end;
+        -webkit-flex-pack: end;
+        -ms-flex-pack: end;
+        flex-pack: end;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+        width: 135px;
+
+        > button {
+            margin: 0 2.5px;
+
+            span {
+                padding-left: 0;
+            }
+        }
+}
+}

@@ -15,6 +15,12 @@ body {
     box-sizing: border-box;
 }
 
+.overflow {
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 input.k-textbox {
     background-color: #fff;
     color: #000;
@@ -38,6 +44,24 @@ input.k-textbox {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.flex {
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-justify-content-center {
+    -moz-box-pack: center;
+    -webkit-box-pack: center;
+    -webkit-flex-pack: center;
+    -ms-flex-pack: center;
+    flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
 }
 
 .flex-row {
@@ -77,16 +101,50 @@ input.k-textbox {
     display: none !important;
 }
 
-@icon-style {
-    -ms-flex-positive: 0;
-    -moz-flex-grow: 0;
-    -webkit-box-flex: 0;
-    flex-grow: 0;
-    -ms-flex-negative: 0;
-    -moz-flex-shrink: 0;
-    -webkit-box-shrink: 0;
-    flex-shrink: 0;
-    width: 60px;
-    font-size: 36px;
+button {
+    font-family: inherit;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border-radius: 0;
+    padding: 10px;
+    text-align: left;
+    -ms-transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    -o-transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0 !important;
+
+    span.next-icon {
+        float: right;
+        font-size: 20px;
+        padding-left: 10px;
+        top: 0;
+    }
+}
+
+.btn-primary, .btn-primary:focus {
     color: #fff;
+    background-color: #000;
+    border: 0 none;
+    box-shadow: 0 0 0 0 transparent;
+}
+
+.btn-primary, .btn-primary:focus {
+    background-color: #4b88a3;
 }
