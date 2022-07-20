@@ -1,0 +1,38 @@
+.panel-actions {
+    margin-left: auto;
+    -ms-flex-negative: 0;
+    -moz-flex-shrink: 0;
+    -webkit-box-shrink: 0;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+:host ::ng-deep {
+    .btn:hover, .btn:focus {
+        background-color: #95bcfc;
+        color: white;
+    }
+    
+    .btn {
+        background-color: transparent;
+        float: left;
+        position: relative;
+        padding: 0 10px;
+        height: 40px;
+        line-height: 40px;
+        vertical-align: middle;
+        color: #000;
+        border: 0 none;
+    }
+
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 1px;
+        height: 30px;
+        background-color: #000;
+    }
+}
+

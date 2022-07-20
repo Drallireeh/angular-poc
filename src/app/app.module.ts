@@ -13,7 +13,7 @@ import { ListOfElementsModule } from './list-of-elements/list-of-elements.module
 import { PanelBodyFiltersComponent } from './panel-body-filters/panel-body-filters.component';
 import { AllergiesPathologiesComponent } from './allergies-pathologies/allergies-pathologies.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
-
+import { PanelActionsComponent } from './panel-actions/panel-actions.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { PrescriptionComponent } from './prescription/prescription.component';
     FooterComponent,
     PanelBodyFiltersComponent,
     AllergiesPathologiesComponent,
-    PrescriptionComponent
+    PrescriptionComponent,
+    PanelActionsComponent
   ],
   imports: [
     BrowserModule,

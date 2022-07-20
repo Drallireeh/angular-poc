@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListOfElementsComponent } from './list-of-elements.component';
 import { ElementFromListComponent } from '../element-from-list/element-from-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { ElementFromListComponent } from '../element-from-list/element-from-list
     ElementFromListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   exports: [
     ListOfElementsComponent
