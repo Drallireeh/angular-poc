@@ -5,7 +5,7 @@
             <label>Menu</label>
         </li>
         <li *ngFor="let parent of menuParents" class="menu-parent">
-            <app-menu-parent></app-menu-parent>
+            <app-menu-parent [menuItems]="parent.items"></app-menu-parent>
         </li>    
     </ul>
 </nav>

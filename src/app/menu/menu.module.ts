@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MenuComponent } from './menu.component';
 import { MenuParentComponent } from '../menu-parent/menu-parent.component';
 import { MenuItemComponent } from '../menu-item/menu-item.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 	declarations: [
@@ -14,7 +15,8 @@ import { MenuItemComponent } from '../menu-item/menu-item.component';
 	],
 	imports: [
 		CommonModule,
-		FontAwesomeModule
+		FontAwesomeModule,
+		RouterModule
 	],
 	exports: [
 		MenuComponent
