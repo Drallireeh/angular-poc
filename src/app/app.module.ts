@@ -14,6 +14,8 @@ import { PanelBodyFiltersComponent } from './panel-body-filters/panel-body-filte
 import { AllergiesPathologiesComponent } from './allergies-pathologies/allergies-pathologies.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
 import { PanelActionsComponent } from './panel-actions/panel-actions.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,7 @@ import { PanelActionsComponent } from './panel-actions/panel-actions.component';
     PanelBodyFiltersComponent,
     AllergiesPathologiesComponent,
     PrescriptionComponent,
-    PanelActionsComponent
+    PanelActionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { PanelActionsComponent } from './panel-actions/panel-actions.component';
     MenuModule,
     PanelModule,
     ListOfElementsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

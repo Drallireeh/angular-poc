@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CategoriesListInterface } from '../categories-list-interface';
+import { GetPokeService } from '../services/get-poke.service';
 
 @Component({
 	selector: 'app-list-of-elements',
@@ -8,10 +9,25 @@ import { CategoriesListInterface } from '../categories-list-interface';
 })
 export class ListOfElementsComponent implements OnInit {
 	listCategories!: CategoriesListInterface[];
+	listPokemon: any;
+	//listPokemon2: any;
 
-	constructor() { }
+	constructor(private service:GetPokeService) { }
 
 	ngOnInit(): void {
+		this.service.getAllPokemon()
+        .subscribe(response => {
+		  this.listPokemon = response;
+		});
+
+		// for(let i = 1; i <= 9; i++){
+		// 	this.service.getOnePokemon(i)
+		// 	.subscribe(response2 => {
+		// 		this.listPokemon2 += JSON.stringify(response2);
+		// 	})
+		// }
+
+
 		this.listCategories = [
 			{
 				categoryName: 'test de nom',
