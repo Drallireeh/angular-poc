@@ -1,5 +1,10 @@
 <app-panel>
-    <app-panel-body-filters>
+    <app-panel-actions slot="panel-heading">
+        <button id="btnAjouter" class="btn"><span class="next-icon next-icon-ajout"></span>Médicamenteuse</button>
+        <button id="btnAjouterAlim" class="btn"><span class="next-icon next-icon-ajout"></span>Alimentaire</button>
+        <button id="btnAjouterEnv" class="btn"><span class="next-icon next-icon-ajout"></span>Environnementale</button>
+    </app-panel-actions>
+    <app-panel-body-filters slot="panel-body">
         <div class="row">
             <div id="filter-input" class="col-md-6 col-lg-6 col-sm-6">
                 <input class="k-textbox" type="text" name="filter-input" value="" placeholder="Recherche ..."
@@ -13,5 +18,5 @@
             </div>
         </div>
     </app-panel-body-filters>
-    <app-list-of-elements></app-list-of-elements>
+    <app-list-of-elements slot="panel-body"></app-list-of-elements>
 </app-panel>
