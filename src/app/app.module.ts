@@ -12,13 +12,17 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListOfElementsModule } from './list-of-elements/list-of-elements.module';
 import { PanelBodyFiltersComponent } from './panel-body-filters/panel-body-filters.component';
+import { AllergiesPathologiesComponent } from './allergies-pathologies/allergies-pathologies.component';
+import { PrescriptionComponent } from './prescription/prescription.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
-    PanelBodyFiltersComponent
+    PanelBodyFiltersComponent,
+    AllergiesPathologiesComponent,
+    PrescriptionComponent
   ],
   imports: [
     BrowserModule,

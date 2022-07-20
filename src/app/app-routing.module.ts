@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AllergiesPathologiesComponent } from './allergies-pathologies/allergies-pathologies.component';
+import { PrescriptionComponent } from './prescription/prescription.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'allergies', component: AllergiesPathologiesComponent },
+  { path: 'prescription', component: PrescriptionComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
