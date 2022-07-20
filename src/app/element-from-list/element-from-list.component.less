@@ -17,12 +17,12 @@
 
     .code {
         background-color: darkgrey;
-    color: white;
-    padding: 5px;
-    text-align: center;
-    width: 50px;
-    cursor: default;
-    text-decoration: none;
+        color: white;
+        padding: 5px;
+        text-align: center;
+        width: 50px;
+        cursor: default;
+        text-decoration: none;
     }
 
     >div:first-of-type {
@@ -35,16 +35,16 @@
         padding: 0 10px;
         flex: 1;
 
-        > div:nth-of-type(1) > p{
+        >div:nth-of-type(1)>p {
             overflow: hidden;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
         }
 
-        > div:nth-of-type(2) p {
+        >div:nth-of-type(2) p {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -73,12 +73,17 @@
         justify-content: flex-end;
         width: 135px;
 
-        > button {
+        >button {
+            height: 40px;
+            width: 40px;
             margin: 0 2.5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             span {
                 padding-left: 0;
             }
         }
-}
+    }
 }
