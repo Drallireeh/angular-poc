@@ -10,17 +10,17 @@ export class MenuComponent implements OnInit {
 	menuParents: MenuParentInterface[] = [{
 		items: [
 			{
-				label: "test",
-				icone: "aucune",
-				url: "https://",
+				label: "Allergies / Pathologies",
+				icone: "",
+				url: "/allergies",
 				htmlId: "",
-				partial: true
+				partial: false
 			},
 			{
-				label: "Label 2",
+				label: "Prescription",
 				icone: "",
 				htmlId: "",
-				url: "https://",
+				url: "/prescription",
 				partial: false
 			}
 		]
@@ -31,14 +31,14 @@ export class MenuComponent implements OnInit {
 				label: "Test parent 2",
 				icone: "aucune",
 				htmlId: "",
-				url: "https://",
+				url: "",
 				partial: true
 			},
 			{
 				label: "Label 1",
 				icone: "",
 				htmlId: "",
-				url: "https://",
+				url: "",
 				partial: false
 			}
 		]

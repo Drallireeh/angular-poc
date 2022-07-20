@@ -8,7 +8,6 @@ import { HeaderModule} from './header/header.module';
 import { MenuModule } from './menu/menu.module';
 import { PanelModule } from './panel/panel.module';
 import { FooterComponent } from './footer/footer.component';
-import { InputsModule } from '@progress/kendo-angular-inputs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListOfElementsModule } from './list-of-elements/list-of-elements.module';
 import { PanelBodyFiltersComponent } from './panel-body-filters/panel-body-filters.component';
@@ -32,7 +31,6 @@ import { PrescriptionComponent } from './prescription/prescription.component';
     MenuModule,
     PanelModule,
     ListOfElementsModule,
-    InputsModule,
     BrowserAnimationsModule
   ],
   providers: [],
