@@ -12,4 +12,7 @@ export class PopinSimpleComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  closePopin(event: any): void {
+    event.target.closest('app-popin-simple').classList.add('hidden');
+  }
 }
