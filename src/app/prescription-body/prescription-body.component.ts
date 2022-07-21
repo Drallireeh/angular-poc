@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faUser, faKitMedical, faHouseMedicalCircleExclamation, faTextWidth } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-prescription-body',
@@ -8,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class PrescriptionBodyComponent implements OnInit {
 
   constructor() { }
+
+  faUser = faUser;
+  faKitMedical = faKitMedical;
+  faHouseMedicalCircleExclamation = faHouseMedicalCircleExclamation;
+  faTextWidth = faTextWidth;
 
   ngOnInit(): void {
   }
