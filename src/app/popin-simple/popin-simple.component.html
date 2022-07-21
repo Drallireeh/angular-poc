@@ -1,7 +1,7 @@
 <div class="blackback">
     <div class="popin">
         <header>
-            <h1>Nombre de repas</h1>
+            <h1>{{title}}</h1>
             <div (click)="closePopin($event)">
                 Annuler
             </div>
@@ -13,30 +13,30 @@
                     <p class="saisieType">Saisie tactile</p>
                 </div>
                 <div class="line row2">
-                    <button class="buttonPrimary btn-primary check">7</button>
-                    <button class="buttonPrimary btn-primary check">8</button>
-                    <button class="buttonPrimary btn-primary check">9</button>
+                    <button class="buttonPrimary btn-primary check" (click)="selectNumber($event)">7</button>
+                    <button class="buttonPrimary btn-primary check" (click)="selectNumber($event)">8</button>
+                    <button class="buttonPrimary btn-primary check" (click)="selectNumber($event)">9</button>
                 </div>
                 <div class="line row3">
-                    <button class="buttonPrimary btn-primary check">4</button>
-                    <button class="buttonPrimary btn-primary check">5</button>
-                    <button class="buttonPrimary btn-primary check">6</button>
+                    <button class="buttonPrimary btn-primary check" (click)="selectNumber($event)">4</button>
+                    <button class="buttonPrimary btn-primary check" (click)="selectNumber($event)">5</button>
+                    <button class="buttonPrimary btn-primary check" (click)="selectNumber($event)">6</button>
                 </div>
                 <div class="line row4">
-                    <button class="buttonPrimary btn-primary check">1</button>
-                    <button class="buttonPrimary btn-primary check">2</button>
-                    <button class="buttonPrimary btn-primary check">3</button>
+                    <button class="buttonPrimary btn-primary check" (click)="selectNumber($event)">1</button>
+                    <button class="buttonPrimary btn-primary check" (click)="selectNumber($event)">2</button>
+                    <button class="buttonPrimary btn-primary check" (click)="selectNumber($event)">3</button>
                 </div>
                 <div class="line row5">
                     <button class="buttonPrimary btn-primary disabled" disabled="disabled">,</button>
-                    <button class="buttonPrimary btn-primary check">0</button>
+                    <button class="buttonPrimary btn-primary check" (click)="selectNumber($event)">0</button>
                     <button class="buttonPrimary btn-primary disabled" disabled="disabled"></button>
                 </div>
             </div>
         </main>
         <footer>
             <div></div>
-            <div>
+            <div (click)="closePopin($event)">
                 Valider
             </div>
         </footer>
