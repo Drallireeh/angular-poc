@@ -16,6 +16,7 @@ import { PrescriptionComponent } from './prescription/prescription.component';
 import { PanelActionsComponent } from './panel-actions/panel-actions.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
+import { PrescriptionBodyComponent } from './prescription-body/prescription-body.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
     AllergiesPathologiesComponent,
     PrescriptionComponent,
     PanelActionsComponent,
+    PrescriptionBodyComponent,
   ],
   imports: [
     BrowserModule,
