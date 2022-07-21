@@ -48,6 +48,21 @@
     </div>
     <hr>
     <div class="ctn-prescription-poso">
-
+        <div class="col-md-3">
+            <select name="typePoso" id="">
+                <option value="1">Quantité</option>
+                <option value="2">Journalière</option>
+            </select>
+        </div>
+        <div class="col-md-9">
+            <div>
+                <input type="text" placeholder="Quantité">
+                <button><fa-icon class="next-icon" [icon]="faEdit"></fa-icon></button>
+            </div>
+            <div class="hidden">
+                <input type="text" placeholder="heure">
+                <button><fa-icon class="next-icon" [icon]="faEdit"></fa-icon></button>
+            </div>
+        </div>
     </div>
 </div>

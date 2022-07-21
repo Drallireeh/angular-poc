@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faUser, faKitMedical, faHouseMedicalCircleExclamation, faTextWidth } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faKitMedical, faHouseMedicalCircleExclamation, faTextWidth, faEdit} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-prescription-body',
@@ -14,6 +14,7 @@ export class PrescriptionBodyComponent implements OnInit {
   faKitMedical = faKitMedical;
   faHouseMedicalCircleExclamation = faHouseMedicalCircleExclamation;
   faTextWidth = faTextWidth;
+  faEdit = faEdit;
 
   ngOnInit(): void {
   }
