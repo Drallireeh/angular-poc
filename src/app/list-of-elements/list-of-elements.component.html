@@ -6,3 +6,14 @@
         </div>
     </div>
 </div>
+<ul class="list-group hidden">
+        <li 
+            *ngFor="let pokemon of listPokemon.results"
+            class="list-group-item">
+            {{ pokemon.name }}
+        </li>
+</ul>
+
+<div *ngFor="let pokemon of listPokemon.results; let i = index;">
+        <app-pokemon-detail [index]="i"></app-pokemon-detail>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetPokeService } from '../services/get-poke.service';
 
 @Component({
   selector: 'app-allergies-pathologies',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./allergies-pathologies.component.less']
 })
 export class AllergiesPathologiesComponent implements OnInit {
-
-  constructor() { }
+  pokemon:any;
+  constructor(private service:GetPokeService) { }
 
   ngOnInit(): void {
   }
