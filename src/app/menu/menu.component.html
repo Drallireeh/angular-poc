@@ -1,6 +1,7 @@
-<nav id="menu" role="menu">
+<nav id="menu" role="menu" [class.fixed-menu]="menuOpen" (click)="onClickMenu()">
     <ul>
         <li class="menu-header" title="Ouvrir / Fermer le menu">
+            <fa-icon class="next-icon" [icon]="faList"></fa-icon>
             <span class="next-icon next-icon-ouvrir-menu" data-pin="false" title="Ouvrir / Fermer le menu"></span>
             <label>Menu</label>
         </li>
