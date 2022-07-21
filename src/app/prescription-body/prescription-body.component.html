@@ -57,8 +57,10 @@
         <div class="col-md-9">
             <div>
                 <input type="text" placeholder="Quantité">
-                <button><fa-icon class="next-icon" [icon]="faEdit"></fa-icon></button>
-                <app-popin-simple></app-popin-simple>
+                <button (click)="openPopin($event)" id="test">
+                    <fa-icon class="next-icon" [icon]="faEdit"></fa-icon>
+                </button>
+                <app-popin-simple class="hidden"></app-popin-simple>
             </div>
             <div class="hidden">
                 <input type="text" placeholder="heure">

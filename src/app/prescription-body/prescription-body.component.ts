@@ -16,7 +16,11 @@ export class PrescriptionBodyComponent implements OnInit {
   faTextWidth = faTextWidth;
   faEdit = faEdit;
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
+
+	openPopin(event: any): void {
+    event.target.closest('button').nextElementSibling.classList.remove('hidden');
+	}
 
 }
