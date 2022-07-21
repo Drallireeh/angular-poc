@@ -17,6 +17,7 @@ import { PanelActionsComponent } from './panel-actions/panel-actions.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { PrescriptionBodyComponent } from './prescription-body/prescription-body.component';
+import { PopinSimpleComponent } from './popin-simple/popin-simple.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PrescriptionBodyComponent } from './prescription-body/prescription-body
     PrescriptionComponent,
     PanelActionsComponent,
     PrescriptionBodyComponent,
+    PopinSimpleComponent,
   ],
   imports: [
     BrowserModule,
