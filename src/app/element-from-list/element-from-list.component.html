@@ -6,8 +6,8 @@
             <p *ngIf="element.commentaire !== ''" class="info-secondaire">{{element.commentaire}}</p>
         </div>
         <div class="col-md-2 col-lg-2 col-sm-2 flex flex-col flex-justify-content-center">
-            <p>{{element.date}} <a class="code" *ngIf="element.code !== ''; else elseBlock">{{element.code}}</a></p>
-            <ng-template #elseBlock><p class="info-secondaire">Pas de code CIM10</p></ng-template>
+            <p>{{element.date}} <a class="code" *ngIf="element.code !== ''">{{element.code}}</a></p>
+            <p *ngIf="element.code === ''" class="info-secondaire">Pas de code CIM10</p>
         </div>
     </div>
     <div class="container-btn">
