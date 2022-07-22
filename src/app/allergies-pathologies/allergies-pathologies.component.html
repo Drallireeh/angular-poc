@@ -19,5 +19,9 @@
             </div>
         </div>
     </app-panel-body-filters>
+    <app-navigation-onglets slot="panel-body">
+        <app-navigation-tab id="tab_allergie" label="Allergies" [active]="true"></app-navigation-tab>
+        <app-navigation-tab id="tab_pathologie" label="Antécédents"></app-navigation-tab>
+    </app-navigation-onglets>
     <app-list-of-elements slot="panel-body"></app-list-of-elements>
 </app-panel>
