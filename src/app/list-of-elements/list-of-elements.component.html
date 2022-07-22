@@ -6,13 +6,3 @@
         </div>
     </div>
 </div>
-
-<div  class="pokeCtn"
-infinite-scroll
-[infiniteScrollDistance]="1"
-[infiniteScrollThrottle]="50"
-[scrollWindow]="false"
-(scrolled)="onScrollDown()"
- *ngIf="dataLoaded">
-        <app-pokemon-detail  *ngFor="let pokemmon of numberPkmn; let i = index;" [index]="i"></app-pokemon-detail>
-</div>

@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListOfElementsComponent } from './list-of-elements.component';
-import { ElementFromListComponent } from '../element-from-list/element-from-list.component';
+import { ListOfPokemonComponent } from './list-of-pokemon.component';
+import { PokemonDetailComponent } from '../pokemon-detail/pokemon-detail.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 @NgModule({
   declarations: [
-    ListOfElementsComponent,
-    ElementFromListComponent,
+    ListOfPokemonComponent,
+    PokemonDetailComponent
   ],
   imports: [
     CommonModule,
@@ -17,8 +17,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     InfiniteScrollModule
   ],
   exports: [
-    ListOfElementsComponent,
+    ListOfPokemonComponent,
     InfiniteScrollModule
   ]
 })
-export class ListOfElementsModule { }
+export class ListOfPokemonModule { }

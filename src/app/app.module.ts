@@ -10,6 +10,7 @@ import { PanelModule } from './panel/panel.module';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListOfElementsModule } from './list-of-elements/list-of-elements.module';
+import { ListOfPokemonModule } from './list-of-pokemon/list-of-pokemon.module';
 import { PanelBodyFiltersComponent } from './panel-body-filters/panel-body-filters.component';
 import { AllergiesPathologiesComponent } from './allergies-pathologies/allergies-pathologies.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
@@ -40,6 +41,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     MenuModule,
     PanelModule,
     ListOfElementsModule,
+    ListOfPokemonModule,
     BrowserAnimationsModule,
     HttpClientModule,
     InfiniteScrollModule,

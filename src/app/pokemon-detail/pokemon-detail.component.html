@@ -1,6 +1,9 @@
-<div *ngIf="dataLoaded">
+<div *ngIf="dataLoaded" class="pkmnLine">
     <p>
         <span>{{pokemon.names[4].name}}</span>
         <span>{{pokemon.genera[3].genus}}</span>
+    </p>
+    <p>
+        {{pokemon.flavor_text_entries[0].flavor_text}}
     </p>
 </div>
