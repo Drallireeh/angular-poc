@@ -20,6 +20,7 @@ import { NavigationOngletsComponent } from './navigation-onglets/navigation-ongl
 import { NavigationTabComponent } from './navigation-tab/navigation-tab.component';
 import { PrescriptionBodyComponent } from './prescription-body/prescription-body.component';
 import { PopinSimpleComponent } from './popin-simple/popin-simple.component';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PopinSimpleComponent } from './popin-simple/popin-simple.component';
     PanelModule,
     ListOfElementsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

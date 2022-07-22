@@ -14,6 +14,12 @@
         </li>
 </ul>
 
-<div *ngFor="let pokemon of listPokemon.results; let i = index;">
-        <app-pokemon-detail [index]="i"></app-pokemon-detail>
+<div  class="pokeCtn"
+infinite-scroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="50"
+[scrollWindow]="false"
+(scrolled)="onScrollDown()"
+(click)="clicked()">
+        <app-pokemon-detail *ngFor="let pokemmon of listPokemon.results; let i = index;" [index]="i"></app-pokemon-detail>
 </div>
