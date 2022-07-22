@@ -6,13 +6,6 @@
         </div>
     </div>
 </div>
-<ul class="list-group hidden">
-        <li 
-            *ngFor="let pokemon of listPokemon.results"
-            class="list-group-item">
-            {{ pokemon.name }}
-        </li>
-</ul>
 
 <div  class="pokeCtn"
 infinite-scroll
@@ -20,6 +13,6 @@ infinite-scroll
 [infiniteScrollThrottle]="50"
 [scrollWindow]="false"
 (scrolled)="onScrollDown()"
-(click)="clicked()">
-        <app-pokemon-detail *ngFor="let pokemmon of listPokemon.results; let i = index;" [index]="i"></app-pokemon-detail>
+(click)="clicked()" *ngIf="dataLoaded">
+        <app-pokemon-detail  *ngFor="let pokemmon of listPokemon.results; let i = index;" [index]="i"></app-pokemon-detail>
 </div>

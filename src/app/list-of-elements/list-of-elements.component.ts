@@ -7,6 +7,7 @@ import { GetPokeService } from '../services/get-poke.service';
 	templateUrl: './list-of-elements.component.html',
 	styleUrls: ['./list-of-elements.component.less']
 })
+
 export class ListOfElementsComponent implements OnInit {
 	listCategories!: CategoriesListInterface[];
 	listPokemon: any;
@@ -16,6 +17,8 @@ export class ListOfElementsComponent implements OnInit {
   scrollDistance = 1;
   scrollUpDistance = 2;
   direction = "";
+  response: any;
+  dataLoaded: boolean = false;
 
 	//listPokemon2: any;
 
@@ -24,8 +27,9 @@ export class ListOfElementsComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.service.getAllPokemon()
-        .subscribe(response => {
+        .subscribe((response: any) => {
 		  this.listPokemon = response;
+		  this.dataLoaded = true;
 		});
 
 

@@ -17,7 +17,6 @@ export class GetPokeService {
   getOnePokemon(number: number){
     let urlOne = this.url;
     urlOne += `/${number}`;
-    console.log(urlOne)
     return this.httpClient.get(urlOne);
   }
   

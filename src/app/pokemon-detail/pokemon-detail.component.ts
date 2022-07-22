@@ -10,13 +10,15 @@ export class PokemonDetailComponent implements OnInit {
   @Input() index!: number;
 
   pokemon: any;
+  dataLoaded: boolean = false;
 
   constructor(private service:GetPokeService) { }
 
   ngOnInit(): void {
     this.service.getOnePokemon(this.index + 1)
-		 	.subscribe(response => {
-		 		this.pokemon = response;
+		 	.subscribe((pkmn: any) => {
+         this.pokemon = pkmn;
+         this.dataLoaded = true;
        })
     }
 
