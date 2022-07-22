@@ -16,6 +16,8 @@ import { PrescriptionComponent } from './prescription/prescription.component';
 import { PanelActionsComponent } from './panel-actions/panel-actions.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
+import { NavigationOngletsComponent } from './navigation-onglets/navigation-onglets.component';
+import { NavigationTabComponent } from './navigation-tab/navigation-tab.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
     AllergiesPathologiesComponent,
     PrescriptionComponent,
     PanelActionsComponent,
+    NavigationOngletsComponent,
+    NavigationTabComponent,
   ],
   imports: [
     BrowserModule,

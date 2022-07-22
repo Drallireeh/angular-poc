@@ -1,0 +1,49 @@
+:host {
+    -ms-flex-positive: 1;
+    -moz-flex-grow: 1;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+
+li {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 20px;
+    -ms-transition: all linear 0.1s;
+    -moz-transition: all linear 0.1s;
+    -o-transition: all linear 0.1s;
+    -webkit-transition: all linear 0.1s;
+    transition: all linear 0.1s;
+
+    a {
+        display: block;
+        padding: 0;
+        color: #000;
+        text-decoration: none;
+    }
+}
+
+li.active {
+    font-weight: bold;
+}
+
+li.active:after {
+    transform: scaleX(1);
+}
+
+li:after {
+    display: block;
+    content: '';
+    border-bottom: 5px solid transparent;
+    border-bottom-color: #de7d0c;
+    margin-top: -5px;
+    transform: scaleX(0);
+    -ms-transition: transform ease-in-out 200ms;
+    -moz-transition: transform ease-in-out 200ms;
+    -o-transition: transform ease-in-out 200ms;
+    -webkit-transition: transform ease-in-out 200ms;
+    transition: transform ease-in-out 200ms;
+}
