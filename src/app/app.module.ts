@@ -16,11 +16,10 @@ import { PrescriptionComponent } from './prescription/prescription.component';
 import { PanelActionsComponent } from './panel-actions/panel-actions.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
-import { NavigationOngletsComponent } from './navigation-onglets/navigation-onglets.component';
-import { NavigationTabComponent } from './navigation-tab/navigation-tab.component';
 import { PrescriptionBodyComponent } from './prescription-body/prescription-body.component';
 import { PopinSimpleComponent } from './popin-simple/popin-simple.component';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -30,8 +29,6 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
     AllergiesPathologiesComponent,
     PrescriptionComponent,
     PanelActionsComponent,
-    NavigationOngletsComponent,
-    NavigationTabComponent,
     PrescriptionBodyComponent,
     PopinSimpleComponent,
   ],
@@ -46,6 +43,7 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
     BrowserAnimationsModule,
     HttpClientModule,
     InfiniteScrollModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
