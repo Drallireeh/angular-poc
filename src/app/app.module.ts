@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { NavigationOngletsComponent } from './navigation-onglets/navigation-onglets.component';
 import { NavigationTabComponent } from './navigation-tab/navigation-tab.component';
+import { PrescriptionBodyComponent } from './prescription-body/prescription-body.component';
+import { PopinSimpleComponent } from './popin-simple/popin-simple.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { NavigationTabComponent } from './navigation-tab/navigation-tab.componen
     PanelActionsComponent,
     NavigationOngletsComponent,
     NavigationTabComponent,
+    PrescriptionBodyComponent,
+    PopinSimpleComponent,
   ],
   imports: [
     BrowserModule,

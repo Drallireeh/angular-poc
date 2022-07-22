@@ -1,0 +1,71 @@
+<div class="ctn-prescription flex-grow-1 flex-basis-none overflow">
+    <div class="ctn-prescription-head">
+        <div class="col-lg-12">
+            <div class="icon-med">L</div>
+            <p>Doliprane</p>
+        </div>
+    </div>
+    <hr>
+    <div class="ctn-prescription-config">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <div>
+                <label for="option" class="col-md-4">Options</label>
+                <button>Calendaire</button>
+            </div>
+            <div>
+                <label for="start" class="col-md-4">Commence</label>
+                <input type="text" class="col-md-6" id="start" value="01/01/2022 12:30">
+            </div>
+            <div>
+                <label for="psc" class="col-md-4">Prise en charge</label>
+                <input type="text" class="col-md-6" id="psc" value="Établissement">
+            </div>
+            <div>
+                <label for="voie" class="col-md-4">Voie</label>
+                <input type="text" class="col-md-6" id="voie" value="Orale">
+            </div>
+            <div>
+                <label for="motif" class="col-md-4">Motif</label>
+                <input type="text" class="col-md-6" id="motif" placeholder="Établissement">
+            </div>
+        </div>
+        <div class="col-md-offset-1 col-lg-3 col-md-3 col-sm-12">
+            <div>
+                <button class="btn btn-secondary">
+                        <fa-icon class="next-icon" [icon]="faUser"></fa-icon>
+                </button>
+                <button class="btn btn-secondary">
+                        <fa-icon class="next-icon" [icon]="faKitMedical"></fa-icon>
+                </button>
+                <button class="btn btn-secondary">
+                        <fa-icon class="next-icon" [icon]="faHouseMedicalCircleExclamation"></fa-icon>
+                </button>
+                <button class="btn btn-secondary">
+                        <fa-icon class="next-icon" [icon]="faTextWidth"></fa-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="ctn-prescription-poso">
+        <div class="col-md-3">
+            <select name="typePoso" id="">
+                <option value="1">Quantité</option>
+                <option value="2">Journalière</option>
+            </select>
+        </div>
+        <div class="col-md-9">
+            <div>
+                <input type="text" placeholder="Quantité">
+                <button (click)="openPopin($event)" id="test">
+                    <fa-icon class="next-icon" [icon]="faEdit"></fa-icon>
+                </button>
+                <app-popin-simple class="hidden" title="Nombre de repas"></app-popin-simple>
+            </div>
+            <div class="hidden">
+                <input type="text" placeholder="heure">
+                <button><fa-icon class="next-icon" [icon]="faEdit"></fa-icon></button>
+            </div>
+        </div>
+    </div>
+</div>
