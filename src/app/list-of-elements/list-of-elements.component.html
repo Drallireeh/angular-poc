@@ -9,10 +9,10 @@
 
 <div  class="pokeCtn"
 infinite-scroll
-[infiniteScrollDistance]="2"
+[infiniteScrollDistance]="1"
 [infiniteScrollThrottle]="50"
 [scrollWindow]="false"
 (scrolled)="onScrollDown()"
-(click)="clicked()" *ngIf="dataLoaded">
-        <app-pokemon-detail  *ngFor="let pokemmon of listPokemon.results; let i = index;" [index]="i"></app-pokemon-detail>
+ *ngIf="dataLoaded">
+        <app-pokemon-detail  *ngFor="let pokemmon of numberPkmn; let i = index;" [index]="i"></app-pokemon-detail>
 </div>

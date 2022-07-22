@@ -6,12 +6,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GetPokeService {
   private url = 'https://pokeapi.co/api/v2/pokemon-species';
-  private urlAll = 'https://pokeapi.co/api/v2/pokemon-species?limit=31';
+  private urlAll = 'https://pokeapi.co/api/v2/pokemon-species?limit=';
    
   constructor(private httpClient: HttpClient) { }
   
-  getAllPokemon(){
-    return this.httpClient.get(this.urlAll);
+  getAllPokemon(number: number){
+    let newUrl = this.urlAll;
+    newUrl += `${number}`;
+    return this.httpClient.get(newUrl);
   }
 
   getOnePokemon(number: number){
