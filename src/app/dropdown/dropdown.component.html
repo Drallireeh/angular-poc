@@ -3,7 +3,7 @@
         <span>{{selected}}</span>
         <span class="arrow-ctn"></span>
     </div>
-    <div class="options-ctn" [class.hidden]="!dropdownActive">
+    <ul class="options-ctn" [class.hidden]="!dropdownActive">
         <ng-content></ng-content>
-    </div>
+    </ul>
 </div>
