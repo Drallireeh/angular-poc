@@ -21,6 +21,7 @@ import { PrescriptionBodyComponent } from './Component/Views/prescriptionDoss/pr
 import { PopinSimpleComponent } from './Component/popin/popin-simple/popin-simple.component';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import {MatTabsModule} from '@angular/material/tabs';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import {MatSelectModule} from '@angular/material/select';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { DropdownContentComponent } from './dropdown-content/dropdown-content.component';
@@ -51,6 +52,7 @@ import { DropdownContentComponent } from './dropdown-content/dropdown-content.co
     HttpClientModule,
     InfiniteScrollModule,
     MatTabsModule,
+    DateInputsModule,
     MatSelectModule
   ],
   providers: [],
