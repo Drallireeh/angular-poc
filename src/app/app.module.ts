@@ -21,6 +21,9 @@ import { PrescriptionBodyComponent } from './Component/Views/prescriptionDoss/pr
 import { PopinSimpleComponent } from './Component/popin/popin-simple/popin-simple.component';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatSelectModule} from '@angular/material/select';
+import { DropdownComponent } from './dropdown/dropdown.component';
+import { DropdownContentComponent } from './dropdown-content/dropdown-content.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     PanelActionsComponent,
     PrescriptionBodyComponent,
     PopinSimpleComponent,
+    DropdownComponent,
+    DropdownContentComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     BrowserAnimationsModule,
     HttpClientModule,
     InfiniteScrollModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
