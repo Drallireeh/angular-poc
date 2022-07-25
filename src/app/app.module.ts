@@ -21,6 +21,8 @@ import { PrescriptionBodyComponent } from './Component/Views/prescriptionDoss/pr
 import { PopinSimpleComponent } from './Component/popin/popin-simple/popin-simple.component';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import {MatTabsModule} from '@angular/material/tabs';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     BrowserAnimationsModule,
     HttpClientModule,
     InfiniteScrollModule,
-    MatTabsModule
+    MatTabsModule,
+    DateInputsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
