@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, AbstractType } from '@angular/core';
-import { CategoriesListInterface } from '../categories-list-interface';
+import { CategoriesListInterface } from '../../../categories-list-interface';
 
 @Component({
 	selector: 'app-list-of-elements',

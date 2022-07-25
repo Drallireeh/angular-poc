@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ElementFromListInterface } from '../element-from-list-interface';
+import { ElementFromListInterface } from '../../../element-from-list-interface';
 import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 
 @Component({

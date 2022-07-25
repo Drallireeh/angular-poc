@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, AbstractType } from '@angular/core';
-import { CategoriesListInterface } from '../categories-list-interface';
-import { GetPokeService } from '../services/get-poke.service';
+import { GetPokeService } from '../../../services/get-poke.service';
 
 @Component({
   selector: 'app-list-of-pokemon',

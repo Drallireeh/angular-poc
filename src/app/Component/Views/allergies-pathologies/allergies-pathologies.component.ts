@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { GetPokeService } from '../services/get-poke.service';
 
 @Component({
   selector: 'app-allergies-pathologies',
@@ -8,7 +7,7 @@ import { GetPokeService } from '../services/get-poke.service';
 })
 export class AllergiesPathologiesComponent implements OnInit {
   pokemon:any;
-  constructor(private service:GetPokeService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

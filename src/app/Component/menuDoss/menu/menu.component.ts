@@ -1,5 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { MenuParentInterface } from '../menu-parent-interface';
+import { MenuParentInterface } from '../../../menu-parent-interface';
 import { faL, faList } from '@fortawesome/free-solid-svg-icons';
 
 @Component({

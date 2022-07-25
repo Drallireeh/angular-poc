@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MenuItemInterface } from '../menu-item-interface';
+import { MenuItemInterface } from '../../../menu-item-interface';
 
 @Component({
 	selector: 'app-menu-parent',
