@@ -21,6 +21,11 @@ export class PrescriptionBodyComponent implements OnInit {
 
 	openPopin(event: any): void {
     event.target.closest('button').nextElementSibling.classList.remove('hidden');
-	}
+  }
+  
+  changeTheme(primary: string, secondary: string) {
+    document.documentElement.style.setProperty('--primary-color', primary);
+    document.documentElement.style.setProperty('--secondary-color', secondary);
+  }
 
 }
