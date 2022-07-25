@@ -11,7 +11,7 @@ export class AppComponent {
 	title = 'angular-poc';
 
   constructor() {
-    this.changeTheme('blue', 'yellow'); // Set default theme
+    this.changeTheme('#b2e6f3', '#de7d0c'); // Set default theme
   }
 
   changeTheme(primary: string, secondary: string) {
