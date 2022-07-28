@@ -15,6 +15,6 @@ export class PopinHeaderComponent implements OnInit {
   }
 
   closePopin(event: any): void {
-    event.target.closest('app-popin-simple').classList.add('hidden');
+    event.target.closest('next-popin-simples').classList.add('hidden');
   }
 }

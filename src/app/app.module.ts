@@ -28,6 +28,8 @@ import { DropdownContentComponent } from './dropdown-content/dropdown-content.co
 import { PopinHeaderComponent } from './Component/popin/popin-header/popin-header.component';
 import { PopinFooterComponent } from './Component/popin/popin-footer/popin-footer.component';
 import { PopinBaseComponent } from './Component/popin/popin-base/popin-base.component';
+import { PopinSimplesComponent } from './Component/popin/popin-simples/popin-simples.component';
+import { PopinButtonComponent } from './Component/popin/popin-button/popin-button.component';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { PopinBaseComponent } from './Component/popin/popin-base/popin-base.comp
     PopinHeaderComponent,
     PopinFooterComponent,
     PopinBaseComponent,
+    PopinSimplesComponent,
+    PopinButtonComponent,
   ],
   imports: [
     BrowserModule,
