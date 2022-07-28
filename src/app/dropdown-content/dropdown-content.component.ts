@@ -1,18 +1,23 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-dropdown-content',
-  templateUrl: './dropdown-content.component.html',
-  styleUrls: ['./dropdown-content.component.less']
+	selector: 'app-dropdown-content',
+	templateUrl: './dropdown-content.component.html',
+	styleUrls: ['./dropdown-content.component.less']
 })
 export class DropdownContentComponent implements OnInit {
-  @Input() value!: string;
-  @Input() label!: string;
-  @Input() active: boolean = false;
+	@Input() value!: string;
+	@Input() label!: string;
+	@Input() active: boolean = false;
+	@Output() selectEvent = new EventEmitter<string>();
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
+	selectValue() {
+		console.log("Event de clic sur le li")
+		this.selectEvent.emit(this.label)
+	}
 }

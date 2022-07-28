@@ -25,6 +25,7 @@ import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import {MatSelectModule} from '@angular/material/select';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { DropdownContentComponent } from './dropdown-content/dropdown-content.component';
+import { NextInputWithPopinComponent } from './next-input-with-popin/next-input-with-popin.component';
 import { PopinHeaderComponent } from './Component/popin/popin-header/popin-header.component';
 import { PopinFooterComponent } from './Component/popin/popin-footer/popin-footer.component';
 import { PopinBaseComponent } from './Component/popin/popin-base/popin-base.component';
@@ -44,6 +45,7 @@ import { PopinButtonComponent } from './Component/popin/popin-button/popin-butto
     PopinSimpleComponent,
     DropdownComponent,
     DropdownContentComponent,
+    NextInputWithPopinComponent,
     PopinHeaderComponent,
     PopinFooterComponent,
     PopinBaseComponent,

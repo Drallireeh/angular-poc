@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllergiesPathologiesComponent implements OnInit {
   pokemon:any;
+  
   constructor() { }
 
   ngOnInit(): void {
