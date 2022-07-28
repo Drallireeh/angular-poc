@@ -30,6 +30,12 @@ a {
     text-decoration: underline;
 }
 
+input {
+    text-indent: 0.8em;
+    border: 1px solid var(--secondary-color);
+    height: 33.66px;
+}
+
 .mat-tab-list {
     .mat-ink-bar {
         display: block;
@@ -187,6 +193,11 @@ button {
     }
 }
 
+*[class^='col-'] {
+    padding-left: 2.5px;
+    padding-right: 2.5px;
+}
+
 .btn-primary,
 .btn-primary:focus {
     color: #fff;
@@ -198,6 +209,18 @@ button {
 .btn-primary,
 .btn-primary:focus {
     background-color: #4b88a3;
+}
+
+.btn.btn-secondary {
+    background-color: var(--secondary-color);
+}
+
+
+.btn.btn-secondary.check {
+    background-color: white;
+    outline: 0;
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 .hidden {
