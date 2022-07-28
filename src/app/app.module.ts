@@ -26,6 +26,10 @@ import {MatSelectModule} from '@angular/material/select';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { DropdownContentComponent } from './dropdown-content/dropdown-content.component';
 import { NextInputWithPopinComponent } from './next-input-with-popin/next-input-with-popin.component';
+import { PopinHeaderComponent } from './Component/popin/popin-header/popin-header.component';
+import { PopinFooterComponent } from './Component/popin/popin-footer/popin-footer.component';
+import { PopinBaseComponent } from './Component/popin/popin-base/popin-base.component';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +44,9 @@ import { NextInputWithPopinComponent } from './next-input-with-popin/next-input-
     DropdownComponent,
     DropdownContentComponent,
     NextInputWithPopinComponent,
+    PopinHeaderComponent,
+    PopinFooterComponent,
+    PopinBaseComponent,
   ],
   imports: [
     BrowserModule,
