@@ -25,6 +25,7 @@ import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import {MatSelectModule} from '@angular/material/select';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { DropdownContentComponent } from './dropdown-content/dropdown-content.component';
+import { NextInputWithPopinComponent } from './next-input-with-popin/next-input-with-popin.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { DropdownContentComponent } from './dropdown-content/dropdown-content.co
     PopinSimpleComponent,
     DropdownComponent,
     DropdownContentComponent,
+    NextInputWithPopinComponent,
   ],
   imports: [
     BrowserModule,
