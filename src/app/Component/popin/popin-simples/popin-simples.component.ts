@@ -14,8 +14,9 @@ export class PopinSimplesComponent implements OnInit {
 
   selectNumber(event: any): void {
     let number = event.target.closest('button').textContent;
-    let appPopin = event.target.closest('app-popin-simple');
-    appPopin.parentNode.firstChild.value = number;
-    appPopin.classList.add('hidden');
+    let popin = event.target.closest('next-popin-simples');
+    popin.parentNode.firstChild.value = number;
+    console.log(popin.parentNode.firstChild)
+    popin.classList.add('hidden');
   }
 }
