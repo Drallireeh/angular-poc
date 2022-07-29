@@ -29,6 +29,7 @@ import { NextInputWithPopinComponent } from './next-input-with-popin/next-input-
 import { PopinHeaderComponent } from './Component/popin/popin-header/popin-header.component';
 import { PopinFooterComponent } from './Component/popin/popin-footer/popin-footer.component';
 import { PopinBaseComponent } from './Component/popin/popin-base/popin-base.component';
+import { NextDropdownWithPopinComponent } from './next-dropdown-with-popin/next-dropdown-with-popin.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { PopinBaseComponent } from './Component/popin/popin-base/popin-base.comp
     PopinHeaderComponent,
     PopinFooterComponent,
     PopinBaseComponent,
+    NextDropdownWithPopinComponent,
   ],
   imports: [
     BrowserModule,
