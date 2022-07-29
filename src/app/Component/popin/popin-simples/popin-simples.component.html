@@ -1,0 +1,38 @@
+<next-popin-base>
+        <h1></h1>
+        <div class="clavierTactileSimple">
+            <div class="line row1">
+                <p class="saisieType">Saisie tactile</p>
+                <popin-button type="btn-secondary" value=",25" type="next-btn next-btn-secondary"></popin-button>
+            </div>
+            <div class="line row2">
+                <popin-button (click)="selectNumber($event)" type="next-btn next-btn-primary" value="7"></popin-button>
+                <popin-button (click)="selectNumber($event)" type="next-btn next-btn-primary" value="8"></popin-button>
+                <popin-button (click)="selectNumber($event)" type="next-btn next-btn-primary" value="9"></popin-button>
+                <popin-button type="btn-secondary" value=",33" type="next-btn next-btn-secondary"></popin-button>
+            </div>
+            <div class="line row3">
+                <popin-button (click)="selectNumber($event)" type="next-btn next-btn-primary" value="4"></popin-button>
+                <popin-button (click)="selectNumber($event)" type="next-btn next-btn-primary" value="5"></popin-button>
+                <popin-button (click)="selectNumber($event)" type="next-btn next-btn-primary"value="6"></popin-button>
+                <popin-button type="btn-secondary" value=",50" type="next-btn next-btn-secondary"></popin-button>
+            </div>
+            <div class="line row4">
+                <popin-button (click)="selectNumber($event)" type="next-btn next-btn-primary" value="1"></popin-button>
+                <popin-button (click)="selectNumber($event)" type="next-btn next-btn-primary" value="2"></popin-button>
+                <popin-button (click)="selectNumber($event)" type="next-btn next-btn-primary" value="3"></popin-button>
+                <popin-button type="btn-secondary" value=",66" type="next-btn next-btn-secondary"></popin-button>
+            </div>
+            <div class="line row5">
+                <popin-button (click)="selectNumber($event)" type="next-btn next-btn-primary" value=","></popin-button>
+                <popin-button (click)="selectNumber($event)" type="next-btn next-btn-primary" value="0"></popin-button>
+                <popin-button (click)="selectNumber($event)" type="next-btn next-btn-primary" value=""></popin-button>
+                <popin-button type="btn-secondary" value=",76" type="next-btn next-btn-secondary"></popin-button>
+            </div>
+            <div class="line row6">
+                <popin-button type="btn-secondary" value="00" type="next-btn next-btn-secondary"></popin-button>
+                <popin-button type="btn-secondary" value="000" type="next-btn next-btn-secondary"></popin-button>
+                <popin-button type="btn-secondary" value="0000" type="next-btn next-btn-secondary next-btn-double"></popin-button>
+            </div>
+        </div>
+</next-popin-base>

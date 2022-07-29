@@ -1,7 +1,7 @@
 import { Component, OnInit, Input  } from '@angular/core';
 
 @Component({
-  selector: 'app-popin-base',
+  selector: 'next-popin-base',
   templateUrl: './popin-base.component.html',
   styleUrls: ['./popin-base.component.less']
 })
@@ -15,7 +15,7 @@ export class PopinBaseComponent implements OnInit {
   }
 
   closePopin(event: any): void {
-    event.target.closest('app-popin-simple').classList.add('hidden');
+    event.target.closest('next-popin-simples').classList.add('hidden');
   }
 
   selectNumber(event: any): void {
