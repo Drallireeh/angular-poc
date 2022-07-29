@@ -1,7 +1,7 @@
-import { Component, ContentChildren, ElementRef, Input, OnInit, QueryList } from '@angular/core';
+import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UtilitiesService } from '../app.component';
-import { DropdownContentComponent } from '../dropdown-content/dropdown-content.component';
+import { DropdownOption } from '../dropdown-option';
 
 @Component({
 	selector: 'app-dropdown',
@@ -13,24 +13,18 @@ export class DropdownComponent implements OnInit {
 	@Input() selected: string = '0';
 	// Dropdown ouverte ou fermée
 	dropdownActive: boolean = false;
-	// Liste des options
-	@ContentChildren(DropdownContentComponent) options!: QueryList<DropdownContentComponent>;
+	// Si on est en présence d'une popin on ajoute une classe spé
+	@Input() isPopin?: boolean = false;
+	// Liste des options de la dropdown
+	@Input() dropdownOptions: Array<DropdownOption> = [];
 	// Event de clic en dehors de la dropdown pour la fermer
 	clickOutsideSub!: Subscription;
 
 	constructor(private utilitiesService: UtilitiesService, private eRef: ElementRef) { }
 
-	ngOnInit(): void { }
-
-	ngAfterViewInit(): void {
-		// On sélectionne le premier élément de la dropdown, a changer pour sélectionner celui actif en tout temps
-		this.selected = this.options.first.label;
-
-		// On connecte l'évent de clic sur les options de cette dropdown
-		this.options.forEach((option) => {
-			option.selectEvent.subscribe(() => this.selectDropdownValue(option.label));
-		});
-	}
+	ngOnInit(): void {
+		console.log(this.dropdownOptions)
+	 }
 
 	onClick(): void {
 		// On set la dropdown à on / off
@@ -49,11 +43,12 @@ export class DropdownComponent implements OnInit {
 	}
 
 	// Sélection de la valeur de la dropdown
-	selectDropdownValue(label: string): void {
-		this.selected = label;
-		this.options.forEach((option) => {
-			if (option.label === label) option.active = true;
-			else option.active = false;
-		});
+	selectDropdownValue(optionClicked: DropdownOption): void {
+		this.dropdownOptions.map((option) => {
+			option.active = false;
+		})
+		this.selected = optionClicked.label;
+		optionClicked.active = true;
+
 	}
 }
