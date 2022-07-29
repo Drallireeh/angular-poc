@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DropdownOption } from '../dropdown-option';
 
 @Component({
   selector: 'app-next-dropdown-with-popin',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./next-dropdown-with-popin.component.less']
 })
 export class NextDropdownWithPopinComponent implements OnInit {
+	@Input() dropdownOptions: Array<DropdownOption> = [];
+	@Input() selected: string = '';
 
   constructor() { }
 
