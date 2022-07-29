@@ -1,9 +1,9 @@
 <div class="dropdown-ctn" (click)="onClick()">
-    <div class="dropdown">
+    <div class="dropdown" [class.with-popin]="isPopin">
         <span>{{selected}}</span>
         <span class="arrow-ctn"></span>
     </div>
     <ul class="options-ctn" [class.hidden]="!dropdownActive">
-        <ng-content></ng-content>
+        <app-dropdown-content *ngFor="let option of dropdownOptions" [value]="option.value" [label]="option.label" [active]="selected === option.label" (click)="selectDropdownValue(option)"></app-dropdown-content>
     </ul>
 </div>

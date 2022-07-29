@@ -29,6 +29,7 @@ import { NextInputWithPopinComponent } from './next-input-with-popin/next-input-
 import { PopinHeaderComponent } from './Component/popin/popin-header/popin-header.component';
 import { PopinFooterComponent } from './Component/popin/popin-footer/popin-footer.component';
 import { PopinBaseComponent } from './Component/popin/popin-base/popin-base.component';
+import { NextDropdownWithPopinComponent } from './next-dropdown-with-popin/next-dropdown-with-popin.component';
 import { PopinSimplesComponent } from './Component/popin/popin-simples/popin-simples.component';
 import { PopinButtonComponent } from './Component/popin/popin-button/popin-button.component';
 
@@ -49,6 +50,7 @@ import { PopinButtonComponent } from './Component/popin/popin-button/popin-butto
     PopinHeaderComponent,
     PopinFooterComponent,
     PopinBaseComponent,
+    NextDropdownWithPopinComponent,
     PopinSimplesComponent,
     PopinButtonComponent,
   ],

@@ -1,6 +1,6 @@
 .dropdown-ctn {
     position: relative;
-    
+
     .dropdown {
         height: 34px;
         border: 1px solid var(--secondary-color);
@@ -8,7 +8,6 @@
         padding-left: 0.8em;
         cursor: pointer;
         background-color: white;
-        ;
 
         >* {
             box-sizing: border-box;
@@ -40,6 +39,10 @@
         }
     }
 
+    .dropdown.with-popin {
+        border-right: 0px;
+    }
+
     .dropdown:hover {
         background-color: #fff6e5;
     }
@@ -51,8 +54,8 @@
         border-top: 0px;
         width: 100%;
         z-index: 9999999;
-            margin: 0px;
-            padding: 2px;
+        margin: 0px;
+        padding: 2px;
     }
 
     .options-ctn.hidden {

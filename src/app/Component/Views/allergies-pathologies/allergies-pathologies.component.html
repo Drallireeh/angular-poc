@@ -1,4 +1,3 @@
-
 <app-panel idString="allergPanelId" panelTitle="Allergies / Pathologies">
     <app-panel-actions slot="panel-heading">
         <button id="btnAjouter" class="btn"><span class="next-icon next-icon-ajout"></span>Médicamenteuse</button>
@@ -12,26 +11,19 @@
                     autofocus="" autocomplete="off">
             </div>
             <div class="col-md-3 col-lg-3 col-sm-3">
-                  <app-dropdown>
-                    <app-dropdown-content value="0" label="Tous les status" [active]="true"></app-dropdown-content>
-                    <app-dropdown-content value="1" label="Aucune"></app-dropdown-content>
-                    <app-dropdown-content value="2" label="Allergie"></app-dropdown-content>
-                    <app-dropdown-content value="3" label="Hypersensibilité"></app-dropdown-content>
-                 </app-dropdown>
+                <app-dropdown [dropdownOptions]="dropdownStatus" [selected]="dropdownStatus[0].label"></app-dropdown>
             </div>
             <div class="col-md-3 col-lg-3 col-sm-3">
-                 <app-dropdown>
-                    <app-dropdown-content value="0" label="Toutes les types" [active]="true"></app-dropdown-content>
-                    <app-dropdown-content value="1" label="Aucun"></app-dropdown-content>
-                    <app-dropdown-content value="2" label="Classe"></app-dropdown-content>
-                    <app-dropdown-content value="3" label="Substance"></app-dropdown-content>
-                    <app-dropdown-content value="4" label="Médicaments"></app-dropdown-content>
-                 </app-dropdown>
+                <app-dropdown [dropdownOptions]="dropdownTypes" [selected]="dropdownTypes[0].label"></app-dropdown>
             </div>
         </div>
     </app-panel-body-filters>
     <mat-tab-group slot="panel-body" animationDuration="0ms">
-        <mat-tab label="Allergies"><app-list-of-elements></app-list-of-elements></mat-tab>
-        <mat-tab label="Antécédents"><app-list-of-pokemon></app-list-of-pokemon></mat-tab>
+        <mat-tab label="Allergies">
+            <app-list-of-elements></app-list-of-elements>
+        </mat-tab>
+        <mat-tab label="Antécédents">
+            <app-list-of-pokemon></app-list-of-pokemon>
+        </mat-tab>
     </mat-tab-group>
 </app-panel>
