@@ -16,13 +16,11 @@ export class PopinButtonComponent implements OnInit {
   }
 
   focus(event: any): void {
-    console.log('oui')
     let button = event.target.closest('button');
     button.classList.add('focus');
   }
 
   unFocus(event: any): void {
-    console.log('non')
     let button = event.target.closest('button');
     button.classList.remove('focus');
   }
