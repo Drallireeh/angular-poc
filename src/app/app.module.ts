@@ -32,6 +32,7 @@ import { PopinBaseComponent } from './Component/popin/popin-base/popin-base.comp
 import { NextDropdownWithPopinComponent } from './next-dropdown-with-popin/next-dropdown-with-popin.component';
 import { PopinSimplesComponent } from './Component/popin/popin-simples/popin-simples.component';
 import { PopinButtonComponent } from './Component/popin/popin-button/popin-button.component';
+import { PopinButtonGommeComponent } from './Component/popin/popin-button-gomme/popin-button-gomme.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { PopinButtonComponent } from './Component/popin/popin-button/popin-butto
     NextDropdownWithPopinComponent,
     PopinSimplesComponent,
     PopinButtonComponent,
+    PopinButtonGommeComponent,
   ],
   imports: [
     BrowserModule,

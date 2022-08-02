@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./popin-simples.component.less']
 })
 export class PopinSimplesComponent implements OnInit {
-  title: string = '';
+  title: any = '';
 
   constructor() { }
 
@@ -26,5 +26,9 @@ export class PopinSimplesComponent implements OnInit {
     this.title == '' ? this.title = '0' + number : this.title += number;
     popin.parentNode.firstChild.value = this.title;
     popin.classList.add('hidden');
+  }
+
+  erase(): void {
+    this.title = this.title.slice(0, -1); 
   }
 }
