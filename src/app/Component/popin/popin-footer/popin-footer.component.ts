@@ -13,7 +13,12 @@ export class PopinFooterComponent implements OnInit {
   }
 
   closePopin(event: any): void {
-    event.target.closest('next-popin-simples').classList.add('hidden');
+    let footer = event.target.closest('popin-footer');
+    let main = footer.previousElementSibling;
+    let value = main.querySelector('h1').textContent;
+    let popin = event.target.closest('next-popin-simples');
+    popin.parentNode.firstChild.value = value;
+    popin.classList.add('hidden');
   }
 
 }
