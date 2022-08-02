@@ -15,4 +15,13 @@ export class PopinButtonComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  focus(event: any): void {
+    let button = event.target.closest('button');
+    button.classList.add('focus');
+  }
+
+  unFocus(event: any): void {
+    let button = event.target.closest('button');
+    button.classList.remove('focus');
+  }
 }
