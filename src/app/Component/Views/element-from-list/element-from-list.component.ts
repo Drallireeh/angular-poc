@@ -3,19 +3,18 @@ import { ElementFromListInterface } from '../../../element-from-list-interface';
 import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-element-from-list',
-  templateUrl: './element-from-list.component.html',
-  styleUrls: ['./element-from-list.component.less']
+	selector: 'app-element-from-list',
+	templateUrl: './element-from-list.component.html',
+	styleUrls: ['./element-from-list.component.less']
 })
 export class ElementFromListComponent implements OnInit {
-  @Input() element!: ElementFromListInterface;
+	@Input() element!: ElementFromListInterface;
 
-  faEdit = faEdit;
+	faEdit = faEdit;
 	faRemove = faRemove;
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {
+	}
 }

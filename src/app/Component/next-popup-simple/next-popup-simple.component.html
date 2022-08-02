@@ -1,0 +1,30 @@
+<app-next-overlay></app-next-overlay>
+<div class="next-window flex-col" data-role="draggable" [ngStyle]="{'width': width + 'px'}">
+    <div class="next-window-titlebar">
+        <span class="next-window-title">{{title}}</span>
+        <!-- <div class="k-window-actions"></div> -->
+    </div>
+    <div id="next-alert" class="next-window-content" data-role="window" tabindex="0" role="dialog"
+        aria-labelledby="next-alert_wnd_title">
+        <form>
+            <div class="content"><span class="next-icon next-icon-warning"></span>
+                <div class="message">
+                    <ng-content></ng-content>
+                    <!--  -->
+                </div>
+            </div>
+            <div class="actions">
+                <div class="actions-right">
+                    <button type="button" (click)="confirmCallback()" class="btn btn-secondary">
+                        <span class="next-icon next-icon-valider"></span>{{confirmationText}}
+                    </button>
+                    <button *ngIf="confirmPopup" type="button" (click)="closeWindow()" class="btn btn-secondary">
+                        <span class="next-icon next-icon-annulation"></span>{{annulationText}}
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Style width sur le next-window -->

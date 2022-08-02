@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HeaderModule} from './Component/headerDoss/header/header.module';
+import { HeaderModule } from './Component/headerDoss/header/header.module';
 import { MenuModule } from './Component/menuDoss/menu/menu.module';
 import { PanelModule } from './Component/panelDoss/panel/panel.module';
 import { FooterComponent } from './Component/footer/footer.component';
@@ -16,13 +16,12 @@ import { AllergiesPathologiesComponent } from './Component/Views/allergies-patho
 import { PrescriptionComponent } from './Component/Views/prescriptionDoss/prescription/prescription.component';
 import { PanelActionsComponent } from './Component/panelDoss/panel-actions/panel-actions.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PokemonDetailComponent } from './Component/Views/pokemon-detail/pokemon-detail.component';
 import { PrescriptionBodyComponent } from './Component/Views/prescriptionDoss/prescription-body/prescription-body.component';
 import { PopinSimpleComponent } from './Component/popin/popin-simple/popin-simple.component';
-import {InfiniteScrollModule} from 'ngx-infinite-scroll';
-import {MatTabsModule} from '@angular/material/tabs';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { MatTabsModule } from '@angular/material/tabs';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { DropdownContentComponent } from './dropdown-content/dropdown-content.component';
 import { NextInputWithPopinComponent } from './next-input-with-popin/next-input-with-popin.component';
@@ -32,6 +31,8 @@ import { PopinBaseComponent } from './Component/popin/popin-base/popin-base.comp
 import { NextDropdownWithPopinComponent } from './next-dropdown-with-popin/next-dropdown-with-popin.component';
 import { PopinSimplesComponent } from './Component/popin/popin-simples/popin-simples.component';
 import { PopinButtonComponent } from './Component/popin/popin-button/popin-button.component';
+import { BorderOfListComponent } from './Component/Views/border-of-list/border-of-list.component';
+import { NextPopupSimpleModule } from './Component/next-popup-simple/next-popup-simple.module';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { PopinButtonComponent } from './Component/popin/popin-button/popin-butto
     NextDropdownWithPopinComponent,
     PopinSimplesComponent,
     PopinButtonComponent,
+    BorderOfListComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +70,8 @@ import { PopinButtonComponent } from './Component/popin/popin-button/popin-butto
     InfiniteScrollModule,
     MatTabsModule,
     DateInputsModule,
-    MatSelectModule
+    MatSelectModule,
+    NextPopupSimpleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

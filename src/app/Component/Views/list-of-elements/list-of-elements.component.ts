@@ -9,6 +9,7 @@ import { CategoriesListInterface } from '../../../categories-list-interface';
 
 export class ListOfElementsComponent implements OnInit {
 	listCategories!: CategoriesListInterface[];
+	displayedPopup: boolean = false;
 
 	//listPokemon2: any;
 
@@ -16,8 +17,6 @@ export class ListOfElementsComponent implements OnInit {
 	}
 	
 	ngOnInit(): void {
-
-
 		this.listCategories = [
 			{
 				categoryName: 'test de nom',
@@ -176,5 +175,12 @@ export class ListOfElementsComponent implements OnInit {
 		]
 	}
 
+	confirmPopup() {
+		alert("la confirmation marche correctement");
+		this.displayedPopup = false;
+	}
 
+	displayPopup() {
+		this.displayedPopup = true;
+	}
 }

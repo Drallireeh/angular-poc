@@ -4,7 +4,7 @@ import { ListOfElementsComponent } from './list-of-elements.component';
 import { ElementFromListComponent } from '../element-from-list/element-from-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-
+import { NextPopupSimpleModule } from '../../next-popup-simple/next-popup-simple.module';
 
 @NgModule({
   declarations: [
@@ -14,11 +14,12 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    NextPopupSimpleModule
   ],
   exports: [
     ListOfElementsComponent,
-    InfiniteScrollModule
+    InfiniteScrollModule,
   ]
 })
 export class ListOfElementsModule { }
