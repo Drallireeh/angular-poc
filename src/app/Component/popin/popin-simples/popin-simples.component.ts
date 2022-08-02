@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PopinSimplesComponent implements OnInit {
   title: any = '';
-  disabled: any = '';
+  disabled: string = '';
 
   constructor() { }
 
