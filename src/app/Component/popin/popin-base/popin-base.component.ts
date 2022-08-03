@@ -15,6 +15,7 @@ export class PopinBaseComponent implements OnInit {
   }
 
   closePopin(event: any): void {
+    console.log("lcic")
     event.target.closest('next-popin-simples').classList.add('hidden');
   }
 

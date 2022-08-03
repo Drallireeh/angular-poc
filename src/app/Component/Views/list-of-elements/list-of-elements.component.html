@@ -2,12 +2,11 @@
     <div class="allergies-liste-ctn">
         <div class="allergie-regroup" *ngFor="let category of listCategories">
             <p>{{category.categoryName}}</p>
-            <app-element-from-list *ngFor="let element of category.elements" [element]="element">
-            </app-element-from-list>
+            <app-element-from-list (openPopup)="displayPopup()" *ngFor="let element of category.elements" [element]="element"></app-element-from-list>
         </div>
     </div>
 </div>
-<app-next-popup-simple (confirmCallbackEvent)="displayPopup()" [isVisible]="displayedPopup">
+<app-next-popup-simple (confirmCallbackEvent)="confirmPopup()" [changing]="changingValue">
     La couleur <span style="width: 15px; height: 15px; background-color: red; display: inline-block"></span>
     correspond à un type non renseigné<br>La couleur <span
         style="width: 15px; height: 15px; background-color: orange; display: inline-block"></span>

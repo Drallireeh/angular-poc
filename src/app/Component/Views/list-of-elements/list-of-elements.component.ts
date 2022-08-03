@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, AbstractType } from '@angular/core';
+import { Subject } from 'rxjs';
 import { CategoriesListInterface } from '../../../categories-list-interface';
 
 @Component({
@@ -9,9 +10,7 @@ import { CategoriesListInterface } from '../../../categories-list-interface';
 
 export class ListOfElementsComponent implements OnInit {
 	listCategories!: CategoriesListInterface[];
-	displayedPopup: boolean = false;
-
-	//listPokemon2: any;
+	changingValue: Subject<boolean> = new Subject();
 
 	constructor() { 
 	}
@@ -175,12 +174,17 @@ export class ListOfElementsComponent implements OnInit {
 		]
 	}
 
+	closePopup() {
+		this.changingValue.next(false);
+	}
+
 	confirmPopup() {
 		alert("la confirmation marche correctement");
-		this.displayedPopup = false;
+		this.closePopup();
 	}
 
 	displayPopup() {
-		this.displayedPopup = true;
+		console.log("display popup")
+		this.changingValue.next(true);
 	}
 }

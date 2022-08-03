@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-next-overlay',
-  templateUrl: './next-overlay.component.html',
-  styleUrls: ['./next-overlay.component.less']
+	selector: 'app-next-overlay',
+	templateUrl: './next-overlay.component.html',
+	styleUrls: ['./next-overlay.component.less']
 })
 export class NextOverlayComponent implements OnInit {
+	@Output() closePopup = new EventEmitter<void>;
 
-  constructor() { }
+	@HostListener('click', ['$event'])
+	onClick() {
+		this.closePopup.emit();
+	}
 
-  ngOnInit(): void {
-  }
+	constructor() { }
+
+	ngOnInit(): void {
+	}
 
 }
