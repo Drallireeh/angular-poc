@@ -18,6 +18,7 @@ export class AppComponent {
   // HostListener qui permet de regarder les clics globaux (exemple hors éléments). On subscribe à cet event pour l'utiliser où on veut
   @HostListener('document:click', ['$event'])
   documentClick(event: any): void {
+    console.log(event.target)
     this.utilitiesService.documentClickedTarget.next(event.target)
   }
 

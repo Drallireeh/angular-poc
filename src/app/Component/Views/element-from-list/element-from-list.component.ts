@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ElementFromListInterface } from '../../../element-from-list-interface';
 import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,6 +9,7 @@ import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 })
 export class ElementFromListComponent implements OnInit {
 	@Input() element!: ElementFromListInterface;
+	@Output() openPopup = new EventEmitter<void>();
 
 	faEdit = faEdit;
 	faRemove = faRemove;
@@ -16,5 +17,10 @@ export class ElementFromListComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit(): void {
+	}
+
+	// Fonction de callback qui emit l'évent de clic sur le bouton de confirmation
+	openPopupEmit() {
+		this.openPopup.emit();
 	}
 }

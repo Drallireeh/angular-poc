@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
 	selector: 'app-next-popup-simple',
@@ -6,9 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 	styleUrls: ['./next-popup-simple.component.less']
 })
 export class NextPopupSimpleComponent implements OnInit {
-
 	// AFfiche / cache la window 
-	@Input() isVisible: boolean = false;
+	@Input() isOpen: boolean = false;
 	// Indique si la popup est une popup de confirmation ou seulement d'alerte
 	@Input() confirmPopup: boolean = false;
 	// Titre 
@@ -24,17 +24,23 @@ export class NextPopupSimpleComponent implements OnInit {
 	// Emitter de l'event de confirmation
 	@Output() confirmCallbackEvent = new EventEmitter<void>();
 
+	@Input() changing!: Subject<boolean>;
+
 	constructor() { }
 
 	ngOnInit(): void {
+		this.changing.subscribe(v => { 
+			this.isOpen = v;
+		  });
 	}
 
 	// Fonction de callback qui emit l'évent de clic sur le bouton de confirmation
-	confirmCallback() {
+	confirmCallback(): void{
 		this.confirmCallbackEvent.emit();
+		this.closeWindow();
 	}
 
-	closeWindow() {
-		this.isVisible = false;
+	closeWindow(): void  {
+		this.changing.next(false);
 	}
 }
