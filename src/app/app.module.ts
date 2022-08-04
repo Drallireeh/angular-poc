@@ -34,6 +34,7 @@ import { PopinButtonComponent } from './Component/popin/popin-button/popin-butto
 import { BorderOfListComponent } from './Component/Views/border-of-list/border-of-list.component';
 import { NextPopupSimpleModule } from './Component/next-popup-simple/next-popup-simple.module';
 import { PopinButtonGommeComponent } from './Component/popin/popin-button-gomme/popin-button-gomme.component';
+import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virgule/popin-button-virgule.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { PopinButtonGommeComponent } from './Component/popin/popin-button-gomme/
     PopinButtonComponent,
     BorderOfListComponent,
     PopinButtonGommeComponent,
+    PopinButtonVirguleComponent,
   ],
   imports: [
     BrowserModule,
