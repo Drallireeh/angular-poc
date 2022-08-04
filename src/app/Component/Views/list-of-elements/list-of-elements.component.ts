@@ -184,7 +184,6 @@ export class ListOfElementsComponent implements OnInit {
 	}
 
 	displayPopup() {
-		console.log("display popup")
 		this.changingValue.next(true);
 	}
 }
