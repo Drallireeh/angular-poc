@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
 	selector: 'app-next-popup-simple',
@@ -24,12 +24,13 @@ export class NextPopupSimpleComponent implements OnInit {
 	// Emitter de l'event de confirmation
 	@Output() confirmCallbackEvent = new EventEmitter<void>();
 
-	@Input() changing!: Subject<boolean>;
+	@Input() subjectOpen$!: Subject<boolean>;
+	destroy$ = new Subject<void>();
 
 	constructor() { }
 
 	ngOnInit(): void {
-		this.changing.subscribe(v => { 
+		this.subjectOpen$.pipe(takeUntil(this.destroy$)).subscribe(v => {
 			this.isOpen = v;
 		  });
 	}
@@ -41,6 +42,11 @@ export class NextPopupSimpleComponent implements OnInit {
 	}
 
 	closeWindow(): void  {
-		this.changing.next(false);
+		this.subjectOpen$.next(false);
+	}
+
+	ngOnDestroy(): void {
+		this.destroy$.next();
+		this.destroy$.complete();
 	}
 }

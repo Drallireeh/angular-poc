@@ -23,7 +23,6 @@ export class DropdownComponent implements OnInit {
 	constructor(private utilitiesService: UtilitiesService, private eRef: ElementRef) { }
 
 	ngOnInit(): void {
-		console.log(this.dropdownOptions)
 	 }
 
 	onClick(): void {

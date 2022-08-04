@@ -6,7 +6,7 @@
         </div>
     </div>
 </div>
-<app-next-popup-simple (confirmCallbackEvent)="confirmPopup()" [changing]="changingValue">
+<app-next-popup-simple (confirmCallbackEvent)="confirmPopup()" [subjectOpen$]="changingValue">
     La couleur <span style="width: 15px; height: 15px; background-color: red; display: inline-block"></span>
     correspond à un type non renseigné<br>La couleur <span
         style="width: 15px; height: 15px; background-color: orange; display: inline-block"></span>
