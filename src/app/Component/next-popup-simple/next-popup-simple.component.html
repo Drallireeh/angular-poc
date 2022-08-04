@@ -1,6 +1,6 @@
 
 <app-next-overlay *ngIf="isOpen" (closePopup)="closeWindow()"></app-next-overlay>
-<div *ngIf="isOpen" class="next-window flex-col" data-role="draggable" [ngStyle]="{'width': width + 'px', 'left': 'calc(50% - (' + width + 'px / 2))'}">
+<div cdkDrag *ngIf="isOpen" class="next-window flex-col" data-role="draggable" [ngStyle]="{'width': width + 'px', 'left': 'calc(50% - (' + width + 'px / 2))'}">
     <div class="next-window-titlebar">
         <span class="next-window-title">{{title}}</span>
         <!-- <div class="k-window-actions"></div> -->
