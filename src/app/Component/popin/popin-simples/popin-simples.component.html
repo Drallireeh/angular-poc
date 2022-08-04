@@ -1,4 +1,4 @@
-<next-popin-base *ngIf="showPops">
+<next-popin-base *ngIf="showPops" (closePopup)="closePops()">
 <h1>{{title}}</h1>
         <div class="clavierTactileSimple">
             <div class="line row1">

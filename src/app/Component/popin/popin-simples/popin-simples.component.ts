@@ -1,4 +1,6 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs';
+
 
 @Component({
   selector: 'next-popin-simples',
@@ -9,14 +11,20 @@ export class PopinSimplesComponent implements OnInit {
   title: any = '';
   disabled: string = '';
 
+  @Input() showPops: boolean = false;
+
+	@Input() changing!: Subject<boolean>;
+
   constructor() { }
 
-  @Input() showPops: boolean = true;
 
 
   ctn = document.getElementsByClassName('.clavierTactileSimple');
 
   ngOnInit(): void {
+    this.changing.subscribe(v => { 
+			this.showPops = v;
+		  });
   }
 
   selectNumber(event: any): void {
@@ -38,7 +46,7 @@ export class PopinSimplesComponent implements OnInit {
     this.title == '' ? this.title = '0' + number : this.title += number;
     popin.parentNode.firstChild.value = this.title;
     //popin.classList.add('hidden');
-    this.showPops = false;
+    this.changing.next(false);
   }
 
   erase(): void {
@@ -46,5 +54,9 @@ export class PopinSimplesComponent implements OnInit {
       this.disabled = '';
     }
     this.title = this.title.slice(0, -1); 
+  }
+
+  closePops(): void {
+    this.changing.next(false);
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input  } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'next-popin-base',
@@ -11,13 +11,16 @@ export class PopinBaseComponent implements OnInit {
 
   @Input() title!: string; 
   @Input() show!: string;
+  @Output() closePopup = new EventEmitter<void>;
 
   ngOnInit(): void {
   }
 
-  closePopin(event: any): void {
-    console.log("lcic")
-    event.target.closest('next-popin-simples').classList.add('hidden');
+  closePopin(): void {
+    console.log("lcic");
+    this.closePopup.emit();
+
+    //event.target.closest('next-popin-simples').classList.add('hidden');
   }
 
   selectNumber(event: any): void {
