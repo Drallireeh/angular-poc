@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'next-popin-simples',
@@ -10,6 +10,9 @@ export class PopinSimplesComponent implements OnInit {
   disabled: string = '';
 
   constructor() { }
+
+  @Input() showPops: boolean = true;
+
 
   ctn = document.getElementsByClassName('.clavierTactileSimple');
 
@@ -34,7 +37,8 @@ export class PopinSimplesComponent implements OnInit {
     let popin = event.target.closest('next-popin-simples');
     this.title == '' ? this.title = '0' + number : this.title += number;
     popin.parentNode.firstChild.value = this.title;
-    popin.classList.add('hidden');
+    //popin.classList.add('hidden');
+    this.showPops = false;
   }
 
   erase(): void {

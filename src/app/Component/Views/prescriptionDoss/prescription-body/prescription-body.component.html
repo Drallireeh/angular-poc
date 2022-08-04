@@ -57,10 +57,10 @@
         <div class="col-md-9">
             <div>
                 <input type="text" placeholder="Quantité">
-                <button (click)="openPopin($event)" id="test">
+                <button (click)="openPopin()" id="test">
                     <fa-icon class="next-icon" [icon]="faEdit"></fa-icon>
                 </button>
-                <next-popin-simples class="hidden" title="Nombre de repas"></next-popin-simples>
+                <next-popin-simples title="Nombre de repas" [showPops]="boolbool"></next-popin-simples>
             </div>
             <div class="hidden">
                 <input type="text" placeholder="heure">

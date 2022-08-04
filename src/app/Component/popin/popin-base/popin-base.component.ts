@@ -10,6 +10,7 @@ export class PopinBaseComponent implements OnInit {
   constructor() { }
 
   @Input() title!: string; 
+  @Input() show!: string;
 
   ngOnInit(): void {
   }
