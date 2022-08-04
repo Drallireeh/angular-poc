@@ -1,10 +1,11 @@
 <div class="blackback">
         <div class="popin">
             <popin-header></popin-header>
+            <h1>{{show}}</h1>
             <main>
                 <ng-content></ng-content>
             </main>
             <popin-footer></popin-footer>
         </div>
         <div class="fondPopin" (click)="closePopin($event)"></div>
-</div>
+    </div>

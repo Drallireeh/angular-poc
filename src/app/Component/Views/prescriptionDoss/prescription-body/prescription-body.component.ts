@@ -10,6 +10,8 @@ export class PrescriptionBodyComponent implements OnInit {
 
   constructor() { }
 
+  boolbool: boolean = true;
+
   faUser = faUser;
   faKitMedical = faKitMedical;
   faHouseMedicalCircleExclamation = faHouseMedicalCircleExclamation;
@@ -19,8 +21,8 @@ export class PrescriptionBodyComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
-	openPopin(event: any): void {
-    event.target.closest('button').nextElementSibling.classList.remove('hidden');
+	openPopin(): void {
+    this.boolbool = true;
   }
   
   changeTheme(primary: string, secondary: string) {
