@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'popin-header',
@@ -9,12 +9,17 @@ export class PopinHeaderComponent implements OnInit {
 
   constructor() { }
 
+  // Variable de titre récupéré par le composant parent
   @Input() title!: string; 
+
+  // Evenement renvoyé vers le composant parent
+  @Output() closePopin = new EventEmitter<void>;
 
   ngOnInit(): void {
   }
 
-  closePopin(event: any): void {
-    event.target.closest('next-popin-simples').classList.add('hidden');
+  // Fonction qui active la variable qui renvoie un évènement
+  closePopinHeader(): void {
+    this.closePopin.emit();
   }
 }

@@ -1,11 +1,10 @@
 <div class="blackback">
         <div class="popin">
-            <popin-header></popin-header>
-            <h1>{{show}}</h1>
+            <popin-header (closePopin)="closePopinBase()"></popin-header>
             <main>
                 <ng-content></ng-content>
             </main>
-            <popin-footer></popin-footer>
+            <popin-footer (closePopin)="closePopinBase()"></popin-footer>
         </div>
-        <div class="fondPopin" (click)="closePopin($event)"></div>
+        <div class="fondPopin" (click)="closePopinBase()"></div>
     </div>

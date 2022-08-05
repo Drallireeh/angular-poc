@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 import { faUser, faKitMedical, faHouseMedicalCircleExclamation, faTextWidth, faEdit} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -7,7 +8,8 @@ import { faUser, faKitMedical, faHouseMedicalCircleExclamation, faTextWidth, faE
   styleUrls: ['./prescription-body.component.less']
 })
 export class PrescriptionBodyComponent implements OnInit {
-
+  @Input() openPopup = new EventEmitter<void>();
+  changingValue: Subject<boolean> = new Subject();
   constructor() { }
 
   boolbool: boolean = true;
@@ -22,7 +24,9 @@ export class PrescriptionBodyComponent implements OnInit {
 	}
 
 	openPopin(): void {
-    this.boolbool = true;
+    //this.boolbool = true;
+    //this.openPopup.emit();
+      this.changingValue.next(true);
   }
   
   changeTheme(primary: string, secondary: string) {
