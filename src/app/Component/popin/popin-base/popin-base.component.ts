@@ -9,24 +9,17 @@ export class PopinBaseComponent implements OnInit {
 
   constructor() { }
 
+  // Variable de titre qu'on renvoie vers le popin-header
   @Input() title!: string; 
-  @Input() show!: string;
-  @Output() closePopup = new EventEmitter<void>;
+
+  // Evenement renvoyé vers le composant parent
+  @Output() closePopin = new EventEmitter<void>;
 
   ngOnInit(): void {
   }
 
-  closePopin(): void {
-    console.log("lcic");
-    this.closePopup.emit();
-
-    //event.target.closest('next-popin-simples').classList.add('hidden');
-  }
-
-  selectNumber(event: any): void {
-    let number = event.target.closest('button').textContent;
-    let appPopin = event.target.closest('app-popin-simple');
-    appPopin.parentNode.firstChild.value = number;
-    appPopin.classList.add('hidden');
+  // Fonction qui active la variable qui renvoie un évènement
+  closePopinBase(): void {
+    this.closePopin.emit();
   }
 }

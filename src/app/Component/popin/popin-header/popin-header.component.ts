@@ -9,14 +9,17 @@ export class PopinHeaderComponent implements OnInit {
 
   constructor() { }
 
+  // Variable de titre récupéré par le composant parent
   @Input() title!: string; 
-  @Output() closePopup = new EventEmitter<void>;
+
+  // Evenement renvoyé vers le composant parent
+  @Output() closePopin = new EventEmitter<void>;
 
   ngOnInit(): void {
   }
 
-  closePopin(event: any): void {
-    //event.target.closest('next-popin-simples').classList.add('hidden');
-    this.closePopup.emit();
+  // Fonction qui active la variable qui renvoie un évènement
+  closePopinHeader(): void {
+    this.closePopin.emit();
   }
 }

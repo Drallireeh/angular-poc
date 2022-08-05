@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 
 
@@ -8,30 +8,34 @@ import { Subject } from 'rxjs';
   styleUrls: ['./popin-simples.component.less']
 })
 export class PopinSimplesComponent implements OnInit {
+  // Variable contenant le nombre
   title: any = '';
+  // Variable pour gérer la désactivation de la virgule
   disabled: string = '';
 
-  @Input() showPops: boolean = false;
+  // Boolean gérant l'affichage de la popin
+  @Input() showPopin: boolean = false;
 
+  // Subject permettant de gérer le changement de la variable d'affichage de la popin depuis d'autres composants
 	@Input() changing!: Subject<boolean>;
 
   constructor() { }
 
-
-
-  ctn = document.getElementsByClassName('.clavierTactileSimple');
-
   ngOnInit(): void {
+
+    // Fonction pour changer le boolean qui gère l'affichage de la popin
     this.changing.subscribe(v => { 
-			this.showPops = v;
+			this.showPopin = v;
 		  });
   }
 
+  // Clic sur un chiffre primary pour écrire un nombre
   selectNumber(event: any): void {
     let number = event.target.closest('button').textContent;
     this.title += number; 
   }
 
+  // Clic sur la virgule, et désactivation du bouton si une virgule est présente
   selectVirgule(event: any): void {
     if(this.disabled != "disabled"){
       let number = event.target.closest('button').textContent;
@@ -40,15 +44,18 @@ export class PopinSimplesComponent implements OnInit {
     }
   }
 
+  // Clic sur un chiffre secondary qui ferme la popin après avoir ajouté au nombre ce qui est présent sur le bouton
   selectFinalNumber(event: any): void {
     let number = event.target.closest('button').textContent;
     let popin = event.target.closest('next-popin-simples');
+
+    // Si rien n'est présent dans le nombre, rajoute un 0 devant la virgule
     this.title == '' ? this.title = '0' + number : this.title += number;
     popin.parentNode.firstChild.value = this.title;
-    //popin.classList.add('hidden');
     this.changing.next(false);
   }
 
+  // Clic sur la gomme pour effacer un caractère
   erase(): void {
     if(this.title.slice(-1) == ','){
       this.disabled = '';
@@ -56,7 +63,8 @@ export class PopinSimplesComponent implements OnInit {
     this.title = this.title.slice(0, -1); 
   }
 
-  closePops(): void {
+  // Fonction de fermeture de la popin
+  closePopin(): void {
     this.changing.next(false);
   }
 }

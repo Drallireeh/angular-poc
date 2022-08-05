@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'popin-footer',
@@ -9,16 +9,25 @@ export class PopinFooterComponent implements OnInit {
 
   constructor() { }
 
+  // Evenement renvoyé vers le composant parent
+  @Output() closePopin = new EventEmitter<void>;
+
   ngOnInit(): void {
   }
 
-  closePopin(event: any): void {
+  // Fonction qui active la variable qui renvoie un évènement
+  closePopinFooter(event: any): void {
+    // Récupération des elemnts pour atteindre la valeur inscrite et l'input référent
     let footer = event.target.closest('popin-footer');
     let main = footer.previousElementSibling;
     let value = main.querySelector('h1').textContent;
     let popin = event.target.closest('next-popin-simples');
+
+    // Change la valeur de l'input référent
     popin.parentNode.firstChild.value = value;
-    popin.classList.add('hidden');
+
+    // Active la variable qui renvoie un évènement
+    this.closePopin.emit();
   }
 
 }
