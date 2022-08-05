@@ -2,7 +2,7 @@
     <div class="allergies-liste-ctn">
         <div class="allergie-regroup" *ngFor="let category of listCategories">
             <p>{{category.categoryName}}</p>
-            <app-element-from-list (openPopup)="displayPopup()" *ngFor="let element of category.elements" [element]="element"></app-element-from-list>
+            <app-element-from-list (openPopup)="displayPopup()" *ngFor="let element of category.elements" [element]="element" [borderColor]="getBorderColor(element.type)"></app-element-from-list>
         </div>
     </div>
 </div>

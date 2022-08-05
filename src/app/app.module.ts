@@ -31,7 +31,6 @@ import { PopinBaseComponent } from './Component/popin/popin-base/popin-base.comp
 import { NextDropdownWithPopinComponent } from './next-dropdown-with-popin/next-dropdown-with-popin.component';
 import { PopinSimplesComponent } from './Component/popin/popin-simples/popin-simples.component';
 import { PopinButtonComponent } from './Component/popin/popin-button/popin-button.component';
-import { BorderOfListComponent } from './Component/Views/border-of-list/border-of-list.component';
 import { NextPopupSimpleModule } from './Component/next-popup-simple/next-popup-simple.module';
 import { PopinButtonGommeComponent } from './Component/popin/popin-button-gomme/popin-button-gomme.component';
 import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virgule/popin-button-virgule.component';
@@ -56,7 +55,6 @@ import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virg
     NextDropdownWithPopinComponent,
     PopinSimplesComponent,
     PopinButtonComponent,
-    BorderOfListComponent,
     PopinButtonGommeComponent,
     PopinButtonVirguleComponent,
   ],

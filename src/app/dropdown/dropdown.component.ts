@@ -23,7 +23,7 @@ export class DropdownComponent implements OnInit {
 	constructor(private utilitiesService: UtilitiesService, private eRef: ElementRef) { }
 
 	ngOnInit(): void {
-	 }
+	}
 
 	onClick(): void {
 		// On set la dropdown à on / off
@@ -48,6 +48,5 @@ export class DropdownComponent implements OnInit {
 		})
 		this.selected = optionClicked.label;
 		optionClicked.active = true;
-
 	}
 }

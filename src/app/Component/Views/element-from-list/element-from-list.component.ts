@@ -10,6 +10,7 @@ import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 export class ElementFromListComponent implements OnInit {
 	@Input() element!: ElementFromListInterface;
 	@Output() openPopup = new EventEmitter<void>();
+	@Input() borderColor!: string;
 
 	faEdit = faEdit;
 	faRemove = faRemove;

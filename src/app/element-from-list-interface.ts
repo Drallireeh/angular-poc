@@ -5,4 +5,6 @@ export interface ElementFromListInterface {
     commentaire: string,
     data_id: string,
     data_sejour_id: string,
+    type?: string,
+    status?: boolean
 }
