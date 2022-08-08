@@ -35,7 +35,6 @@ import { NextPopupSimpleModule } from './Component/next-popup-simple/next-popup-
 import { PopinButtonGommeComponent } from './Component/popin/popin-button-gomme/popin-button-gomme.component';
 import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virgule/popin-button-virgule.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

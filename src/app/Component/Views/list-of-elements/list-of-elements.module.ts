@@ -6,12 +6,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NextPopupSimpleModule } from '../../next-popup-simple/next-popup-simple.module';
 import { BorderOfListComponent } from '../border-of-list/border-of-list.component';
+import { ActionsFromListComponent } from '../actions-from-list/actions-from-list.component';
 
 @NgModule({
   declarations: [
     ListOfElementsComponent,
     ElementFromListComponent,
-    BorderOfListComponent
+    BorderOfListComponent,
+    ActionsFromListComponent,
   ],
   imports: [
     CommonModule,

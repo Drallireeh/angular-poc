@@ -1,21 +1,16 @@
 <div class="allergies-ctn" attr.data-id={{element.data_id}} attr.data-sejour-id={{element.data_sejour_id}}>
-    <app-border-of-list (click)="openPopupEmit()" [colorValue]="borderColor"></app-border-of-list>
-    <div class="flex flex-align-items-center flex-justify-content-center">
-        <div class="col-md-10 col-lg-10 col-sm-10 flex flex-col flex-justify-content-center">
-            <p>{{element.label}}</p>
-            <p *ngIf="element.commentaire !== ''" class="info-secondaire">{{element.commentaire}}</p>
-        </div>
-        <div class="col-md-2 col-lg-2 col-sm-2 flex flex-col flex-justify-content-center">
-            <p>{{element.date}} <a class="code" *ngIf="element.code !== ''">{{element.code}}</a></p>
-            <p *ngIf="element.code === ''" class="info-secondaire">Pas de code CIM10</p>
-        </div>
+  <app-border-of-list (click)="openPopupEmit()" [colorValue]="borderColor"></app-border-of-list>
+  <div class="flex flex-align-items-center flex-justify-content-center">
+    <div class="col-md-10 col-lg-10 col-sm-10 flex flex-col flex-justify-content-center">
+      <p>{{element.label}}</p>
+      <p *ngIf="element.commentaire !== ''" class="info-secondaire">{{element.commentaire}}</p>
     </div>
-    <div class="container-btn">
-        <button class="btn btn-primary modifier-btn" title="Modifier l'allergie">
-            <fa-icon class="next-icon" [icon]="faEdit"></fa-icon>
-        </button>
-        <button class="btn btn-primary supprimer-btn" title="Supprimer l'allergie">
-            <fa-icon class="next-icon" [icon]="faRemove"></fa-icon>
-        </button>
+    <div class="col-md-2 col-lg-2 col-sm-2 flex flex-col flex-justify-content-center">
+      <p>{{element.date}} <a class="code" *ngIf="element.code !== ''">{{element.code}}</a></p>
+      <p *ngIf="element.code === ''" class="info-secondaire">Pas de code CIM10</p>
     </div>
+  </div>
+  <app-actions-from-list [titleUpdateBtn]="titleBtnUpdate" [titleDeleteBtn]="titleBtnDelete" otherBtnIcon="test"
+    titleOtherBtn="test">
+  </app-actions-from-list>
 </div>
