@@ -1,230 +1,238 @@
 .next-window {
-    max-height: calc(100vh - 48px);
-    max-width: calc(100vw - 48px);
-    border: 0 none;
-    overflow: hidden;
-    -webkit-box-shadow: 0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%), 0 11px 15px -7px rgb(0 0 0 / 20%);
-    -moz-box-shadow: 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12), 0 11px 15px -7px rgba(0, 0, 0, .2);
-    box-shadow: 0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%), 0 11px 15px -7px rgb(0 0 0 / 20%);
-    color: black;
-    background-color: white;
-    line-height: 1.42857143;
+  max-height: calc(100vh - 48px);
+  max-width: calc(100vw - 48px);
+  border: 0 none;
+  overflow: hidden;
+  -webkit-box-shadow: 0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%), 0 11px 15px -7px rgb(0 0 0 / 20%);
+  -moz-box-shadow: 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12), 0 11px 15px -7px rgba(0, 0, 0, .2);
+  box-shadow: 0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%), 0 11px 15px -7px rgb(0 0 0 / 20%);
+  color: black;
+  background-color: white;
+  line-height: 1.42857143;
+  box-sizing: border-box;
+  position: fixed;
+  min-width: 90px;
+  min-height: 50px;
+  z-index: 10015;
+  opacity: 1;
+  top: 280px;
+  left: 50px;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  display: inline-flex !important;
+
+  .next-window-titlebar {
+    color: var(--primary);
+    width: 100%;
+    background-position: 0 0;
+    background-repeat: repeat-x;
+    white-space: nowrap;
+    min-height: 16px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 58px !important;
     box-sizing: border-box;
-    position: fixed;
-    min-width: 90px;
-    min-height: 50px;
-    z-index: 10015;
-    opacity: 1;
-    top: 280px;
-    left: 50px;
+    line-height: 58px;
+    padding: 12px;
+    background-color: #fff;
+    border: none;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-flow: row nowrap;
+
+    .next-window-title {
+      font-size: 18px;
+      padding: 0 12px;
+      line-height: 31px;
+      font-weight: 400;
+      -ms-flex: 1;
+      flex: 1;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      cursor: default;
+    }
+
+    .spacer {
+      display: none;
+      -ms-flex: 1 0 auto;
+      flex: 1 0 auto;
+    }
+  }
+
+  .next-window-titlebar::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 36px);
+    height: 1px;
+    left: 18px;
+    bottom: 1px;
+    border-bottom: 1px solid #000;
+    border-color: #c0e1d7; // TODO à changer avec des valeurs via les styles
+  }
+
+  .next-window-content {
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    padding: 0 12px 12px;
+    box-sizing: border-box;
+    overflow: auto;
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
     outline: 0;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-appearance: none;
-    display: inline-flex !important;
 
-    .next-window-titlebar {
-        color: var(--primary);
-        width: 100%;
-        background-position: 0 0;
-        background-repeat: repeat-x;
-        white-space: nowrap;
-        min-height: 16px;
+    >form {
+      height: 100%;
+      display: block;
+    }
+
+    .content {
+      display: -moz-box;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      -ms-flex-direction: row;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -moz-box-align: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      max-height: 500px;
+      padding: 10px 5px;
+      overflow: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -ms-flex-positive: 1;
+      -moz-flex-grow: 1;
+      -webkit-box-flex: 1;
+      flex-grow: 1;
+      position: relative;
+
+      .next-icon {
         -ms-flex-negative: 0;
+        -moz-flex-shrink: 0;
+        -webkit-box-shrink: 0;
         flex-shrink: 0;
-        -ms-flex-align: center;
-        align-items: center;
-        height: 58px !important;
-        box-sizing: border-box;
-        line-height: 58px;
-        padding: 12px;
-        background-color: #fff;
-        border: none;
-        position: relative;
-        z-index: 2;
-        display: flex;
-        flex-flow: row nowrap;
+        font-size: 72px;
+        vertical-align: middle;
+        color: #6e6e6e;
+        opacity: .4;
+      }
 
-        .next-window-title {
-            font-size: 18px;
-            padding: 0 12px;
-            line-height: 31px;
-            font-weight: 400;
-            -ms-flex: 1;
-            flex: 1;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-direction: row;
-            flex-direction: row;
-            -ms-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            cursor: default;
-        }
+      .message {
+        -ms-flex-positive: 1;
+        -moz-flex-grow: 1;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        vertical-align: middle;
 
-        .spacer {
-            display: none;
-            -ms-flex: 1 0 auto;
-            flex: 1 0 auto;
-        }
+
+      }
     }
 
-    .next-window-titlebar::after {
-        content: "";
-        position: absolute;
-        width: calc(100% - 36px);
-        height: 1px;
-        left: 18px;
-        bottom: 1px;
-        border-bottom: 1px solid #000;
-        border-color: #c0e1d7; // TODO à changer avec des valeurs via les styles
-    }
+    .actions {
+      color: var(--primary);
+      -ms-flex-negative: 0;
+      -moz-flex-shrink: 0;
+      -webkit-box-shrink: 0;
+      flex-shrink: 0;
+      display: -moz-box;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      -ms-flex-direction: row-reverse;
+      -webkit-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+      -moz-box-pack: space-between;
+      -webkit-box-pack: space-between;
+      -webkit-flex-pack: space-between;
+      -ms-flex-pack: space-between;
+      flex-pack: space-between;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      text-align: right;
+      border: 0 none;
+      height: 32px;
+      padding: 12px 5px 0;
 
-    .next-window-content {
+      .actions-right {
+        -moz-box-pack: end;
+        -webkit-box-pack: end;
+        -webkit-flex-pack: end;
+        -ms-flex-pack: end;
+        flex-pack: end;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+        order: 1;
+        text-align: right;
         display: -moz-box;
         display: -webkit-box;
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
-        -webkit-box-orient: vertical;
-        -moz-box-orient: vertical;
-        -ms-flex-direction: column;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        padding: 0 12px 12px;
-        box-sizing: border-box;
-        overflow: auto;
-        position: relative;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-        outline: 0;
+        -ms-flex-positive: 1;
+        -moz-flex-grow: 1;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        -ms-flex-preferred-size: 0;
+        -moz-flex-basis: 0;
+        -webkit-flex-basis: 0;
+        flex-basis: 0;
+        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        min-height: 32px;
+        padding: 0;
 
-        >form {
-            height: 100%;
-            display: block;
+
+        >button {
+          color: var(--primary);
+          margin-left: 8px;
+          background-color: #fff;
+          border: none;
+          border-bottom: 1px solid transparent;
+          padding-bottom: 0;
+          padding-top: 0;
+          height: 32px;
         }
-
-        .content {
-            display: -moz-box;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-orient: horizontal;
-            -moz-box-orient: horizontal;
-            -ms-flex-direction: row;
-            -webkit-flex-direction: row;
-            flex-direction: row;
-            -moz-box-align: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            flex-align: center;
-            -webkit-align-items: center;
-            align-items: center;
-            max-height: 500px;
-            padding: 10px 5px;
-            overflow: auto;
-            overflow-x: hidden;
-            overflow-y: auto;
-            -ms-flex-positive: 1;
-            -moz-flex-grow: 1;
-            -webkit-box-flex: 1;
-            flex-grow: 1;
-            position: relative;
-
-            .next-icon {
-                -ms-flex-negative: 0;
-                -moz-flex-shrink: 0;
-                -webkit-box-shrink: 0;
-                flex-shrink: 0;
-                font-size: 72px;
-                vertical-align: middle;
-                color: #6e6e6e;
-                opacity: .4;
-            }
-
-            .message {
-                -ms-flex-positive: 1;
-                -moz-flex-grow: 1;
-                -webkit-box-flex: 1;
-                flex-grow: 1;
-                vertical-align: middle;
-            }
-        }
-
-        .actions {
-            color: var(--primary);
-            -ms-flex-negative: 0;
-            -moz-flex-shrink: 0;
-            -webkit-box-shrink: 0;
-            flex-shrink: 0;
-            display: -moz-box;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-orient: horizontal;
-            -moz-box-orient: horizontal;
-            -ms-flex-direction: row-reverse;
-            -webkit-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-            -moz-box-pack: space-between;
-            -webkit-box-pack: space-between;
-            -webkit-flex-pack: space-between;
-            -ms-flex-pack: space-between;
-            flex-pack: space-between;
-            -webkit-justify-content: space-between;
-            justify-content: space-between;
-            text-align: right;
-            border: 0 none;
-            height: 32px;
-            padding: 12px 5px 0;
-
-            .actions-right {
-                -moz-box-pack: end;
-                -webkit-box-pack: end;
-                -webkit-flex-pack: end;
-                -ms-flex-pack: end;
-                flex-pack: end;
-                -webkit-justify-content: flex-end;
-                justify-content: flex-end;
-                order: 1;
-                text-align: right;
-                display: -moz-box;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-                -ms-flex-positive: 1;
-                -moz-flex-grow: 1;
-                -webkit-box-flex: 1;
-                flex-grow: 1;
-                -ms-flex-preferred-size: 0;
-                -moz-flex-basis: 0;
-                -webkit-flex-basis: 0;
-                flex-basis: 0;
-                overflow: hidden;
-                overflow-x: hidden;
-                overflow-y: hidden;
-                min-height: 32px;
-                padding: 0;
-
-
-                >button {
-                    color: var(--primary);
-                    margin-left: 8px;
-                    background-color: #fff;
-                    border: none;
-                    border-bottom: 1px solid transparent;
-                    padding-bottom: 0;
-                    padding-top: 0;
-                    height: 32px;
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 .next-window * {
-    box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+:host /deep/ .color-tile {
+  width: 15px;
+  height: 15px;
+  display: inline-block
 }

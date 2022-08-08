@@ -7,10 +7,8 @@
     </div>
 </div>
 <app-next-popup-simple (confirmCallbackEvent)="confirmPopup()" [subjectOpen$]="changingValue">
-    La couleur <span style="width: 15px; height: 15px; background-color: red; display: inline-block"></span>
-    correspond à un type non renseigné<br>La couleur <span
-        style="width: 15px; height: 15px; background-color: orange; display: inline-block"></span>
-    correspond à une allergie<br>La couleur <span
-        style="width: 15px; height: 15px; background-color: grey; display: inline-block"></span>
-    correspond à une hypersensibilité
+  <ng-container *ngFor="let item of matchingColors; let i = index">
+    La couleur <span class="color-tile"  [ngStyle]="{'background-color': item.color}"></span>
+    correspond à un type non renseigné<br *ngIf="i !== matchingColors.length - 1">
+  </ng-container>
 </app-next-popup-simple>
