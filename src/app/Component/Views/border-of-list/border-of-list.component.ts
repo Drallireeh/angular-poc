@@ -7,11 +7,12 @@ import { Component, HostBinding, Input, OnInit } from '@angular/core';
 })
 export class BorderOfListComponent implements OnInit {
 	@Input() colorValue!: string;
-	@HostBinding('class') class = this.colorValue;
+	@HostBinding('class') classValue = this.colorValue;
 
 	constructor() { }
 
 	ngOnInit(): void {
+    this.classValue = this.colorValue;
 		console.log(this.colorValue)
 	}
 }
