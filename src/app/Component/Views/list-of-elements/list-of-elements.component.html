@@ -1,6 +1,6 @@
-<div class="flex-basis-none flex-grow-1 overflow patientSejourAllergies">
-  <div class="allergies-liste-ctn">
-    <div class="allergie-regroup" *ngFor="let category of listCategories">
+<div class="flex-basis-none flex-grow-1 overflow">
+  <div class="liste-ctn">
+    <div class="regroup" *ngFor="let category of listCategories">
       <p>{{category.categoryName}}</p>
       <app-element-from-list (openPopup)="displayPopup()" *ngFor="let element of category.elements" [element]="element"
         [borderColor]="getBorderColor(element.type)" [titleBtnUpdate]="titleBtnUpdate"
