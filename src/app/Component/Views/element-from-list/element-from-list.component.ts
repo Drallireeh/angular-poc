@@ -8,21 +8,26 @@ import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./element-from-list.component.less']
 })
 export class ElementFromListComponent implements OnInit {
+  // Data de l'élément ciblé
   @Input() element!: ElementFromListInterface;
+  // Event de l'ouverture de popup que l'on remonte au parent
   @Output() openPopup = new EventEmitter<void>();
+  // Couleur de la bordure
   @Input() borderColor!: string;
-  @Input() titleBtnUpdate!: string;
-  @Input() titleBtnDelete!: string;
+  // Titre des boutons d'actions. Le bouton autre est optionnel dans le cas d'une 3ème action voulue
+  @Input() titleBtnUpdate: string = "";
+  @Input() titleBtnDelete: string = "";
   @Input() titleBtnOther!: string;
+  // Icone du 3eme bouton d'action
+  @Input() iconOtherBtn!: string;
 
+  // Icones font awesome
   faEdit = faEdit;
   faRemove = faRemove;
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log("inside element from list")
-    console.log(this.titleBtnDelete, this.titleBtnUpdate)
   }
 
   // Fonction de callback qui emit l'évent de clic sur le bouton de confirmation
