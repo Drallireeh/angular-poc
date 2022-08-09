@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BorderOfListComponent } from './border-of-list.component';
+import { BorderInsideListComponent } from './border-inside-list.component';
 
 describe('BorderOfListComponent', () => {
-  let component: BorderOfListComponent;
-  let fixture: ComponentFixture<BorderOfListComponent>;
+  let component: BorderInsideListComponent;
+  let fixture: ComponentFixture<BorderInsideListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BorderOfListComponent ]
+      declarations: [BorderInsideListComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
-    fixture = TestBed.createComponent(BorderOfListComponent);
+    fixture = TestBed.createComponent(BorderInsideListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
