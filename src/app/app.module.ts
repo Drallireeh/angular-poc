@@ -9,7 +9,7 @@ import { MenuModule } from './Component/menuDoss/menu/menu.module';
 import { PanelModule } from './Component/panelDoss/panel/panel.module';
 import { FooterComponent } from './Component/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ListOfElementsModule } from './Component/Views/list-of-elements/list-of-elements.module';
+import { ListOfElementsModule } from './Component/Views/list-allergies/list-allergies.module';
 import { ListOfPokemonModule } from './Component/Views/list-of-pokemon/list-of-pokemon.module';
 import { PanelBodyFiltersComponent } from './Component/panelDoss/panel-body-filters/panel-body-filters.component';
 import { AllergiesPathologiesComponent } from './Component/Views/allergies-pathologies/allergies-pathologies.component';
