@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { faEdit, faRemove, faCode } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-actions-from-list',
-  templateUrl: './actions-from-list.component.html',
-  styleUrls: ['./actions-from-list.component.less']
+  selector: 'app-actions-inside-list',
+  templateUrl: './actions-inside-list.component.html',
+  styleUrls: ['./actions-inside-list.component.less']
 })
-export class ActionsFromListComponent implements OnInit {
+export class ActionsInsideListComponent implements OnInit {
   // Titre des boutons d'actions
   @Input() titleUpdateBtn: string = "update";
   @Input() titleDeleteBtn: string = "delete";

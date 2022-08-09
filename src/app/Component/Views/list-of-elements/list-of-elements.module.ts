@@ -6,14 +6,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NextPopupSimpleModule } from '../../next-popup-simple/next-popup-simple.module';
 import { BorderInsideListComponent } from '../border-inside-list/border-inside-list.component';
-import { ActionsFromListComponent } from '../actions-from-list/actions-from-list.component';
+import { ActionsInsideListComponent } from '../actions-inside-list/actions-inside-list.component';
 
 @NgModule({
   declarations: [
     ListOfElementsComponent,
     ElementFromListComponent,
     BorderInsideListComponent,
-    ActionsFromListComponent,
+    ActionsInsideListComponent,
   ],
   imports: [
     CommonModule,
