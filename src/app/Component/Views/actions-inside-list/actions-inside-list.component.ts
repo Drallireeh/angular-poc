@@ -13,6 +13,8 @@ export class ActionsInsideListComponent implements OnInit {
   @Input() titleOtherBtn!: string;
   // Icone du 3eme bouton optionnel
   @Input() otherBtnIcon!: string;
+  // Indique si on a un 3eme bouton
+  @Input() otherBtn: boolean = false;
 
   // Fontawesome icones
   faEdit = faEdit;

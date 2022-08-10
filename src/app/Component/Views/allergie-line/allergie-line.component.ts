@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ElementFromListInterface } from '../../../element-from-list-interface';
+import { AllergieInterface } from '../../../allergie-interface';
 import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,17 +9,19 @@ import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 })
 export class AllergieLineComponent implements OnInit {
   // Data de l'élément ciblé
-  @Input() element!: ElementFromListInterface;
+  @Input() element!: AllergieInterface;
   // Event de l'ouverture de popup que l'on remonte au parent
   @Output() openPopup = new EventEmitter<void>();
   // Couleur de la bordure
   @Input() borderColor!: string;
   // Titre des boutons d'actions. Le bouton autre est optionnel dans le cas d'une 3ème action voulue
-  @Input() titleBtnUpdate: string = "";
-  @Input() titleBtnDelete: string = "";
-  @Input() titleBtnOther!: string;
+  titleBtnUpdate: string = "Modifier l'allergie";
+  titleBtnDelete: string = "Supprimer l'allergie";
+  titleBtnOther: string = "troisième btn";
   // Icone du 3eme bouton d'action
-  @Input() iconOtherBtn!: string;
+  iconOtherBtn!: string;
+
+  @Input() otherBtn: boolean = false;
 
   // Icones font awesome
   faEdit = faEdit;
