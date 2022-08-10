@@ -3,11 +3,11 @@ import { ElementFromListInterface } from '../../../element-from-list-interface';
 import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-element-from-list',
-  templateUrl: './element-from-list.component.html',
-  styleUrls: ['./element-from-list.component.less']
+  selector: 'app-allergie-line',
+  templateUrl: './allergie-line.component.html',
+  styleUrls: ['./allergie-line.component.less']
 })
-export class ElementFromListComponent implements OnInit {
+export class AllergieLineComponent implements OnInit {
   // Data de l'élément ciblé
   @Input() element!: ElementFromListInterface;
   // Event de l'ouverture de popup que l'on remonte au parent

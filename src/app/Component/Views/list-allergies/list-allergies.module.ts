@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListAllergiesComponent } from './list-allergies.component';
-import { ElementFromListComponent } from '../element-from-list/element-from-list.component';
+import { AllergieLineComponent } from '../allergie-line/allergie-line.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { NextPopupSimpleModule } from '../../next-popup-simple/next-popup-simple.module';
@@ -11,7 +11,7 @@ import { ActionsInsideListComponent } from '../actions-inside-list/actions-insid
 @NgModule({
   declarations: [
     ListAllergiesComponent,
-    ElementFromListComponent,
+    AllergieLineComponent,
     BorderInsideListComponent,
     ActionsInsideListComponent,
   ],
