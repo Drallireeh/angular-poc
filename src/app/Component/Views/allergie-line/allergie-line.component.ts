@@ -21,6 +21,7 @@ export class AllergieLineComponent implements OnInit {
   // Icone du 3eme bouton d'action
   iconOtherBtn!: string;
 
+  // Détermine la présence d'un troisième bouton d'action
   @Input() otherBtn: boolean = false;
 
   // Icones font awesome
