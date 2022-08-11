@@ -2,7 +2,7 @@
   <div class="liste-ctn">
     <div class="regroup" *ngFor="let category of listCategories">
       <p>{{category.categoryName}}</p>
-      <app-allergie-line (openPopup)="displayPopup()" *ngFor="let element of category.elements" [element]="element"
+      <app-allergie-line *ngFor="let element of category.elements" [element]="element"
         [borderColor]="getBorderColor(element.type)" [otherBtn]="category.modifierDroits">
       </app-allergie-line>
     </div>
