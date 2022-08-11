@@ -203,15 +203,18 @@ export class ListAllergiesComponent implements OnInit {
     if (!this.matchingColors) {
       this.matchingColors = [{
         value: "allergie",
-        color: "orange"
+        color: "orange",
+        text: "une allergie"
       },
       {
         value: "hypersensibilité",
-        color: "grey"
+        color: "grey",
+        text: "une hypersensibilité"
       },
       {
         value: "pathologie",
-        color: "red"
+        color: "red",
+        text: "une pathologie"
       }];
     }
   }

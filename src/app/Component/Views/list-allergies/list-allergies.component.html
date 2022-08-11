@@ -12,6 +12,6 @@
   promptValue="test">
   <ng-container *ngFor="let item of matchingColors; let i = index">
     La couleur <span class="color-tile" [ngStyle]="{'background-color': item.color}"></span>
-    correspond à un(e) {{item.value}}<br *ngIf="i !== matchingColors.length - 1">
+    correspond à {{item.text}}<br *ngIf="i !== matchingColors.length - 1">
   </ng-container>
 </app-next-popup>
