@@ -4,7 +4,7 @@ import { ListAllergiesComponent } from './list-allergies.component';
 import { AllergieLineComponent } from '../allergie-line/allergie-line.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { NextPopupSimpleModule } from '../../next-popup-simple/next-popup-simple.module';
+import { NextPopupModule } from '../../next-popup/next-popup.module';
 import { BorderInsideListComponent } from '../border-inside-list/border-inside-list.component';
 import { ActionsInsideListComponent } from '../actions-inside-list/actions-inside-list.component';
 
@@ -19,11 +19,11 @@ import { ActionsInsideListComponent } from '../actions-inside-list/actions-insid
     CommonModule,
     FontAwesomeModule,
     InfiniteScrollModule,
-    NextPopupSimpleModule
+    NextPopupModule
   ],
   exports: [
     ListAllergiesComponent,
     InfiniteScrollModule,
   ]
 })
-export class ListOfElementsModule { }
+export class ListAllergiesModule { }

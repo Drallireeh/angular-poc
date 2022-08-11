@@ -9,7 +9,7 @@ import { MenuModule } from './Component/menuDoss/menu/menu.module';
 import { PanelModule } from './Component/panelDoss/panel/panel.module';
 import { FooterComponent } from './Component/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ListOfElementsModule } from './Component/Views/list-allergies/list-allergies.module';
+import { ListAllergiesModule } from './Component/Views/list-allergies/list-allergies.module';
 import { ListOfPokemonModule } from './Component/Views/list-of-pokemon/list-of-pokemon.module';
 import { PanelBodyFiltersComponent } from './Component/panelDoss/panel-body-filters/panel-body-filters.component';
 import { AllergiesPathologiesComponent } from './Component/Views/allergies-pathologies/allergies-pathologies.component';
@@ -31,7 +31,7 @@ import { PopinBaseComponent } from './Component/popin/popin-base/popin-base.comp
 import { NextDropdownWithPopinComponent } from './next-dropdown-with-popin/next-dropdown-with-popin.component';
 import { PopinSimplesComponent } from './Component/popin/popin-simples/popin-simples.component';
 import { PopinButtonComponent } from './Component/popin/popin-button/popin-button.component';
-import { NextPopupSimpleModule } from './Component/next-popup-simple/next-popup-simple.module';
+import { NextPopupModule } from './Component/next-popup/next-popup.module';
 import { PopinButtonGommeComponent } from './Component/popin/popin-button-gomme/popin-button-gomme.component';
 import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virgule/popin-button-virgule.component';
 
@@ -64,7 +64,7 @@ import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virg
     HeaderModule,
     MenuModule,
     PanelModule,
-    ListOfElementsModule,
+    ListAllergiesModule,
     ListOfPokemonModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -72,7 +72,7 @@ import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virg
     MatTabsModule,
     DateInputsModule,
     MatSelectModule,
-    NextPopupSimpleModule
+    NextPopupModule
   ],
   providers: [],
   bootstrap: [AppComponent]
