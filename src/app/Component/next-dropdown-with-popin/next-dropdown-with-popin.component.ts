@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DropdownOption } from '../dropdown-option';
+import { DropdownOption } from '../../dropdown-option';
 
 @Component({
   selector: 'app-next-dropdown-with-popin',

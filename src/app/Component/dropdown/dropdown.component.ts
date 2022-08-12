@@ -1,7 +1,7 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { UtilitiesService } from '../app.component';
-import { DropdownOption } from '../dropdown-option';
+import { UtilitiesService } from '../../app.component';
+import { DropdownOption } from '../../dropdown-option';
 
 @Component({
 	selector: 'app-dropdown',
