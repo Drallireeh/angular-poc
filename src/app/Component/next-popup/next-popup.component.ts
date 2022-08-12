@@ -8,7 +8,8 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class NextPopupComponent implements OnInit {
   // AFfiche / cache la window
-  @Input() isOpen: boolean = false;
+  isOpen: boolean = false;
+  
   // Indique si la popup est une popup de confirmation ou seulement d'alerte. Affiche le bouton d'annulation si c'est le cas
   @Input() confirmPopup: boolean = false;
   // Titre
