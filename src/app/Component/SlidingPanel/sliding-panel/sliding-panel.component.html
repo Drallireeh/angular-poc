@@ -1,0 +1,86 @@
+<div class="sliding-panel-wrapper">
+    <div class="sliding-panel-background"></div>
+    <div class="sliding-panel" [ngStyle]="{'width': width + 'px', 'right': isOpen ? '0' : ''}">
+        <div *ngIf="toolbar" class="sliding-panel-toolbar" style="margin-left: 0px;">
+            <ul id="tlbEvent">
+            <li class="menu-header">
+                <span class="next-icon next-icon-precedent" title="Développer / Réduire le menu"></span>
+                <label>Réduire le menu</label>
+            </li>
+            <li class="menu-parent">
+                <label>Réalisation</label>
+                <ul>
+                    <li class="menu-item">
+                        <a href="#" title="Valider l'évènement">
+                            <span class="next-icon next-icon-valider"></span>
+                            Valider l'évènement
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" title="Annuler l'évènement">
+                            <span class="next-icon next-icon-annulation"></span>
+                            Annuler l'évènement
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" title="Reporter l'évènement">
+                            <span class="next-icon next-icon-rdv-report"></span>
+                            Reporter l'évènement
+                        </a>
+                    </li>
+                </ul>      
+            </li>
+        
+            <li class="menu-parent">
+                <label>GED &amp; exports</label>
+                <ul>
+                    <li class="menu-item">
+                        <a href="#" title="Actions GED">
+                            <span class="next-icon next-icon-document"></span>
+                            Actions GED
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" title="Exporter">
+                            <span class="next-icon next-icon-rdv-export"></span>
+                            Exporter
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        
+            <li class="menu-parent">
+                <label>Edition</label>
+                <ul>
+                    <li class="menu-item">
+                        <a href="#" title="Modifier">
+                            <span class="next-icon next-icon-edition"></span>
+                            Modifier
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" title="Dupliquer">
+                            <span class="next-icon next-icon-rdv-copie"></span>
+                            Dupliquer
+                        </a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" title="Supprimer">
+                            <span class="next-icon next-icon-supprimer"></span>
+                            Supprimer
+                        </a>
+                    </li>
+                </ul>        
+            </li>
+        </ul>
+        
+        </div>
+        <div class="sliding-panel-content">
+            <form action="" data-role="validator" novalidate="novalidate">
+                <app-sliding-panel-header [title]="title"></app-sliding-panel-header>
+                <app-sliding-panel-content></app-sliding-panel-content>
+                <app-sliding-panel-footer></app-sliding-panel-footer>
+            </form>
+        </div>
+    </div>
+</div>

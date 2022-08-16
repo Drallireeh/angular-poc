@@ -1,0 +1,119 @@
+.actions {
+    position: absolute;
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -ms-flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -moz-box-pack: space-between;
+    -webkit-box-pack: space-between;
+    -webkit-flex-pack: space-between;
+    -ms-flex-pack: space-between;
+    flex-pack: space-between;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    height: 46px;
+    padding: 3px 5px;
+    color: #fff;
+    bottom: 0;
+    width: 100%;
+    z-index: 3;
+
+    button[disabled] {
+        background-color: #6e6e6e;
+        color: #e6e6e6;
+        cursor: not-allowed;
+    }
+
+    button {
+        background-color: #fff;
+        color: #424242;
+        border: 1px solid #424242;
+        padding-bottom: 0;
+        padding-top: 0;
+        height: 40px;
+
+        .next-icon {
+            float: right;
+            font-size: 20px;
+            padding-left: 10px;
+            top: 0;
+        }
+    }
+
+    .actions-left {
+        display: -moz-box;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-positive: 1;
+        -moz-flex-grow: 1;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        -ms-flex-preferred-size: 0;
+        -moz-flex-basis: 0;
+        -webkit-flex-basis: 0;
+        flex-basis: 0;
+        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        min-height: 40px;
+        padding: 0;
+        -moz-box-pack: start;
+        -webkit-box-pack: start;
+        -webkit-flex-pack: start;
+        -ms-flex-pack: start;
+        flex-pack: start;
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+        order: 2;
+        padding-right: 3px;
+        text-align: left;
+
+        >button {
+            margin-right: 3px;
+        }
+    }
+
+    .actions-right {
+        display: -moz-box;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-positive: 1;
+        -moz-flex-grow: 1;
+        -webkit-box-flex: 1;
+        flex-grow: 1;
+        -ms-flex-preferred-size: 0;
+        -moz-flex-basis: 0;
+        -webkit-flex-basis: 0;
+        flex-basis: 0;
+        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        min-height: 40px;
+        padding: 0;
+        -moz-box-pack: end;
+        -webkit-box-pack: end;
+        -webkit-flex-pack: end;
+        -ms-flex-pack: end;
+        flex-pack: end;
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+        order: 1;
+        text-align: right;
+        overflow: visible;
+
+        >button {
+            margin-left: 3px;
+        }
+    }
+}

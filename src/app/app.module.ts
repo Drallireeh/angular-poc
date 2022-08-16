@@ -34,6 +34,11 @@ import { PopinButtonComponent } from './Component/popin/popin-button/popin-butto
 import { NextPopupModule } from './Component/next-popup/next-popup.module';
 import { PopinButtonGommeComponent } from './Component/popin/popin-button-gomme/popin-button-gomme.component';
 import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virgule/popin-button-virgule.component';
+import { SlidingPanelHeaderComponent } from './Component/SlidingPanel/sliding-panel-header/sliding-panel-header.component';
+import { SlidingPanelFooterComponent } from './Component/SlidingPanel/sliding-panel-footer/sliding-panel-footer.component';
+import { SlidingPanelContentComponent } from './Component/SlidingPanel/sliding-panel-content/sliding-panel-content.component';
+import { SlidingPanelComponent } from './Component/SlidingPanel/sliding-panel/sliding-panel.component';
+import { SlidingPanelModule } from './Component/SlidingPanel/sliding-panel/sliding-panel.module';
 
 @NgModule({
   declarations: [
@@ -64,6 +69,7 @@ import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virg
     HeaderModule,
     MenuModule,
     PanelModule,
+    SlidingPanelModule,
     ListAllergiesModule,
     ListOfPokemonModule,
     BrowserAnimationsModule,
