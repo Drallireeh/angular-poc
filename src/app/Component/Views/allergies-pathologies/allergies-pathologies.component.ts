@@ -18,4 +18,7 @@ export class AllergiesPathologiesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSelectStatus(selectedValue: string)  {
+    console.log(selectedValue)
+  }
 }

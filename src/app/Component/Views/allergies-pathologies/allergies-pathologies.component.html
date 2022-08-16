@@ -11,7 +11,7 @@
           autocomplete="off">
       </div>
       <div class="col-md-3 col-lg-3 col-sm-3">
-        <app-dropdown [dropdownOptions]="dropdownStatus" [selected]="dropdownStatus[0].label"></app-dropdown>
+        <app-dropdown [dropdownOptions]="dropdownStatus" [selected]="dropdownStatus[0].label" (onSelectEvent)="onSelectStatus($event)"></app-dropdown>
       </div>
       <div class="col-md-3 col-lg-3 col-sm-3">
         <app-dropdown [dropdownOptions]="dropdownTypes" [selected]="dropdownTypes[0].label"></app-dropdown>

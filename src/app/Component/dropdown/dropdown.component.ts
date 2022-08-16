@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UtilitiesService } from '../../app.component';
 import { DropdownOption } from '../../dropdown-option';
@@ -19,6 +19,8 @@ export class DropdownComponent implements OnInit {
 	@Input() dropdownOptions: Array<DropdownOption> = [];
 	// Event de clic en dehors de la dropdown pour la fermer
 	clickOutsideSub!: Subscription;
+	// Callbakc on select
+	@Output() onSelectEvent = new EventEmitter<string>()
 
 	constructor(private utilitiesService: UtilitiesService, private eRef: ElementRef) { }
 
@@ -48,5 +50,10 @@ export class DropdownComponent implements OnInit {
 		})
 		this.selected = optionClicked.label;
 		optionClicked.active = true;
+		this.onSelectEvent.emit(this.selected);
+	}
+
+	ngOnDestroy() {
+		this.clickOutsideSub.unsubscribe()
 	}
 }
