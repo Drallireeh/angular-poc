@@ -46,7 +46,7 @@ import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virg
     PrescriptionBodyComponent,
     PopinSimpleComponent,
     DropdownComponent,
-    DropdownContentComponent,
+    DropdownContentComponent, 
     NextInputWithPopinComponent,
     PopinHeaderComponent,
     PopinFooterComponent,
