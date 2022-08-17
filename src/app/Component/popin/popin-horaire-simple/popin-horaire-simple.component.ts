@@ -28,38 +28,15 @@ export class PopinHoraireSimpleComponent implements OnInit {
 		  });
   }
 
-  // Clic sur un chiffre primary pour écrire un nombre
-  selectNumber(event: any): void {
-    let number = event.target.closest('button').textContent;
-    this.title += number; 
-  }
-
-  // Clic sur la virgule, et désactivation du bouton si une virgule est présente
-  selectVirgule(event: any): void {
-    if(this.disabled != "disabled"){
-      let number = event.target.closest('button').textContent;
-      this.title += number;
-      this.disabled = "disabled";
-    }
-  }
-
   // Clic sur un chiffre secondary qui ferme la popin après avoir ajouté au nombre ce qui est présent sur le bouton
   selectFinalNumber(event: any): void {
-    let number = event.target.closest('button').textContent;
-    let popin = event.target.closest('next-popin-simples');
+    // let number = event.target.closest('button').textContent;
+    // let popin = event.target.closest('next-popin-simples');
 
-    // Si rien n'est présent dans le nombre, rajoute un 0 devant la virgule
-    this.title == '' ? this.title = '0' + number : this.title += number;
-    popin.parentNode.firstChild.value = this.title;
-    this.changing.next(false);
-  }
-
-  // Clic sur la gomme pour effacer un caractère
-  erase(): void {
-    if(this.title.slice(-1) == ','){
-      this.disabled = '';
-    }
-    this.title = this.title.slice(0, -1); 
+    // // Si rien n'est présent dans le nombre, rajoute un 0 devant la virgule
+    // this.title == '' ? this.title = '0' + number : this.title += number;
+    // popin.parentNode.firstChild.value = this.title;
+    // this.changing.next(false);
   }
 
   // Fonction de fermeture de la popin
