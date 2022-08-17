@@ -1,6 +1,6 @@
-<div class="sliding-panel-wrapper">
-    <div class="sliding-panel-background"></div>
-    <div class="sliding-panel" [ngStyle]="{'width': width + 'px', 'right': isOpen ? '0' : ''}">
+<div *ngIf="isOpen" class="sliding-panel-wrapper">
+    <div class="sliding-panel-background" (click)="closePanel()"></div>
+    <div class="sliding-panel" [ngStyle]="{'width': width + 'px'}" [ngClass]="openClassName">
         <div *ngIf="toolbar" class="sliding-panel-toolbar" style="margin-left: 0px;">
             <ul id="tlbEvent">
             <li class="menu-header">

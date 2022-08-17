@@ -1,7 +1,7 @@
 .sliding-panel-wrapper {
-    position: absolute;
-    top: 0;
-    bottom: 0;
+    position: fixed;
+    top: 60px;
+    bottom: 31px;
     left: 0;
     right: 0;
     z-index: 10001;
@@ -29,13 +29,12 @@
         opacity: 1;
         background-color: #fff;
         height: 100%;
-        right: -100%;
         float: right;
         padding: 0;
         box-shadow: -3px 0 3px -3px #424242;
-        right: 0px; // TODO Remove
+        right: -100%;
 
-        > form {
+        >form {
             -ms-flex-positive: 1;
             -moz-flex-grow: 1;
             -webkit-box-flex: 1;
@@ -53,6 +52,37 @@
             overflow: auto;
             overflow-x: hidden;
             overflow-y: auto;
+        }
+    }
+
+    .sliding-panel.open {
+        right: 0%;
+        animation-duration: 1s;
+        animation-name: slidein;
+    }
+
+    .sliding-panel:not(.open) {
+        animation-name: slideout;
+        animation-duration: 1s;
+    }
+
+    @keyframes slidein {
+        from {
+            right: -100%;
+        }
+
+        to {
+            right: 0%;
+        }
+    }
+
+    @keyframes slideout {
+        from {
+            right: 0%;
+        }
+
+        to {
+            right: -100%;
         }
     }
 }
