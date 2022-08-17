@@ -11,6 +11,7 @@ export class PopinButtonComponent implements OnInit {
 
   @Input() value!: string; 
   @Input() type!: string; 
+  @Input() widthBtn: string = '45px'; 
 
   ngOnInit(): void {
   }

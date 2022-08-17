@@ -3,4 +3,5 @@
 (mouseup)="unFocus($event)" 
 (mouseleave)="unFocus($event)"
 (touchstart)="focus($event)" 
-(touchend)="unFocus($event)">{{value}}</button>
+(touchend)="unFocus($event)"
+[ngStyle]="{'width': widthBtn}">{{value}}</button>

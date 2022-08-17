@@ -34,6 +34,8 @@ import { PopinButtonComponent } from './Component/popin/popin-button/popin-butto
 import { NextPopupModule } from './Component/next-popup/next-popup.module';
 import { PopinButtonGommeComponent } from './Component/popin/popin-button-gomme/popin-button-gomme.component';
 import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virgule/popin-button-virgule.component';
+import { PopinDoubleComponent } from './Component/popin/popin-double/popin-double.component';
+import { PopinHoraireSimpleComponent } from './Component/popin/popin-horaire-simple/popin-horaire-simple.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virg
     PopinButtonComponent,
     PopinButtonGommeComponent,
     PopinButtonVirguleComponent,
+    PopinDoubleComponent,
+    PopinHoraireSimpleComponent,
   ],
   imports: [
     BrowserModule,
