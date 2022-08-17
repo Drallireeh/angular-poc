@@ -1,0 +1,88 @@
+.sliding-panel-wrapper {
+    position: fixed;
+    top: 60px;
+    bottom: 31px;
+    left: 0;
+    right: 0;
+    z-index: 10001;
+
+    .sliding-panel-background {
+        width: 100%;
+        height: 100%;
+        float: left;
+        opacity: .4;
+        background-color: #000;
+    }
+
+    .sliding-panel {
+        display: -moz-box;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        position: absolute;
+        opacity: 1;
+        background-color: #fff;
+        height: 100%;
+        float: right;
+        padding: 0;
+        box-shadow: -3px 0 3px -3px #424242;
+        right: -100%;
+
+        >form {
+            -ms-flex-positive: 1;
+            -moz-flex-grow: 1;
+            -webkit-box-flex: 1;
+            flex-grow: 1;
+            display: -moz-box;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            -ms-flex-direction: column;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            overflow: auto;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+    }
+
+    .sliding-panel.open {
+        right: 0%;
+        animation-duration: 1s;
+        animation-name: slidein;
+    }
+
+    .sliding-panel:not(.open) {
+        animation-name: slideout;
+        animation-duration: 1s;
+    }
+
+    @keyframes slidein {
+        from {
+            right: -100%;
+        }
+
+        to {
+            right: 0%;
+        }
+    }
+
+    @keyframes slideout {
+        from {
+            right: 0%;
+        }
+
+        to {
+            right: -100%;
+        }
+    }
+}

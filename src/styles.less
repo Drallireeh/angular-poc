@@ -18,10 +18,10 @@ body {
 ul.reset,
 ul.reset li,
 ul.reset ul li {
-   margin:0;
-   padding: 0;
-   text-indent: 0;
-   list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    list-style-type: none;
 }
 
 a {
@@ -244,4 +244,38 @@ body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.btn-group {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+
+    .btn:first-child {
+        margin-left: 0;
+    }
+
+    .btn {
+        text-align: left;
+        top: 0;
+        -moz-box-sizing: border-box !important;
+        -webkit-box-sizing: border-box !important;
+        box-sizing: border-box !important;
+        position: relative;
+        float: left;
+    }
+
+    .dropdown-menu {
+        padding: 0;
+        border: 0 none;
+        box-shadow: none;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+
+.btn-default {
+    border: 0 none;
+    box-shadow: 0 0 0 0 transparent;
 }

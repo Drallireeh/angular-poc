@@ -18,7 +18,13 @@ export class AllergiesPathologiesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSelectStatus(selectedValue: string)  {
-    console.log(selectedValue)
+  onSelectStatus(e: DropdownOption)  {
+    console.log("selecte")
+    console.log(e);
+  }
+
+  onChangeStatus(e: DropdownOption) {
+    console.log("change")
+    console.log(e);
   }
 }

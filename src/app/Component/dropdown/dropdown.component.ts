@@ -20,7 +20,9 @@ export class DropdownComponent implements OnInit {
 	// Event de clic en dehors de la dropdown pour la fermer
 	clickOutsideSub!: Subscription;
 	// Callbakc on select
-	@Output() onSelectEvent = new EventEmitter<string>()
+	@Output() onSelect = new EventEmitter<DropdownOption>()
+	// Callbakc on change
+	@Output() onChange = new EventEmitter<DropdownOption>()
 
 	constructor(private utilitiesService: UtilitiesService, private eRef: ElementRef) { }
 
@@ -45,12 +47,13 @@ export class DropdownComponent implements OnInit {
 
 	// Sélection de la valeur de la dropdown
 	selectDropdownValue(optionClicked: DropdownOption): void {
+		if (this.selected !== optionClicked.label) this.onChange.emit(optionClicked);
 		this.dropdownOptions.map((option) => {
 			option.active = false;
 		})
 		this.selected = optionClicked.label;
 		optionClicked.active = true;
-		this.onSelectEvent.emit(this.selected);
+		this.onSelect.emit(optionClicked);
 	}
 
 	ngOnDestroy() {
