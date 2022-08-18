@@ -41,6 +41,7 @@ import { SlidingPanelFooterComponent } from './Component/SlidingPanel/sliding-pa
 import { SlidingPanelContentComponent } from './Component/SlidingPanel/sliding-panel-content/sliding-panel-content.component';
 import { SlidingPanelComponent } from './Component/SlidingPanel/sliding-panel/sliding-panel.component';
 import { SlidingPanelModule } from './Component/SlidingPanel/sliding-panel/sliding-panel.module';
+import { NextCheckboxComponent } from './Component/next-checkbox/next-checkbox.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { SlidingPanelModule } from './Component/SlidingPanel/sliding-panel/slidi
     PopinButtonVirguleComponent,
     PopinDoubleComponent,
     PopinHoraireSimpleComponent,
+    NextCheckboxComponent,
   ],
   imports: [
     BrowserModule,

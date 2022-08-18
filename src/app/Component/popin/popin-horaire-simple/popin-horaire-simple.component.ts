@@ -12,6 +12,12 @@ export class PopinHoraireSimpleComponent implements OnInit {
   // Variable pour gérer la désactivation de la virgule
   disabled: string = '';
 
+  check: boolean = false;
+  click: boolean = false;
+
+  minute: string = "00";
+  heure: string = "00";
+
   // Boolean gérant l'affichage de la popin
   @Input() showPopin: boolean = false;
 
@@ -37,6 +43,12 @@ export class PopinHoraireSimpleComponent implements OnInit {
     // this.title == '' ? this.title = '0' + number : this.title += number;
     // popin.parentNode.firstChild.value = this.title;
     // this.changing.next(false);
+  }
+
+   selectHoraire(): void {
+    this.check = true;
+    console.log(this.minute, this.heure)
+    this.title = this.heure + ':' + this.minute
   }
 
   // Fonction de fermeture de la popin
