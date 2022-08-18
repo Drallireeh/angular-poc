@@ -3,83 +3,209 @@
     <div class="sliding-panel" [ngStyle]="{'width': width + 'px'}" [ngClass]="openClassName">
         <div *ngIf="toolbar" class="sliding-panel-toolbar" style="margin-left: 0px;">
             <ul id="tlbEvent">
-            <li class="menu-header">
-                <span class="next-icon next-icon-precedent" title="Développer / Réduire le menu"></span>
-                <label>Réduire le menu</label>
-            </li>
-            <li class="menu-parent">
-                <label>Réalisation</label>
-                <ul>
-                    <li class="menu-item">
-                        <a href="#" title="Valider l'évènement">
-                            <span class="next-icon next-icon-valider"></span>
-                            Valider l'évènement
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" title="Annuler l'évènement">
-                            <span class="next-icon next-icon-annulation"></span>
-                            Annuler l'évènement
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" title="Reporter l'évènement">
-                            <span class="next-icon next-icon-rdv-report"></span>
-                            Reporter l'évènement
-                        </a>
-                    </li>
-                </ul>      
-            </li>
-        
-            <li class="menu-parent">
-                <label>GED &amp; exports</label>
-                <ul>
-                    <li class="menu-item">
-                        <a href="#" title="Actions GED">
-                            <span class="next-icon next-icon-document"></span>
-                            Actions GED
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" title="Exporter">
-                            <span class="next-icon next-icon-rdv-export"></span>
-                            Exporter
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        
-            <li class="menu-parent">
-                <label>Edition</label>
-                <ul>
-                    <li class="menu-item">
-                        <a href="#" title="Modifier">
-                            <span class="next-icon next-icon-edition"></span>
-                            Modifier
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" title="Dupliquer">
-                            <span class="next-icon next-icon-rdv-copie"></span>
-                            Dupliquer
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a href="#" title="Supprimer">
-                            <span class="next-icon next-icon-supprimer"></span>
-                            Supprimer
-                        </a>
-                    </li>
-                </ul>        
-            </li>
-        </ul>
-        
+                <li class="menu-header">
+                    <span class="next-icon next-icon-precedent" title="Développer / Réduire le menu"></span>
+                    <label>Réduire le menu</label>
+                </li>
+                <li class="menu-parent">
+                    <label>Réalisation</label>
+                    <ul>
+                        <li class="menu-item">
+                            <a href="#" title="Valider l'évènement">
+                                <span class="next-icon next-icon-valider"></span>
+                                Valider l'évènement
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" title="Annuler l'évènement">
+                                <span class="next-icon next-icon-annulation"></span>
+                                Annuler l'évènement
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" title="Reporter l'évènement">
+                                <span class="next-icon next-icon-rdv-report"></span>
+                                Reporter l'évènement
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-parent">
+                    <label>GED &amp; exports</label>
+                    <ul>
+                        <li class="menu-item">
+                            <a href="#" title="Actions GED">
+                                <span class="next-icon next-icon-document"></span>
+                                Actions GED
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" title="Exporter">
+                                <span class="next-icon next-icon-rdv-export"></span>
+                                Exporter
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu-parent">
+                    <label>Edition</label>
+                    <ul>
+                        <li class="menu-item">
+                            <a href="#" title="Modifier">
+                                <span class="next-icon next-icon-edition"></span>
+                                Modifier
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" title="Dupliquer">
+                                <span class="next-icon next-icon-rdv-copie"></span>
+                                Dupliquer
+                            </a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" title="Supprimer">
+                                <span class="next-icon next-icon-supprimer"></span>
+                                Supprimer
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
         </div>
         <div class="sliding-panel-content">
             <form action="" data-role="validator" novalidate="novalidate">
                 <app-sliding-panel-header [title]="title"></app-sliding-panel-header>
-                <app-sliding-panel-content></app-sliding-panel-content>
-                <app-sliding-panel-footer></app-sliding-panel-footer>
+                <app-sliding-panel-content class="">
+                    <div class="form-horizontal" role="form">
+                        <input data-val="true" data-val-required="Le champ IsExist est requis." id="Allergie_IsExist"
+                            name="Allergie.IsExist" type="hidden" value="True">
+
+                        <input data-val="true" data-val-required="Le champ IsDirect est requis." id="Allergie_IsDirect"
+                            name="Allergie.IsDirect" type="hidden" value="False">
+
+                        <input data-val="true" data-val-number="Le champ Id doit être un nombre."
+                            data-val-required="Le champ Id est requis." id="Allergie_Id" name="Allergie.Id"
+                            type="hidden" value="1000000138">
+
+                        <input data-val="true" data-val-number="Le champ PatientId doit être un nombre."
+                            data-val-required="Le champ PatientId est requis." id="Allergie_PatientId"
+                            name="Allergie.PatientId" type="hidden" value="1000000177">
+
+                        <input id="Allergie_AllergieId" name="Allergie.AllergieId" type="hidden" value="105705">
+
+                        <input id="Allergie_AllergieLibelle" name="Allergie.AllergieLibelle" type="hidden"
+                            value="ACTIMINCYL BIO barre hyperprotéinée caramel">
+
+                        <input data-val="true" data-val-required="Le champ Type est requis." id="Allergie_AllergieType"
+                            name="Allergie.AllergieType" type="hidden" value="MedicDcAllergy">
+
+                        <input id="Allergie_CodeCim10" name="Allergie.CodeCim10" type="hidden" value="">
+
+                        <input data-val="true" data-val-number="Le champ SejourId doit être un nombre."
+                            data-val-required="Le champ SejourId est requis." id="Allergie_SejourId"
+                            name="Allergie.SejourId" type="hidden" value="2792">
+
+                        <input data-val="true" data-val-required="Le champ IsNonCodifie est requis."
+                            id="Allergie_IsNonCodifie" name="Allergie.IsNonCodifie" type="hidden" value="False">
+
+                        <input data-val="true" data-val-required="Le champ IsSaisieLibre est requis."
+                            id="Allergie_IsSaisieLibre" name="Allergie.IsSaisieLibre" type="hidden" value="False">
+
+                        <div class="form-group saisie-libre">
+                            <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis"
+                                for="Allergie_AllergieLibelle">Libellé</label>
+                            <div class="col-lg-9 col-md-3 col-sm-9" style="padding-top: 7px;">
+                                <span id="allergieLibelle" data-type="Médicament"><span>Médicament</span> : ACTIMINCYL
+                                    BIO barre hyperprotéinée caramel</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis"
+                                for="Allergie_AllergieHypersensibilite">Type</label>
+                            <div class="radio-button-container col-lg-9 col-md-3 col-sm-9" style="padding-top: 7px">
+                                <ul class="typeAllerg">
+                                    <li>
+                                        <input class="k-radio" data-val="true"
+                                            data-val-required="Le champ Allergie/Hypersensibilité est requis."
+                                            id="Allergie_AllergieHypersensibilite_NullValue"
+                                            name="Allergie.AllergieHypersensibilite" type="radio"
+                                            value="NullValue"><label class="k-radio-label"
+                                            for="Allergie_AllergieHypersensibilite_NullValue">Aucune</label>
+                                    </li>
+                                    <li>
+                                        <input class="k-radio" id="Allergie_AllergieHypersensibilite_Allergie"
+                                            name="Allergie.AllergieHypersensibilite" type="radio"
+                                            value="Allergie"><label class="k-radio-label"
+                                            for="Allergie_AllergieHypersensibilite_Allergie">Allergie</label>
+                                    </li>
+                                    <li>
+                                        <input checked="checked" class="k-radio"
+                                            id="Allergie_AllergieHypersensibilite_Hypersensibilite"
+                                            name="Allergie.AllergieHypersensibilite" type="radio"
+                                            value="Hypersensibilite"><label class="k-radio-label"
+                                            for="Allergie_AllergieHypersensibilite_Hypersensibilite">Hypersensibilité</label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="form-group saisie-libre">
+                            <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis"
+                                for="Allergie_DateDebut">Date de début</label>
+                            <div class="col-lg-9 col-md-3 col-sm-9">
+                                <span class="k-widget k-datepicker" style="width: 150px;"><span
+                                        class="k-picker-wrap k-state-default"><input data-val="true"
+                                            data-val-date="Le champ Date de début doit être une date."
+                                            id="Allergie_DateDebut" name="Allergie.DateDebut" style="width: 100%;"
+                                            type="text" data-role="datepicker" class="k-input" role="combobox"
+                                            aria-expanded="false" aria-owns="Allergie_DateDebut_dateview"
+                                            autocomplete="off" aria-disabled="false"><span unselectable="on"
+                                            class="k-select" aria-label="select" role="button"
+                                            aria-controls="Allergie_DateDebut_dateview"><span
+                                                class="k-icon k-i-calendar"></span></span></span></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 col-md-3 col-sm-3 control-label"
+                                for="Allergie_CodeCim10">Réaction</label>
+                            <div class="col-lg-9 col-md-3 col-sm-9">
+                                <span id="codeCim10string">Aucun</span>
+                                <button id="btnDeleteCodeCim10" type="button" class="btn btn-secondary check"
+                                    style="display:none"><span class="next-icon next-icon-supprimer"></span></button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 col-md-3 col-sm-3 control-label"
+                                for="Allergie_Commentaire">Commentaire</label>
+                            <div class="col-lg-9 col-md-3 col-sm-9">
+                                <textarea class="k-textbox" cols="20" id="Allergie_Commentaire" maxlength="254"
+                                    name="Allergie.Commentaire" placeholder="Laisser un commentaire" rows="4"
+                                    style="width : 100%; height : 100%; resize: none"></textarea>
+                                <span class="k-invalid-msg" data-for="Libelle"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 col-md-3 col-sm-3 control-label"
+                                for="Allergie_UtilisateurModification" style="padding-top:0px">Modifié par</label>
+                            <div class="col-lg-9 col-md-3 col-sm-9">
+                                Dr ANDRE, Pascal
+                            </div>
+                        </div>
+                    </div>
+                </app-sliding-panel-content>
+                <app-sliding-panel-footer>
+                    <button left type="button" class="btn" id="btnAnnuler"><span
+                            class="next-icon next-icon-annulation"></span>Annuler</button>
+                    <button right class="btn" type="button" id="btnEnregistrer"><span
+                            class="next-icon next-icon-sauvegarder"></span>Enregistrer</button>
+                </app-sliding-panel-footer>
             </form>
         </div>
     </div>

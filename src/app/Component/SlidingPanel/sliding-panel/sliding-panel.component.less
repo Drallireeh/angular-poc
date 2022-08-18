@@ -29,12 +29,13 @@
         opacity: 1;
         background-color: #fff;
         height: 100%;
+        right: -100%;
         float: right;
         padding: 0;
         box-shadow: -3px 0 3px -3px #424242;
-        right: -100%;
 
-        >form {
+        .sliding-panel-content {
+            position: relative;
             -ms-flex-positive: 1;
             -moz-flex-grow: 1;
             -webkit-box-flex: 1;
@@ -49,9 +50,33 @@
             -ms-flex-direction: column;
             -webkit-flex-direction: column;
             flex-direction: column;
+            z-index: 1;
             overflow: auto;
             overflow-x: hidden;
             overflow-y: auto;
+            -webkit-box-shadow: -3px 0 3px #6e6e6e;
+            -moz-box-shadow: -3px 0 3px #6e6e6e;
+            box-shadow: -3px 0 3px #6e6e6e;
+
+            >form {
+                -ms-flex-positive: 1;
+                -moz-flex-grow: 1;
+                -webkit-box-flex: 1;
+                flex-grow: 1;
+                display: -moz-box;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -moz-box-orient: vertical;
+                -ms-flex-direction: column;
+                -webkit-flex-direction: column;
+                flex-direction: column;
+                overflow: auto;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
         }
     }
 
