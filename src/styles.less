@@ -279,3 +279,49 @@ body {
     border: 0 none;
     box-shadow: 0 0 0 0 transparent;
 }
+
+.form-horizontal {
+
+    .form-group {
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+
+    *[class^='col-'] {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .control-label {
+        text-align: left;
+    }
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.main-container section * {
+    -ms-flex-negative: 0;
+    -moz-flex-shrink: 0;
+    -webkit-box-shrink: 0;
+    flex-shrink: 0;
+}
+
+.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical > .btn-group:before, .btn-group-vertical > .btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-header:before, .modal-header:after, .modal-footer:before, .modal-footer:after {
+    display: table;
+    content: " ";
+}

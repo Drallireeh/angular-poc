@@ -1,28 +1,8 @@
 <div class="actions">
     <div class="actions-left">
-        <button type="button" disabled=""><span class="next-icon next-icon-action-rapide"></span>Autre bouton</button>
-        <button type="button"><span class="next-icon next-icon-action-rapide"></span>Autre bouton</button>
+        <ng-content select="[left]"></ng-content>
     </div>
     <div class="actions-right" style="overflow: visible">
-        <div class="btn-group dropup">
-            <button type="button" id="btnBurgerMenu" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                <span class="next-icon next-icon-liste2"></span>Plus
-            </button>
-            <ul class="dropdown-menu">
-                <li><button type="button" style="width: 100%">
-                    <span class="next-icon next-icon-accueil"></span>Action 1
-                </button></li>
-                <li><button type="button" style="width: 100%">
-                    <span class="next-icon next-icon-accueil"></span>Action 2
-                </button></li>
-                <li><button type="button" style="width: 100%">
-                    <span class="next-icon next-icon-accueil"></span>Action 3
-                </button></li>
-                <li><button type="button" style="width: 100%">
-                    <span class="next-icon next-icon-accueil"></span>Action 4
-                </button></li>
-            </ul>
-        </div>
-        <button type="submit" id="btnEnregistrer"><span class="next-icon next-icon-sauvegarder"></span>Enregistrer</button>
+        <ng-content select="[right]"></ng-content>
     </div>
 </div>

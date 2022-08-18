@@ -1,0 +1,44 @@
+.content {
+    -ms-flex-positive: 1;
+    -moz-flex-grow: 1;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    width: 100%;
+    position: relative;
+    margin: 40px 0 46px 0;
+    background-color: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    ::ng-deep .form-horizontal {
+        -ms-flex-negative: 0;
+        -moz-flex-shrink: 0;
+        -webkit-box-shrink: 0;
+        flex-shrink: 0;
+        padding: 10px;
+    }
+
+    ::ng-deep .header {
+        display: -moz-box;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-negative: 0;
+        -moz-flex-shrink: 0;
+        -webkit-box-shrink: 0;
+        flex-shrink: 0;
+        position: relative;
+        height: 30px;
+        min-height: 30px;
+        line-height: 20px;
+        padding: 5px;
+        background-color: var(--secondary-color);
+        color: #424242;
+    }
+}
