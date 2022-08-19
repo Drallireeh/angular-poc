@@ -37,6 +37,7 @@ import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virg
 import { PopinDoubleComponent } from './Component/popin/popin-double/popin-double.component';
 import { PopinHoraireSimpleComponent } from './Component/popin/popin-horaire-simple/popin-horaire-simple.component';
 import { SlidingPanelModule } from './Component/SlidingPanel/sliding-panel/sliding-panel.module';
+import { NextCheckboxComponent } from './Component/next-checkbox/next-checkbox.component';
 import { BtnsAsRadioModule } from './Component/btns-as-radio/btns-as-radio.module';
 
 @NgModule({
@@ -62,6 +63,7 @@ import { BtnsAsRadioModule } from './Component/btns-as-radio/btns-as-radio.modul
     PopinButtonVirguleComponent,
     PopinDoubleComponent,
     PopinHoraireSimpleComponent,
+    NextCheckboxComponent,
   ],
   imports: [
     BrowserModule,

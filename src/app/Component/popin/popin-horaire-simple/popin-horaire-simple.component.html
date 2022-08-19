@@ -1,16 +1,20 @@
 <next-popin-base *ngIf="showPopin" (closePopin)="closePopin()">
-        <h1>{{title}}</h1>
-                <div class="clavierTactileHoraireSimple">
-                    <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="08:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="10:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="12:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="14:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="16:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="18:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="20:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="22:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="00:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                </div>
-                <div>
-                </div>
-        </next-popin-base>
+    <h1>{{title}}</h1>
+    <div class="clavierTactileHoraireSimple">
+        <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="08:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+        <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="10:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+        <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="12:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+        <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="14:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+        <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="16:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+        <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="18:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+        <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="20:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+        <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="22:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+        <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="00:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+    </div>
+    <div class="horaireSimpleSelect" (click)="selectHoraire()">
+        <next-checkbox [isChecked]="check" [isCliquable]="click"></next-checkbox>
+        <input type="text" class="inputHour" value={{heure}} (change)="selectHeure($event)">
+        <span> : </span>
+        <input type="text" class="inputMin" value={{minute}} (change)="selectMinute($event)">
+    </div>
+</next-popin-base>

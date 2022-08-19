@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -7,10 +7,17 @@ import { Subject } from 'rxjs';
   styleUrls: ['./popin-horaire-simple.component.less']
 })
 export class PopinHoraireSimpleComponent implements OnInit {
-  // Variable contenant le nombre
-  title: any = '';
-  // Variable pour gérer la désactivation de la virgule
-  disabled: string = '';
+
+  // Variable qui active / désactive la sélection d'horaire manuelle
+  check: boolean = false;
+  // Variable pour définir si l'on peut modifier la checkbox par clic natif
+  click: boolean = false;
+  // Variable des minutes pour le titre
+  minute: string = "00";
+  // Variable des heures pour le titre
+  heure: string = "00";
+  // Variable du formatée du titre
+  title: any = `${this.heure}:${this.minute}`;
 
   // Boolean gérant l'affichage de la popin
   @Input() showPopin: boolean = false;
@@ -28,16 +35,38 @@ export class PopinHoraireSimpleComponent implements OnInit {
 		  });
   }
 
-  // Clic sur un chiffre secondary qui ferme la popin après avoir ajouté au nombre ce qui est présent sur le bouton
+  // Clic sur une case horaire préremplie et fermeture de la popin + remplissage de l'input
   selectFinalNumber(event: any): void {
-    // let number = event.target.closest('button').textContent;
-    // let popin = event.target.closest('next-popin-simples');
-
-    // // Si rien n'est présent dans le nombre, rajoute un 0 devant la virgule
-    // this.title == '' ? this.title = '0' + number : this.title += number;
-    // popin.parentNode.firstChild.value = this.title;
-    // this.changing.next(false);
+    let number = event.target.closest('button').textContent;
+    let popin = event.target.closest('next-popin-horaire-simple');
+    this.title = number
+    popin.parentNode.firstChild.value = this.title;
+    this.changing.next(false);
   }
+
+  // Clic sur la ligne de la checkbox pour passer en saisie manuelle
+   selectHoraire(): void {
+    this.check = true;
+  };
+
+  // Changement de l'heure manuellement
+  selectHeure(event: any): void {
+    this.check = true;
+    this.heure = event.target.value;
+    this.updateTitle();
+  };
+
+  // Changement des minutes manuellement
+  selectMinute(event: any): void {
+    this.check = true;
+    this.minute = event.target.value;
+    this.updateTitle();
+  };
+
+  // Reformate le titre
+  updateTitle(): void {
+    this.title = `${this.heure}:${this.minute}`;
+  };
 
   // Fonction de fermeture de la popin
   closePopin(): void {
