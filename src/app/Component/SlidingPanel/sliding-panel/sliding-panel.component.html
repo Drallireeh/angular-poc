@@ -80,41 +80,7 @@
                 <app-sliding-panel-header [title]="title"></app-sliding-panel-header>
                 <app-sliding-panel-content class="">
                     <div class="form-horizontal" role="form">
-                        <input data-val="true" data-val-required="Le champ IsExist est requis." id="Allergie_IsExist"
-                            name="Allergie.IsExist" type="hidden" value="True">
-
-                        <input data-val="true" data-val-required="Le champ IsDirect est requis." id="Allergie_IsDirect"
-                            name="Allergie.IsDirect" type="hidden" value="False">
-
-                        <input data-val="true" data-val-number="Le champ Id doit être un nombre."
-                            data-val-required="Le champ Id est requis." id="Allergie_Id" name="Allergie.Id"
-                            type="hidden" value="1000000138">
-
-                        <input data-val="true" data-val-number="Le champ PatientId doit être un nombre."
-                            data-val-required="Le champ PatientId est requis." id="Allergie_PatientId"
-                            name="Allergie.PatientId" type="hidden" value="1000000177">
-
-                        <input id="Allergie_AllergieId" name="Allergie.AllergieId" type="hidden" value="105705">
-
-                        <input id="Allergie_AllergieLibelle" name="Allergie.AllergieLibelle" type="hidden"
-                            value="ACTIMINCYL BIO barre hyperprotéinée caramel">
-
-                        <input data-val="true" data-val-required="Le champ Type est requis." id="Allergie_AllergieType"
-                            name="Allergie.AllergieType" type="hidden" value="MedicDcAllergy">
-
-                        <input id="Allergie_CodeCim10" name="Allergie.CodeCim10" type="hidden" value="">
-
-                        <input data-val="true" data-val-number="Le champ SejourId doit être un nombre."
-                            data-val-required="Le champ SejourId est requis." id="Allergie_SejourId"
-                            name="Allergie.SejourId" type="hidden" value="2792">
-
-                        <input data-val="true" data-val-required="Le champ IsNonCodifie est requis."
-                            id="Allergie_IsNonCodifie" name="Allergie.IsNonCodifie" type="hidden" value="False">
-
-                        <input data-val="true" data-val-required="Le champ IsSaisieLibre est requis."
-                            id="Allergie_IsSaisieLibre" name="Allergie.IsSaisieLibre" type="hidden" value="False">
-
-                        <div class="form-group saisie-libre">
+                        <div class="form-group row align-items-center">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis"
                                 for="Allergie_AllergieLibelle">Libellé</label>
                             <div class="col-lg-9 col-md-3 col-sm-9" style="padding-top: 7px;">
@@ -123,37 +89,26 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group row align-items-center">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis"
                                 for="Allergie_AllergieHypersensibilite">Type</label>
-                            <div class="radio-button-container col-lg-9 col-md-3 col-sm-9" style="padding-top: 7px">
-                                <ul class="typeAllerg">
-                                    <li>
-                                        <input class="k-radio" data-val="true"
-                                            data-val-required="Le champ Allergie/Hypersensibilité est requis."
-                                            id="Allergie_AllergieHypersensibilite_NullValue"
-                                            name="Allergie.AllergieHypersensibilite" type="radio"
-                                            value="NullValue"><label class="k-radio-label"
-                                            for="Allergie_AllergieHypersensibilite_NullValue">Aucune</label>
-                                    </li>
-                                    <li>
-                                        <input class="k-radio" id="Allergie_AllergieHypersensibilite_Allergie"
-                                            name="Allergie.AllergieHypersensibilite" type="radio"
-                                            value="Allergie"><label class="k-radio-label"
-                                            for="Allergie_AllergieHypersensibilite_Allergie">Allergie</label>
-                                    </li>
-                                    <li>
-                                        <input checked="checked" class="k-radio"
-                                            id="Allergie_AllergieHypersensibilite_Hypersensibilite"
-                                            name="Allergie.AllergieHypersensibilite" type="radio"
-                                            value="Hypersensibilite"><label class="k-radio-label"
-                                            for="Allergie_AllergieHypersensibilite_Hypersensibilite">Hypersensibilité</label>
-                                    </li>
-                                </ul>
+                            <div class=" col-lg-9 col-md-3 col-sm-9 radio-button-container">
+                               <app-btns-as-radio [btns]="[{
+                                'label': 'oui',
+                                'selected': true
+                               },
+                               {
+                                'label': 'non',
+                                'selected': false
+                               },
+                               {
+                                'label': 'Peut être',
+                                'selected': false
+                               }]" ></app-btns-as-radio>
                             </div>
                         </div>
 
-                        <div class="form-group saisie-libre">
+                        <div class="form-group row align-items-center">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis"
                                 for="Allergie_DateDebut">Date de début</label>
                             <div class="col-lg-9 col-md-3 col-sm-9">
@@ -170,7 +125,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group row align-items-center">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label"
                                 for="Allergie_CodeCim10">Réaction</label>
                             <div class="col-lg-9 col-md-3 col-sm-9">
@@ -180,7 +135,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group row align-items-center">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label"
                                 for="Allergie_Commentaire">Commentaire</label>
                             <div class="col-lg-9 col-md-3 col-sm-9">
@@ -191,7 +146,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group row align-items-center">
                             <label class="col-lg-3 col-md-3 col-sm-3 control-label"
                                 for="Allergie_UtilisateurModification" style="padding-top:0px">Modifié par</label>
                             <div class="col-lg-9 col-md-3 col-sm-9">

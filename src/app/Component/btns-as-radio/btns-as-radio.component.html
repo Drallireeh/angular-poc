@@ -1,0 +1,2 @@
+<button *ngFor="let btn of btns" (click)="selectBtn($event)" type="button" class="btn check btn-secondary"
+	[ngClass]="{'focus': btn.selected}" [ngStyle]="{'width': 'calc((100% - ' + 10 * (btns.length - 1) + 'px) / ' + btns.length + ')'}">{{btn.label}}</button>

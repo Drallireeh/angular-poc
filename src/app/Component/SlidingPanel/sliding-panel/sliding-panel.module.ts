@@ -4,6 +4,7 @@ import { SlidingPanelHeaderComponent } from '../sliding-panel-header/sliding-pan
 import { SlidingPanelContentComponent } from '../sliding-panel-content/sliding-panel-content.component';
 import { SlidingPanelFooterComponent } from '../sliding-panel-footer/sliding-panel-footer.component';
 import { SlidingPanelComponent } from './sliding-panel.component';
+import { BtnsAsRadioModule } from '../../btns-as-radio/btns-as-radio.module';
 
 
 
@@ -15,7 +16,8 @@ import { SlidingPanelComponent } from './sliding-panel.component';
     SlidingPanelComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BtnsAsRadioModule
   ],
   exports: [
     SlidingPanelComponent
