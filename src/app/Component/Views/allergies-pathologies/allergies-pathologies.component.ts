@@ -19,7 +19,7 @@ export class AllergiesPathologiesComponent implements OnInit {
   }
 
   onSelectStatus(e: DropdownOption)  {
-    console.log("selecte")
+    console.log("select")
     console.log(e);
   }
 

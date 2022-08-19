@@ -36,11 +36,8 @@ import { PopinButtonGommeComponent } from './Component/popin/popin-button-gomme/
 import { PopinButtonVirguleComponent } from './Component/popin/popin-button-virgule/popin-button-virgule.component';
 import { PopinDoubleComponent } from './Component/popin/popin-double/popin-double.component';
 import { PopinHoraireSimpleComponent } from './Component/popin/popin-horaire-simple/popin-horaire-simple.component';
-import { SlidingPanelHeaderComponent } from './Component/SlidingPanel/sliding-panel-header/sliding-panel-header.component';
-import { SlidingPanelFooterComponent } from './Component/SlidingPanel/sliding-panel-footer/sliding-panel-footer.component';
-import { SlidingPanelContentComponent } from './Component/SlidingPanel/sliding-panel-content/sliding-panel-content.component';
-import { SlidingPanelComponent } from './Component/SlidingPanel/sliding-panel/sliding-panel.component';
 import { SlidingPanelModule } from './Component/SlidingPanel/sliding-panel/sliding-panel.module';
+import { BtnsAsRadioModule } from './Component/btns-as-radio/btns-as-radio.module';
 
 @NgModule({
   declarations: [
@@ -82,7 +79,8 @@ import { SlidingPanelModule } from './Component/SlidingPanel/sliding-panel/slidi
     MatTabsModule,
     DateInputsModule,
     MatSelectModule,
-    NextPopupModule
+    NextPopupModule,
+    BtnsAsRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

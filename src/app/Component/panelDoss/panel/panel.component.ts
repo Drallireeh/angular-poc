@@ -9,7 +9,6 @@ export class PanelComponent implements OnInit {
   @Input() idString!: string; 
   @Input() panelTitle!: string; 
 
-
   constructor() { }
 
   ngOnInit(): void {

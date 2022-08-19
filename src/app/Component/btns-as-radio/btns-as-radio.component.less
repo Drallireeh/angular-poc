@@ -1,0 +1,21 @@
+:host {
+    width:100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // width: 120px !important;
+    }
+
+    button:not(:last-child) {
+        margin-right: 10px;
+    }
+
+    button:focus {
+        box-shadow: none;
+    }
+}
