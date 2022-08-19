@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -8,11 +8,15 @@ import { Subject } from 'rxjs';
 })
 export class PopinHoraireSimpleComponent implements OnInit {
 
+  // Variable qui active / désactive la sélection d'horaire manuelle
   check: boolean = false;
+  // Variable pour définir si l'on peut modifier la checkbox par clic natif
   click: boolean = false;
-
+  // Variable des minutes pour le titre
   minute: string = "00";
+  // Variable des heures pour le titre
   heure: string = "00";
+  // Variable du formatée du titre
   title: any = `${this.heure}:${this.minute}`;
 
   // Boolean gérant l'affichage de la popin
@@ -31,7 +35,7 @@ export class PopinHoraireSimpleComponent implements OnInit {
 		  });
   }
 
-  // Clic sur un chiffre secondary qui ferme la popin après avoir ajouté au nombre ce qui est présent sur le bouton
+  // Clic sur une case horaire préremplie et fermeture de la popin + remplissage de l'input
   selectFinalNumber(event: any): void {
     let number = event.target.closest('button').textContent;
     let popin = event.target.closest('next-popin-horaire-simple');
@@ -40,22 +44,26 @@ export class PopinHoraireSimpleComponent implements OnInit {
     this.changing.next(false);
   }
 
+  // Clic sur la ligne de la checkbox pour passer en saisie manuelle
    selectHoraire(): void {
     this.check = true;
   };
 
+  // Changement de l'heure manuellement
   selectHeure(event: any): void {
     this.check = true;
     this.heure = event.target.value;
     this.updateTitle();
   };
 
+  // Changement des minutes manuellement
   selectMinute(event: any): void {
     this.check = true;
     this.minute = event.target.value;
     this.updateTitle();
   };
 
+  // Reformate le titre
   updateTitle(): void {
     this.title = `${this.heure}:${this.minute}`;
   };
