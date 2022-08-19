@@ -25,7 +25,6 @@ export class BtnsAsRadioComponent implements OnInit {
 	}
 
 	selectBtn(event: any): void {
-		console.log(event)
 		this.btns.map((btn) => {
 			btn.selected = false;
 		});
