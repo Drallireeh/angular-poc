@@ -4,7 +4,9 @@
     <button id="btnAjouterAlim" class="btn"><span class="next-icon next-icon-ajout"></span>Alimentaire</button>
     <button id="btnAjouterEnv" class="btn"><span class="next-icon next-icon-ajout"></span>Environnementale</button>
   </app-panel-actions>
-  <app-sliding-panel slot="panel-body"></app-sliding-panel>
+  <app-sliding-panel slot="panel-body">
+    <app-update-allergie></app-update-allergie>
+  </app-sliding-panel>
   <app-panel-body-filters slot="panel-body">
     <div class="row flex-align-items-center">
       <div id="filter-input" class="col-md-6 col-lg-6 col-sm-6">

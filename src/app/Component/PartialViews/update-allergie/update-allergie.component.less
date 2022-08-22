@@ -1,0 +1,34 @@
+textarea {
+    padding: 10px;
+    border-color: var(--secondary-color);
+}
+
+textarea::placeholder {
+    font-style: italic;
+}
+
+.p-top {
+    padding-top: 7px;
+}
+
+.date-picker-ctn {
+    > kendo-datetimepicker {
+        width: 150px;
+
+        > input {
+            width: calc(100% - 33px);
+        }
+        
+    }
+
+    > kendo-datetimepicker > button {
+        width: 33px;
+        background-color: blue;
+    }
+
+    kendo-dateinput {
+        width: calc(100% - 33px);
+    }
+    
+
+}
