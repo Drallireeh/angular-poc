@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Type } from '@angular/compiler';
 
 @Component({
   selector: 'next-popin-double',
@@ -11,6 +12,8 @@ export class PopinDoubleComponent implements OnInit {
   title: any = '';
   // Variable pour gérer la désactivation de la virgule
   disabled: string = '';
+
+  data: Array<Array<string>> = [['g', 'mg'], ['l', 'ml']];
 
   // Boolean gérant l'affichage de la popin
   @Input() showPopin: boolean = false;
