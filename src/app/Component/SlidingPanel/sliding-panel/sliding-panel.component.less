@@ -77,8 +77,13 @@
                 overflow-x: hidden;
                 overflow-y: auto;
 
-                .form-group {
+                ::ng-deep .form-group {
                     padding: 5px 0px;
+                    align-items: flex-start;
+
+                    .control-label {
+                        padding-top: 7px;
+                    }
                 }
             }
         }
