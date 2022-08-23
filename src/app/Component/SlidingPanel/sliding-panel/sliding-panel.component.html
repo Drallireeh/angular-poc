@@ -80,14 +80,12 @@
                 <app-sliding-panel-header [title]="title"></app-sliding-panel-header>
                 <app-sliding-panel-content class="">
                     <div class="form-horizontal" role="form">
-                        <ng-content></ng-content>
+                        <ng-content select="[sp-content]"></ng-content>
                     </div>
                 </app-sliding-panel-content>
                 <app-sliding-panel-footer>
-                    <button left type="button" class="btn" id="btnAnnuler" (click)="closePanel()"><span
-                            class="next-icon next-icon-annulation"></span>Annuler</button>
-                    <button right class="btn" type="button" id="btnEnregistrer"><span
-                            class="next-icon next-icon-sauvegarder"></span>Enregistrer</button>
+                    <ng-content left select="[sp-actions-left]"></ng-content>
+                    <ng-content right select="[sp-actions-right]"></ng-content>
                 </app-sliding-panel-footer>
             </form>
         </div>
