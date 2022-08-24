@@ -3,35 +3,35 @@
         <div class="containerClaviers">
             <div class="clavierTactileJSON">
                 <div class="clavierTactile1">
-                    <popin-button type="btn-secondary" [value]="'1' + data[0][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'2' + data[0][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'2.5' + data[0][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'5' + data[0][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'10' + data[0][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'20' + data[0][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'25' + data[0][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'50' + data[0][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'100' + data[0][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'200' + data[0][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'250' + data[0][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'500' + data[0][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'1' + topValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'2' + topValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'2.5' + topValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'5' + topValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'10' + topValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'20' + topValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'25' + topValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'50' + topValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'100' + topValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'200' + topValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'250' + topValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'500' + topValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
                 </div>
                 <h1>{{data[0][0]}}</h1>
-                <hr *ngIf="data.length > 0">
-                <h1 *ngIf="data.length > 0">{{data[1][0]}}</h1>
-                <div *ngIf="data.length > 0" class="clavierTactile2">
-                    <popin-button type="btn-secondary" [value]="'1' + data[1][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'2' + data[1][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'2.5' + data[1][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'5' + data[1][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'10' + data[1][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'20' + data[1][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'25' + data[1][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'50' + data[1][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'100' + data[1][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'200' + data[1][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'250' + data[1][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
-                    <popin-button type="btn-secondary" [value]="'500' + data[1][0]" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                <hr *ngIf="data.length > 1">
+                <h1 *ngIf="data.length > 1">{{data[1][0]}}</h1>
+                <div *ngIf="data.length > 1" class="clavierTactile2">
+                    <popin-button [value]="'1' + botValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'2' + botValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'2.5' + botValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'5' + botValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'10' + botValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'20' + botValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'25' + botValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'50' + botValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'100' + botValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'200' + botValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'250' + botValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
+                    <popin-button [value]="'500' + botValue" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>
                 </div>
             </div>
             <div class="separationLine"></div>
@@ -65,12 +65,12 @@
                     <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value=",76" type="next-btn next-btn-secondary"></popin-button>
                 </div>
                 <div class="line row6">
-                    <popin-button type="next-btn next-btn-primary" [value]="data[0][0]" widthBtn="100px"></popin-button>
-                    <popin-button *ngIf="data[0].length > 0" type="next-btn next-btn-primary" [value]="data[0][1]" widthBtn="100px"></popin-button>
+                    <popin-button (click)="selectTopMesure($event)" type="next-btn next-btn-primary" [value]="data[0][0]" widthBtn="100px"></popin-button>
+                    <popin-button (click)="selectTopMesure($event)" *ngIf="data[0].length > 1" type="next-btn next-btn-primary" [value]="data[0][1]" widthBtn="100px"></popin-button>
                 </div>
-                <div *ngIf="data.length > 0" class="line row7">
-                    <popin-button type="next-btn next-btn-primary" [value]="data[1][0]" widthBtn="100px"></popin-button>
-                    <popin-button *ngIf="data[1].length > 0" type="next-btn next-btn-primary" [value]="data[1][1]" widthBtn="100px"></popin-button>
+                <div *ngIf="data.length > 1" class="line row7">
+                    <popin-button (click)="selectBotMesure($event)" type="next-btn next-btn-primary" [value]="data[1][0]" widthBtn="100px"></popin-button>
+                    <popin-button (click)="selectBotMesure($event)" *ngIf="data[1].length > 1" type="next-btn next-btn-primary" [value]="data[1][1]" widthBtn="100px"></popin-button>
                 </div>
             </div>
         </div>

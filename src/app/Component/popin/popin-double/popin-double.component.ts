@@ -14,6 +14,8 @@ export class PopinDoubleComponent implements OnInit {
   disabled: string = '';
 
   data: Array<Array<string>> = [['g', 'mg'], ['l', 'ml']];
+  topValue: string = this.data[0][0];
+  botValue: string = this.data[1][0];
 
   // Boolean gérant l'affichage de la popin
   @Input() showPopin: boolean = false;
@@ -55,6 +57,14 @@ export class PopinDoubleComponent implements OnInit {
     this.title == '' ? this.title = '0' + number : this.title += number;
     popin.parentNode.firstChild.value = this.title;
     this.changing.next(false);
+  }
+
+  selectTopMesure(event: any): void {
+    this.topValue = event.target.textContent;
+  }
+
+  selectBotMesure(event: any): void {
+    this.botValue = event.target.textContent;
   }
 
   // Clic sur la gomme pour effacer un caractère
