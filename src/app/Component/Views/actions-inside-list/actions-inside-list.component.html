@@ -2,7 +2,7 @@
   <button *ngIf="otherBtn" class="btn btn-primary other-btn" [title]="titleOtherBtn">
     <fa-icon class="next-icon" [icon]="faCode"></fa-icon>
   </button>
-  <button class="btn btn-primary modifier-btn" [title]="titleUpdateBtn">
+  <button (click)="updateClicked()" class="btn btn-primary modifier-btn" [title]="titleUpdateBtn">
     <fa-icon class="next-icon" [icon]="faEdit"></fa-icon>
   </button>
   <button class="btn btn-primary supprimer-btn" [title]="titleDeleteBtn">
