@@ -37,7 +37,7 @@
             <div class="separationLine"></div>
             <div class="clavierTactileSimple">
                 <div class="line row1">
-                    <p class="saisieType">Saisie tactile</p>
+                <p class="saisieType">Saisie en {{mesureActuelle}}</p>
                     <popin-button type="btn-secondary" value=",25" type="next-btn next-btn-secondary"></popin-button>
                 </div>
                 <div class="line row2">
@@ -65,12 +65,12 @@
                     <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value=",76" type="next-btn next-btn-secondary"></popin-button>
                 </div>
                 <div class="line row6">
-                    <popin-button (click)="selectTopMesure($event)" type="next-btn next-btn-primary" [value]="data[0][0]" widthBtn="100px"></popin-button>
-                    <popin-button (click)="selectTopMesure($event)" *ngIf="data[0].length > 1" type="next-btn next-btn-primary" [value]="data[0][1]" widthBtn="100px"></popin-button>
+                    <popin-button (click)="selectTopMesure($event); selectMesure1()" type="next-btn next-btn-primary" [forceFocus]="mesure1" [value]="data[0][0]" widthBtn="100px"></popin-button>
+                    <popin-button (click)="selectTopMesure($event); selectMesure2()" *ngIf="data[0].length > 1" [forceFocus]="mesure2" type="next-btn next-btn-primary" [value]="data[0][1]" widthBtn="100px"></popin-button>
                 </div>
                 <div *ngIf="data.length > 1" class="line row7">
-                    <popin-button (click)="selectBotMesure($event)" type="next-btn next-btn-primary" [value]="data[1][0]" widthBtn="100px"></popin-button>
-                    <popin-button (click)="selectBotMesure($event)" *ngIf="data[1].length > 1" type="next-btn next-btn-primary" [value]="data[1][1]" widthBtn="100px"></popin-button>
+                    <popin-button (click)="selectBotMesure($event); selectMesure3()" type="next-btn next-btn-primary" [forceFocus]="mesure3" [value]="data[1][0]" widthBtn="100px"></popin-button>
+                    <popin-button (click)="selectBotMesure($event); selectMesure4()" *ngIf="data[1].length > 1" [forceFocus]="mesure4" type="next-btn next-btn-primary" [value]="data[1][1]" widthBtn="100px"></popin-button>
                 </div>
             </div>
         </div>

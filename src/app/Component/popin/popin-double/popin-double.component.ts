@@ -17,6 +17,12 @@ export class PopinDoubleComponent implements OnInit {
   topValue: string = this.data[0][0];
   botValue: string = this.data[1][0];
 
+  mesureActuelle: string = this.data[0][0];
+  mesure1: string = "forceFocus";
+  mesure2: string = "";
+  mesure3: string = "";
+  mesure4: string = "";
+
   // Boolean gérant l'affichage de la popin
   @Input() showPopin: boolean = false;
 
@@ -61,10 +67,40 @@ export class PopinDoubleComponent implements OnInit {
 
   selectTopMesure(event: any): void {
     this.topValue = event.target.textContent;
+    this.mesureActuelle = event.target.textContent;
+  }
+
+  selectMesure1(): void {
+    this.mesure1 = "forceFocus";
+    this.mesure2 = "";
+    this.mesure3 = "";
+    this.mesure4 = "";
+  }
+
+  selectMesure2(): void {
+    this.mesure1 = "";
+    this.mesure2 = "forceFocus";
+    this.mesure3 = "";
+    this.mesure4 = "";
   }
 
   selectBotMesure(event: any): void {
     this.botValue = event.target.textContent;
+    this.mesureActuelle = event.target.textContent;
+  }
+
+  selectMesure3(): void {
+    this.mesure1 = "";
+    this.mesure2 = "";
+    this.mesure3 = "forceFocus";
+    this.mesure4 = "";
+  }
+
+  selectMesure4(): void {
+    this.mesure1 = "";
+    this.mesure2 = "";
+    this.mesure3 = "";
+    this.mesure4 = "forceFocus";
   }
 
   // Clic sur la gomme pour effacer un caractère
