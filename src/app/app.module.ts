@@ -40,6 +40,7 @@ import { SlidingPanelModule } from './Component/SlidingPanel/sliding-panel/slidi
 import { NextCheckboxComponent } from './Component/next-checkbox/next-checkbox.component';
 import { BtnsAsRadioModule } from './Component/btns-as-radio/btns-as-radio.module';
 import { UpdateAllergieComponent } from './Component/PartialViews/update-allergie/update-allergie.component';
+import { CancelSlidingButtonComponent } from './Component/SlidingPanel/cancel-sliding-button/cancel-sliding-button.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { UpdateAllergieComponent } from './Component/PartialViews/update-allergi
     PopinHoraireSimpleComponent,
     NextCheckboxComponent,
     UpdateAllergieComponent,
+    CancelSlidingButtonComponent,
   ],
   imports: [
     BrowserModule,

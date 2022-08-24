@@ -8,7 +8,6 @@ export class SlidingPanelService {
 	private openPanelEvent = new Subject<boolean>();
 
 	emitOpenPanel() {
-		console.log("test")
 		this.openPanelEvent.next(true);
 	}
 

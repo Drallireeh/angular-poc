@@ -21,15 +21,14 @@ destroy$ = new Subject<void>();
 
 	ngOnInit(): void {
 		this.spServ.OpenPanelListener().pipe(takeUntil(this.destroy$)).subscribe((value) => {
-			console.log(value);
-			this.isOpen = value;
-			if (value) this.openClassName = "open";
-			else this.openClassName = "";
+			if (value) this.openPanel();
+			else this.closePanel();
 		});
 	}
 
-	onOpenPanel(): void  {
-
+	openPanel(): void {
+		this.openClassName = "open";
+		this.isOpen = true;
 	}
 
 	closePanel(): void {

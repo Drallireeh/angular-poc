@@ -27,5 +27,4 @@ export class AllergiesPathologiesComponent implements OnInit {
 		console.log("change")
 		console.log(e);
 	}
-
 }
