@@ -6,8 +6,6 @@ import { SlidingPanelFooterComponent } from '../sliding-panel-footer/sliding-pan
 import { SlidingPanelComponent } from './sliding-panel.component';
 import { BtnsAsRadioModule } from '../../btns-as-radio/btns-as-radio.module';
 
-
-
 @NgModule({
   declarations: [
     SlidingPanelHeaderComponent,
