@@ -36,7 +36,7 @@ export class PopinDoubleComponent implements OnInit {
   @Input() showPopin: boolean = false;
 
   // Subject permettant de gérer le changement de la variable d'affichage de la popin depuis d'autres composants
-	@Input() changing!: Subject<boolean>;
+  changing: Subject<boolean> = new Subject();
 
   constructor() { }
 

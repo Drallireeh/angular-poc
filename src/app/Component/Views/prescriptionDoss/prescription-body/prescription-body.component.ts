@@ -9,7 +9,6 @@ import { faUser, faKitMedical, faHouseMedicalCircleExclamation, faTextWidth, faE
 })
 export class PrescriptionBodyComponent implements OnInit {
   @Input() openPopup = new EventEmitter<void>();
-  changingValue: Subject<boolean> = new Subject();
   constructor() { }
 
   boolbool: boolean = true;
@@ -23,12 +22,6 @@ export class PrescriptionBodyComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
-	openPopin(): void {
-    //this.boolbool = true;
-    //this.openPopup.emit();
-      this.changingValue.next(true);
-  }
-  
   changeTheme(primary: string, secondary: string) {
     document.documentElement.style.setProperty('--primary-color', primary);
     document.documentElement.style.setProperty('--secondary-color', secondary);

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { Subject } from 'rxjs';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'next-popin-horaire-simple',
@@ -18,7 +19,9 @@ export class PopinHoraireSimpleComponent implements OnInit {
   heure: string = "00";
   // Variable du formatée du titre
   title: any = `${this.heure}:${this.minute}`;
-
+  // Variable contenant l'icône du bouton
+  faEdit = faEdit;
+  
   // Boolean gérant l'affichage de la popin
   @Input() showPopin: boolean = false;
 
