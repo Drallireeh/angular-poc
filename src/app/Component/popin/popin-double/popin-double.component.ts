@@ -65,6 +65,14 @@ export class PopinDoubleComponent implements OnInit {
     this.changing.next(false);
   }
 
+  selectDirectValue(event: any): void {
+    let number = event.target.closest('button').textContent;
+    let popin = event.target.closest('next-popin-double');
+
+    popin.parentNode.firstChild.value = number;
+    this.changing.next(false);
+  }
+
   selectTopMesure(event: any): void {
     this.topValue = event.target.textContent;
     this.mesureActuelle = event.target.textContent;
