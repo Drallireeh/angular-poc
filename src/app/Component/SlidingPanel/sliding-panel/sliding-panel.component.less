@@ -34,6 +34,27 @@
         padding: 0;
         box-shadow: -3px 0 3px -3px #424242;
 
+        .sliding-panel-toolbar {
+            position: absolute;
+            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            top: 40px;
+            bottom: 46px;
+            width: 240px;
+            margin-left: -46px;
+            background-color: transparent;
+            -ms-transition: margin-left ease .5s;
+            -moz-transition: margin-left ease .5s;
+            -o-transition: margin-left ease .5s;
+            -webkit-transition: margin-left ease .5s;
+            transition: margin-left ease .5s;
+        }
+
+        .sliding-panel-toolbar.opened {
+            margin-left: -243px;
+        }
+
         .sliding-panel-content {
             position: relative;
             -ms-flex-positive: 1;
