@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Type } from '@angular/compiler';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'next-popin-double',
@@ -10,12 +12,20 @@ import { Type } from '@angular/compiler';
 export class PopinDoubleComponent implements OnInit {
   // Variable contenant le nombre
   title: any = '';
+  inputVal: any = '';
   // Variable pour gérer la désactivation de la virgule
   disabled: string = '';
 
   data: Array<Array<string>> = [['g', 'mg'], ['l', 'ml']];
   topValue: string = this.data[0][0];
   botValue: string = this.data[1][0];
+
+  mesureActuelle: string = this.data[0][0];
+  mesure1: string = "forceFocus";
+  mesure2: string = "";
+  mesure3: string = "";
+  mesure4: string = "";
+  faEdit = faEdit;
 
   // Boolean gérant l'affichage de la popin
   @Input() showPopin: boolean = false;
@@ -59,12 +69,48 @@ export class PopinDoubleComponent implements OnInit {
     this.changing.next(false);
   }
 
+  selectDirectValue(event: any): void {
+    let number = event.target.closest('button').textContent;
+    this.inputVal = number;
+    this.changing.next(false);
+  }
+
   selectTopMesure(event: any): void {
     this.topValue = event.target.textContent;
+    this.mesureActuelle = event.target.textContent;
+  }
+
+  selectMesure1(): void {
+    this.mesure1 = "forceFocus";
+    this.mesure2 = "";
+    this.mesure3 = "";
+    this.mesure4 = "";
+  }
+
+  selectMesure2(): void {
+    this.mesure1 = "";
+    this.mesure2 = "forceFocus";
+    this.mesure3 = "";
+    this.mesure4 = "";
   }
 
   selectBotMesure(event: any): void {
     this.botValue = event.target.textContent;
+    this.mesureActuelle = event.target.textContent;
+  }
+
+  selectMesure3(): void {
+    this.mesure1 = "";
+    this.mesure2 = "";
+    this.mesure3 = "forceFocus";
+    this.mesure4 = "";
+  }
+
+  selectMesure4(): void {
+    this.mesure1 = "";
+    this.mesure2 = "";
+    this.mesure3 = "";
+    this.mesure4 = "forceFocus";
   }
 
   // Clic sur la gomme pour effacer un caractère
@@ -79,4 +125,14 @@ export class PopinDoubleComponent implements OnInit {
   closePopin(): void {
     this.changing.next(false);
   }
+
+  openPopin(): void {
+    this.changing.next(true);
+  }
+
+  // Fonction de fermeture de la popin
+  closePopinWithValue(event:any): void {
+    this.inputVal = this.title + this.mesureActuelle;
+    this.changing.next(false);
+  } 
 }
