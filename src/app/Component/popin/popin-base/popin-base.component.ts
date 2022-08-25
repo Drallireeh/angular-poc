@@ -15,11 +15,17 @@ export class PopinBaseComponent implements OnInit {
   // Evenement renvoyé vers le composant parent
   @Output() closePopin = new EventEmitter<void>;
 
+  @Output() closePopinWithValue = new EventEmitter<void>;
+
   ngOnInit(): void {
   }
 
   // Fonction qui active la variable qui renvoie un évènement
   closePopinBase(): void {
     this.closePopin.emit();
+  }
+
+  closePopinBaseWithValue(): void {
+    this.closePopinWithValue.emit();
   }
 }

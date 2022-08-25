@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Type } from '@angular/compiler';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'next-popin-double',
@@ -10,6 +12,7 @@ import { Type } from '@angular/compiler';
 export class PopinDoubleComponent implements OnInit {
   // Variable contenant le nombre
   title: any = '';
+  inputVal: any = '';
   // Variable pour gérer la désactivation de la virgule
   disabled: string = '';
 
@@ -22,6 +25,7 @@ export class PopinDoubleComponent implements OnInit {
   mesure2: string = "";
   mesure3: string = "";
   mesure4: string = "";
+  faEdit = faEdit;
 
   // Boolean gérant l'affichage de la popin
   @Input() showPopin: boolean = false;
@@ -67,9 +71,7 @@ export class PopinDoubleComponent implements OnInit {
 
   selectDirectValue(event: any): void {
     let number = event.target.closest('button').textContent;
-    let popin = event.target.closest('next-popin-double');
-
-    popin.parentNode.firstChild.value = number;
+    this.inputVal = number;
     this.changing.next(false);
   }
 
@@ -123,4 +125,14 @@ export class PopinDoubleComponent implements OnInit {
   closePopin(): void {
     this.changing.next(false);
   }
+
+  openPopin(): void {
+    this.changing.next(true);
+  }
+
+  // Fonction de fermeture de la popin
+  closePopinWithValue(event:any): void {
+    this.inputVal = this.title + this.mesureActuelle;
+    this.changing.next(false);
+  } 
 }
