@@ -61,11 +61,10 @@ export class PopinDoubleComponent implements OnInit {
   // Clic sur un chiffre secondary qui ferme la popin après avoir ajouté au nombre ce qui est présent sur le bouton
   selectFinalNumber(event: any): void {
     let number = event.target.closest('button').textContent;
-    let popin = event.target.closest('next-popin-simples');
 
     // Si rien n'est présent dans le nombre, rajoute un 0 devant la virgule
     this.title == '' ? this.title = '0' + number : this.title += number;
-    popin.parentNode.firstChild.value = this.title;
+    this.inputVal = this.title + this.mesureActuelle;;
     this.changing.next(false);
   }
 
