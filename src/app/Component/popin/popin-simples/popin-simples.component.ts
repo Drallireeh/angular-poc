@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
-
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'next-popin-simples',
@@ -12,6 +12,8 @@ export class PopinSimplesComponent implements OnInit {
   title: any = '';
   // Variable pour gérer la désactivation de la virgule
   disabled: string = '';
+    // Variable contenant l'icône du bouton
+    faEdit = faEdit;
 
   // Boolean gérant l'affichage de la popin
   @Input() showPopin: boolean = false;
@@ -62,6 +64,11 @@ export class PopinSimplesComponent implements OnInit {
     }
     this.title = this.title.slice(0, -1); 
   }
+
+    // Fonction d'ouverture de la popin
+    openPopin(): void {
+      this.changing.next(true);
+    }
 
   // Fonction de fermeture de la popin
   closePopin(): void {

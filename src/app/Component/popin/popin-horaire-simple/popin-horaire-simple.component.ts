@@ -21,12 +21,12 @@ export class PopinHoraireSimpleComponent implements OnInit {
   title: any = `${this.heure}:${this.minute}`;
   // Variable contenant l'icône du bouton
   faEdit = faEdit;
-  
+
   // Boolean gérant l'affichage de la popin
   @Input() showPopin: boolean = false;
 
   // Subject permettant de gérer le changement de la variable d'affichage de la popin depuis d'autres composants
-	@Input() changing!: Subject<boolean>;
+	@Input() changing: Subject<boolean> = new Subject();
 
   constructor() { }
 
@@ -71,6 +71,11 @@ export class PopinHoraireSimpleComponent implements OnInit {
     this.title = `${this.heure}:${this.minute}`;
   };
 
+    // Fonction d'ouverture de la popin
+    openPopin(): void {
+      this.changing.next(true);
+    }
+    
   // Fonction de fermeture de la popin
   closePopin(): void {
     this.changing.next(false);

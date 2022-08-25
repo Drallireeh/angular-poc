@@ -1,3 +1,7 @@
+<input type="text">
+<button class="buttonClick" (click)="openPopin()">
+    <fa-icon class="next-icon" [icon]="faEdit"></fa-icon>
+</button>
 <next-popin-base *ngIf="showPopin" (closePopin)="closePopin()">
     <h1>{{title}}</h1>
         <div class="clavierTactileSimple">
