@@ -14,7 +14,6 @@ export class BtnsAsRadioComponent implements OnInit {
 	constructor() { }
 
 	ngOnInit(): void {
-		console.log(this.btns)
 	}
 
 	ngAfterInit(): void {

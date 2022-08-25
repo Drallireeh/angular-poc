@@ -20,8 +20,10 @@ export class SlidingPanelComponent implements OnInit {
 	isOpen: boolean = false;
 	// Gére l'animation du panel, si la classe n'est pas remise à 0 quand il faut l'animation ne se joue pas
 	openClassName: string = "open";
-	// Affiche ou cache la toolbar
-	toolbar: boolean = false;
+	// Permet d'activer ou désactiver la toolbar
+	@Input() toolbar: boolean = false;
+	// Indique si la toolbar est ouverte ou réduite
+	toolbarOpened: boolean = false;
 
 	// Callback on open
 	@Output() onOpen = new EventEmitter<void>()
@@ -34,6 +36,7 @@ export class SlidingPanelComponent implements OnInit {
 	constructor(private spServ: SlidingPanelService) { }
 
 	ngOnInit(): void {
+		console.log("toolbar : ", this.toolbar)
 		// Si la width ne correspond pas aux tailles 
 		if (!this.listeWidthAuthorized.find(str => this.width === str)) this.width = this.defaultWidth;
 
@@ -42,6 +45,16 @@ export class SlidingPanelComponent implements OnInit {
 			if (value) this.openPanel();
 			else this.closePanel();
 		});
+
+		// this.borderSrv.BorderEventListener().pipe(takeUntil(this.destroy$)).subscribe(() => {
+		// 	this.displayPopup();
+		// });
+	}
+
+	openCloseToolbar(open: boolean): void {
+		console.log(open)
+		this.toolbarOpened = open;
+		console.log('test : ',this.toolbarOpened)
 	}
 
 	// Ouverture du panel
