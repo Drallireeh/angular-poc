@@ -19,14 +19,14 @@ ul.toolbar-ctn {
     border-bottom-color: var(--primary-color);
     border-left-color: var(--primary-color);
 
-    li label {
-        margin-bottom: 0;
-        padding: 0 5px;
-    }
-
-    >li {
+    li, ::ng-deep li {
         min-height: 40px;
         line-height: 40px;
+
+        label {
+            margin-bottom: 0;
+            padding: 0 5px;
+        }
 
         >ul {
             padding-left: 0;
@@ -71,13 +71,13 @@ ul.toolbar-ctn {
         }
     }
 
-    >li.menu-header {
+    ::ng-deep li.menu-header {
         text-align: right;
         height: 40px;
         background-color: var(--primary-color);
     }
 
-    >li.menu-parent {
+    ::ng-deep li.menu-parent {
         background-color: #fff;
         min-height: 20px;
         line-height: 20px;
@@ -103,11 +103,12 @@ ul.toolbar-ctn {
         }
     }
 
-    li.menu-item {
+    ::ng-deep li.menu-item {
         background-color: #fff;
         color: #000;
         line-height: 40px;
         vertical-align: middle;
-        text-align: rig
+        text-align: right;
+        padding: 0;
     }
 }

@@ -2,7 +2,9 @@
     <div class="sliding-panel-background" (click)="closePanel()"></div>
     <div class="sliding-panel" [ngStyle]="{'width': width}" [ngClass]="openClassName">
         <div *ngIf="toolbar" class="sliding-panel-toolbar" [ngClass]="{opened: toolbarOpened}">
-           <app-sliding-panel-toolbar (showHideToolbar)="openCloseToolbar($event)"></app-sliding-panel-toolbar>
+           <app-sliding-panel-toolbar (showHideToolbar)="openCloseToolbar($event)">
+                <ng-content select="[sp-toolbar]"></ng-content>
+           </app-sliding-panel-toolbar>
         </div>
         <div class="sliding-panel-content">
             <form action="" data-role="validator" novalidate="novalidate">
