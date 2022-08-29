@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { BorderColorInterface } from 'src/app/border-color-interface';
+import { AllergiesService } from 'src/app/services/allergies.service';
 import { BorderPopupService } from 'src/app/services/border-popup.service';
 import { AllergiesListInterface } from '../../../allergies-list-interface';
 
@@ -21,187 +22,11 @@ export class ListAllergiesComponent implements OnInit {
 	// Sujet permettant de clear les event à la destruction du composant (leak memory)
 	destroy$ = new Subject<void>();
 
-	constructor(private borderSrv: BorderPopupService) {
+	constructor(private borderSrv: BorderPopupService, private allergieSrv: AllergiesService) {
 	}
 
 	ngOnInit(): void {
-		// TODO à remove, me permet de remplir plus rapidement la liste
-		if (!this.listCategories) {
-			this.listCategories = [
-				{
-					categoryName: 'Médicamenteux',
-					modifierDroits: false,
-					elements: [{
-						label: 'ACTIMINCYL BIO barre hyperprotéinée caramel',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'pathologie'
-					},
-					{
-						label: 'DOLIALLERGIE LORATADINE 10 mg cp',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: '',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'hypersensibilité'
-					},
-					{
-						label: 'AMOXIBACTIN 250 mg cp chien',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: '',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'allergie'
-					},
-					{
-						label: 'ACTIMINCYL BIO barre hyperprotéinée caramel',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'hypersensibilité'
-					},
-					{
-						label: 'ACON test antigénique nasal',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'hypersensibilité'
-					},
-					{
-						label: 'SPINBRUSH TRULY RADIANCE bros dent électrique',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: '',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'allergie'
-					},
-					{
-						label: 'DAYANG OUI TEA Gingembre Citron Bio tis',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'hypersensibilité'
-					},
-					{
-						label: 'AAZ COVID-VIRO test antigénique',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'allergie'
-					},
-					]
-				},
-				{
-					categoryName: 'Alimentaire',
-					modifierDroits: true,
-					elements: [{
-						label: 'test de label',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: '',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'hypersensibilité'
-					},
-					{
-						label: 'test de label',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: '',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'allergie'
-					},
-					{
-						label: 'test de label',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'hypersensibilité'
-					},
-					{
-						label: 'test de label',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'hypersensibilité'
-					},
-					{
-						label: 'test de label',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'hypersensibilité'
-					},
-					{
-						label: 'test de label',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'allergie'
-					},
-					{
-						label: 'test de label',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-					},
-					{
-						label: 'test de label',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'pathologie'
-					},
-					{
-						label: 'test de label',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'pathologie'
-					},
-					{
-						label: 'test de label',
-						date: '01/01/2022',
-						code: 'D345',
-						commentaire: 'commentaire',
-						data_id: '015545',
-						data_sejour_id: '1',
-						type: 'hypersensibilité'
-					},
-
-					]
-				}
-			]
-		}
+		this.getAllergies();
 
 		// TODO Pareil
 		if (!this.matchingColors) {
@@ -225,6 +50,10 @@ export class ListAllergiesComponent implements OnInit {
 		this.borderSrv.BorderEventListener().pipe(takeUntil(this.destroy$)).subscribe(() => {
 			this.displayPopup();
 		});
+	}
+
+	getAllergies(): void {
+		this.allergieSrv.getAllergies().subscribe(allergies => this.listCategories = allergies);
 	}
 
 	/**

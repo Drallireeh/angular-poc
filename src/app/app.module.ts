@@ -41,6 +41,7 @@ import { NextCheckboxComponent } from './Component/next-checkbox/next-checkbox.c
 import { BtnsAsRadioModule } from './Component/btns-as-radio/btns-as-radio.module';
 import { UpdateAllergieComponent } from './Component/PartialViews/update-allergie/update-allergie.component';
 import { CancelSlidingButtonComponent } from './Component/SlidingPanel/cancel-sliding-button/cancel-sliding-button.component';
+import { SearchAllergiesComponent } from './Component/Views/search-allergies/search-allergies.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { CancelSlidingButtonComponent } from './Component/SlidingPanel/cancel-sl
     NextCheckboxComponent,
     UpdateAllergieComponent,
     CancelSlidingButtonComponent,
+    SearchAllergiesComponent,
   ],
   imports: [
     BrowserModule,
