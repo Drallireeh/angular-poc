@@ -22,6 +22,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MatTabsModule } from '@angular/material/tabs';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DropdownComponent } from './Component/dropdown/dropdown.component';
 import { DropdownContentComponent } from './Component/dropdown-content/dropdown-content.component';
 import { NextInputWithPopinComponent } from './Component/next-input-with-popin/next-input-with-popin.component';
@@ -42,6 +43,7 @@ import { BtnsAsRadioModule } from './Component/btns-as-radio/btns-as-radio.modul
 import { UpdateAllergieComponent } from './Component/PartialViews/update-allergie/update-allergie.component';
 import { CancelSlidingButtonComponent } from './Component/SlidingPanel/cancel-sliding-button/cancel-sliding-button.component';
 import { PopinCalendarComponent } from './Component/popin/popin-calendar/popin-calendar.component';
+import { NextCalendarComponent } from './Component/next-calendar/next-calendar.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,7 @@ import { PopinCalendarComponent } from './Component/popin/popin-calendar/popin-c
     UpdateAllergieComponent,
     CancelSlidingButtonComponent,
     PopinCalendarComponent,
+    NextCalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,6 +90,7 @@ import { PopinCalendarComponent } from './Component/popin/popin-calendar/popin-c
     MatTabsModule,
     DateInputsModule,
     MatSelectModule,
+    MatDatepickerModule,
     NextPopupModule,
     BtnsAsRadioModule
   ],
