@@ -22,6 +22,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MatTabsModule } from '@angular/material/tabs';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DropdownComponent } from './Component/dropdown/dropdown.component';
 import { DropdownContentComponent } from './Component/dropdown-content/dropdown-content.component';
 import { NextInputWithPopinComponent } from './Component/next-input-with-popin/next-input-with-popin.component';
@@ -41,6 +42,8 @@ import { NextCheckboxComponent } from './Component/next-checkbox/next-checkbox.c
 import { BtnsAsRadioModule } from './Component/btns-as-radio/btns-as-radio.module';
 import { UpdateAllergieComponent } from './Component/PartialViews/update-allergie/update-allergie.component';
 import { CancelSlidingButtonComponent } from './Component/SlidingPanel/cancel-sliding-button/cancel-sliding-button.component';
+import { PopinCalendarComponent } from './Component/popin/popin-calendar/popin-calendar.component';
+import { NextCalendarComponent } from './Component/next-calendar/next-calendar.component';
 import { SearchAllergiesComponent } from './Component/Views/search-allergies/search-allergies.component';
 
 @NgModule({
@@ -69,6 +72,8 @@ import { SearchAllergiesComponent } from './Component/Views/search-allergies/sea
     NextCheckboxComponent,
     UpdateAllergieComponent,
     CancelSlidingButtonComponent,
+    PopinCalendarComponent,
+    NextCalendarComponent,
     SearchAllergiesComponent,
   ],
   imports: [
@@ -87,6 +92,7 @@ import { SearchAllergiesComponent } from './Component/Views/search-allergies/sea
     MatTabsModule,
     DateInputsModule,
     MatSelectModule,
+    MatDatepickerModule,
     NextPopupModule,
     BtnsAsRadioModule
   ],

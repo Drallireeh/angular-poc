@@ -5,11 +5,11 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
-  selector: 'next-popin-double',
-  templateUrl: './popin-double.component.html',
-  styleUrls: ['./popin-double.component.less']
+  selector: 'next-popin-calendar',
+  templateUrl: './popin-calendar.component.html',
+  styleUrls: ['./popin-calendar.component.less']
 })
-export class PopinDoubleComponent implements OnInit {
+export class PopinCalendarComponent implements OnInit {
   // Variable contenant le nombre et la mesure
   title: any = '';
   // Variable qu'on enverra dans l'input

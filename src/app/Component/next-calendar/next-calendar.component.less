@@ -1,0 +1,43 @@
+@import '../../app.component.less';
+
+kendo-calendar {
+    border: 1px solid @primaryDark;
+    ::ng-deep .k-calendar {
+        width: 350px;
+        .k-calendar-header {
+            background-color: @primaryLight;
+
+        }
+        .k-calendar-view {
+            table {
+                thead {
+                    tr {
+                        th {
+                            background-color: @primaryMediumDark;
+                            border-color: @primaryMedium;
+                            height: 36px;
+                            width: 50px;
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        .k-weekend:nth-child(even){
+                            background-color: @primaryLight;
+                        }
+                        .k-weekend::nth-child(odd){
+                            background-color: @primaryMedium;
+                        }
+                        .k-today {
+                            background-color: @primaryDark
+                        }
+                        td {
+                             height: 50px;
+                             width: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
