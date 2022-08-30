@@ -1,14 +1,20 @@
 <app-panel idString="allergPanelId" panelTitle="Allergies / Pathologies">
 	<app-panel-actions slot="panel-heading">
-		<button id="btnAjouter" class="btn"><span class="next-icon next-icon-ajout"></span>Médicamenteuse</button>
+		<button id="btnAjouter" class="btn" (click)="addAllergie(0)"><span class="next-icon next-icon-ajout"></span>Médicamenteuse</button>
 		<button id="btnAjouterAlim" class="btn"><span class="next-icon next-icon-ajout"></span>Alimentaire</button>
 		<button id="btnAjouterEnv" class="btn"><span class="next-icon next-icon-ajout"></span>Environnementale</button>
 	</app-panel-actions>
-	<app-sliding-panel width="50%" slot="panel-body">
+	<app-sliding-panel width="50%" slot="panel-body" id="updateAllergiePanel" title="Modification de l'allergie">
 		<app-update-allergie sp-content></app-update-allergie>
 		<app-cancel-sliding-button sp-actions-left></app-cancel-sliding-button>
 		<button sp-actions-right class="btn" type="button" id="btnEnregistrer"><span
 				class="next-icon next-icon-sauvegarder"></span>Enregistrer</button>
+	</app-sliding-panel>
+	<app-sliding-panel width="50%" slot="panel-body" id="addAllergiePanel" title="Ajout d'une allergie">
+		<app-update-allergie sp-content></app-update-allergie>
+		<app-cancel-sliding-button sp-actions-left></app-cancel-sliding-button>
+		<button sp-actions-right class="btn" type="button" id="btnEnregistrer"><span
+				class="next-icon next-icon-sauvegarder"></span>Ajouter</button>
 	</app-sliding-panel>
 	<app-panel-body-filters slot="panel-body">
 		<div class="row flex-align-items-center">

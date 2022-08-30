@@ -12,6 +12,8 @@ export class SlidingPanelComponent implements OnInit {
 	listeWidthAuthorized = ["40%", "50%", "62.5%", "100%", "400px", "600px", "800px"];
 	// Ajout d'une taille par défaut
 	defaultWidth = '40%';
+	// id du panel
+	@Input() id: string = "panel";
 	// Titre du panel a renseigner lors de sa création
 	@Input() title: string = "Titre du panel";
 	// Taille du panel a renseigner lors de sa création
@@ -36,13 +38,12 @@ export class SlidingPanelComponent implements OnInit {
 	constructor(private spServ: SlidingPanelService) { }
 
 	ngOnInit(): void {
-		console.log("toolbar : ", this.toolbar)
 		// Si la width ne correspond pas aux tailles 
 		if (!this.listeWidthAuthorized.find(str => this.width === str)) this.width = this.defaultWidth;
 
 		// On connecte un listener sur l'event d'ouverture/fermeture du panel
 		this.spServ.OpenPanelListener().pipe(takeUntil(this.destroy$)).subscribe((value) => {
-			if (value) this.openPanel();
+			if (value) this.openPanel(value);
 			else this.closePanel();
 		});
 
@@ -58,10 +59,12 @@ export class SlidingPanelComponent implements OnInit {
 	}
 
 	// Ouverture du panel
-	openPanel(): void {
-		this.openClassName = "open";
-		this.isOpen = true;
-		this.onOpen.emit();
+	openPanel(idPanel: string): void {
+		if (idPanel === this.id) {
+			this.openClassName = "open";
+			this.isOpen = true;
+			this.onOpen.emit();
+		}
 	}
 
 	// Fermeture du panel

@@ -28,6 +28,6 @@ export class ActionsInsideListComponent implements OnInit {
 	}
 
 	updateClicked(): void {
-		this.spServ.emitOpenPanel();
+		this.spServ.emitOpenPanel("updateAllergiePanel");
 	}
 }
