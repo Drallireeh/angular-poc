@@ -1,4 +1,4 @@
-<div *ngIf="isOpen" class="sliding-panel-wrapper">
+<div *ngIf="isOpen" class="sliding-panel-wrapper" [id]="id">
     <div class="sliding-panel-background" (click)="closePanel()"></div>
     <div class="sliding-panel" [ngStyle]="{'width': width}" [ngClass]="openClassName">
         <div *ngIf="toolbar" class="sliding-panel-toolbar" [ngClass]="{opened: toolbarOpened}">

@@ -48,6 +48,7 @@ import { UpdateAllergieComponent } from './Component/PartialViews/update-allergi
 import { CancelSlidingButtonComponent } from './Component/SlidingPanel/cancel-sliding-button/cancel-sliding-button.component';
 import { PopinCalendarComponent } from './Component/popin/popin-calendar/popin-calendar.component';
 import { NextCalendarComponent } from './Component/next-calendar/next-calendar.component';
+import { SearchAllergiesComponent } from './Component/Views/search-allergies/search-allergies.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { NextCalendarComponent } from './Component/next-calendar/next-calendar.c
     CancelSlidingButtonComponent,
     PopinCalendarComponent,
     NextCalendarComponent,
+    SearchAllergiesComponent,
   ],
   imports: [
     BrowserModule,

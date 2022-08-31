@@ -14,6 +14,6 @@
   </div>
   <!-- Composant d'actions dans les listes -->
   <app-actions-inside-list [titleUpdateBtn]="titleBtnUpdate" [titleDeleteBtn]="titleBtnDelete"
-    [otherBtnIcon]="iconOtherBtn" [titleOtherBtn]="titleBtnOther" [otherBtn]="otherBtn">
+    [otherBtnIcon]="iconOtherBtn" [titleOtherBtn]="titleBtnOther" [otherBtn]="otherBtn" (deleteEvent)="deleteAllergie()" (updateEvent)="updateAllergie()">
   </app-actions-inside-list>
 </div>

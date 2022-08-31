@@ -5,14 +5,14 @@ import { Subject } from 'rxjs';
 	providedIn: 'root'
 })
 export class SlidingPanelService {
-	private openPanelEvent = new Subject<boolean>();
+	private openPanelEvent = new Subject<string>();
 
-	emitOpenPanel() {
-		this.openPanelEvent.next(true);
+	emitOpenPanel(idPanel: string) {
+		this.openPanelEvent.next(idPanel);
 	}
 
 	emitClosePanel() {
-		this.openPanelEvent.next(false);
+		this.openPanelEvent.next("");
 	}
 
 	OpenPanelListener() {
