@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AllergieInterface } from '../../../allergie-interface';
 import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
+import { AllergiesService } from 'src/app/services/allergies.service';
+import { SlidingPanelService } from 'src/app/services/sliding-panel.service';
 
 @Component({
 	selector: 'app-allergie-line',
@@ -26,8 +28,16 @@ export class AllergieLineComponent implements OnInit {
 	faEdit = faEdit;
 	faRemove = faRemove;
 
-	constructor() { }
+	constructor(private allergieSrv: AllergiesService, private spServ: SlidingPanelService) { }
 
 	ngOnInit(): void {
+	}
+
+	updateAllergie(): void {
+		this.spServ.emitOpenPanel("updateAllergiePanel");
+	}
+
+	deleteAllergie(): void {
+		this.allergieSrv.deleteAllergie(this.element.data_id).subscribe();
 	}
 }
