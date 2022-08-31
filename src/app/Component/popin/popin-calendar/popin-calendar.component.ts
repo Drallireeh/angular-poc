@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Type } from '@angular/compiler';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
@@ -147,4 +147,8 @@ export class PopinCalendarComponent implements OnInit {
     this.inputVal = this.title + this.mesureActuelle;
     this.changing.next(false);
   } 
+
+  date(value:string){
+    this.title = value
+  }
 }

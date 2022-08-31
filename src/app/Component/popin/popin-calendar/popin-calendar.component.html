@@ -3,6 +3,6 @@
     <fa-icon class="next-icon" [icon]="faEdit"></fa-icon>
 </button>
 <next-popin-base *ngIf="showPopin" (closePopin)="closePopin()" (closePopinWithValue)="closePopinWithValue($event)">
-<h1>{{title}}<span *ngIf="title.length > 0">{{mesureActuelle}}</span></h1>
-<next-calendar></next-calendar>
+<h1>{{title}}</h1>
+<next-calendar (changeDate)="date($event)"></next-calendar>
 </next-popin-base>

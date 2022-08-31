@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'next-calendar',
@@ -9,7 +9,11 @@ export class NextCalendarComponent implements OnInit {
 
   constructor() { }
 
+  @Output() changeDate = new EventEmitter<string>();
   ngOnInit(): void {
   }
 
+  onChange(value: string) {
+    this.changeDate.emit(value);
+  }
 }
