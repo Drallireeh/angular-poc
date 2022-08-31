@@ -1,4 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
+
+// Load all required data for the bg locale
+import "@progress/kendo-angular-intl/locales/fr/all";
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -94,7 +98,7 @@ import { NextCalendarComponent } from './Component/next-calendar/next-calendar.c
     NextPopupModule,
     BtnsAsRadioModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
