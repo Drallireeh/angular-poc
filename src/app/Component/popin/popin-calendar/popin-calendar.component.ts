@@ -2,6 +2,7 @@ import { Component, Input, OnInit, EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Type } from '@angular/compiler';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import {formatDate} from '@angular/common';
 
 
 @Component({
@@ -149,6 +150,6 @@ export class PopinCalendarComponent implements OnInit {
   } 
 
   date(value:string){
-    this.title = value
+    this.title = formatDate(new Date(value),'dd/MM/yyyy', 'fr-FR');
   }
 }

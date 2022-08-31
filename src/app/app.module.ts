@@ -1,7 +1,10 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 
 // Load all required data for the bg locale
+import { registerLocaleData } from '@angular/common';
 import "@progress/kendo-angular-intl/locales/fr/all";
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr);
 
 import { BrowserModule } from '@angular/platform-browser';
 

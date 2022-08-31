@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { DateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'next-calendar',
@@ -9,11 +10,12 @@ export class NextCalendarComponent implements OnInit {
 
   constructor() { }
 
-  @Output() changeDate = new EventEmitter<string>();
+  @Output() changeDate = new EventEmitter<any>();
   ngOnInit(): void {
   }
 
-  onChange(value: string) {
-    this.changeDate.emit(value);
+  onChange(value: any) {
+    console.log(value, new Date(value))
+    this.changeDate.emit(new Date(value));
   }
 }
