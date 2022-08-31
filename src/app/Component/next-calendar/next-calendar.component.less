@@ -6,6 +6,9 @@ kendo-calendar {
         width: 350px;
         .k-calendar-header {
             background-color: @primaryLight;
+            .k-nav-today {
+                color: @secondary
+            }
 
         }
         .k-calendar-view {
@@ -22,21 +25,31 @@ kendo-calendar {
                 }
                 tbody {
                     tr {
-                        .k-weekend:nth-of-type(1){
+                        .k-weekend:nth-child(even){
                             background-color: @primaryLight;
                         }
-                        .k-weekend::nth-of-type(2){
+                        .k-weekend:nth-child(odd){
                             background-color: @primaryMedium;
                         }
                         .k-today {
-                            background-color: @primaryDark
+                            background-color: @primaryDark;
+                            color: white
                         }
                         td {
                              height: 50px;
                              width: 50px;
+                             border-radius: 0;
+                             border: 0.5px solid @primaryDark
                         }
-                        .k-ohter-month {
-                            background-color: lightgrey
+                        .k-state-selected, .k-state-focused {
+                            .k-link {
+                                background-color: @secondary;
+                                border-radius: 0;
+                                color: white
+                            }
+                        }
+                        .k-other-month {
+                            background-color: lightgrey!important
                         }
                     }
                 }
