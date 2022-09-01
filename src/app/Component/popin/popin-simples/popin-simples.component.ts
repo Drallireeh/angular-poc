@@ -10,16 +10,21 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 export class PopinSimplesComponent implements OnInit {
   // Variable contenant le nombre
   title: any = '';
+  // Variable qu'on enverra dans l'input
+  inputVal: any = '';
   // Variable pour gérer la désactivation de la virgule
   disabled: string = '';
-    // Variable contenant l'icône du bouton
-    faEdit = faEdit;
+  // Variable contenant l'icône du bouton
+  faEdit = faEdit;
 
   // Boolean gérant l'affichage de la popin
   @Input() showPopin: boolean = false;
 
+  // Boolean gérant l'affichage de la popin
+  @Input() placeholderValue: string = ""; 
+
   // Subject permettant de gérer le changement de la variable d'affichage de la popin depuis d'autres composants
-	@Input() changing!: Subject<boolean>;
+  changing: Subject<boolean> = new Subject();
 
   constructor() { }
 
@@ -49,11 +54,9 @@ export class PopinSimplesComponent implements OnInit {
   // Clic sur un chiffre secondary qui ferme la popin après avoir ajouté au nombre ce qui est présent sur le bouton
   selectFinalNumber(event: any): void {
     let number = event.target.closest('button').textContent;
-    let popin = event.target.closest('next-popin-simples');
-
     // Si rien n'est présent dans le nombre, rajoute un 0 devant la virgule
     this.title == '' ? this.title = '0' + number : this.title += number;
-    popin.parentNode.firstChild.value = this.title;
+    this.inputVal = this.title;
     this.changing.next(false);
   }
 
@@ -74,4 +77,10 @@ export class PopinSimplesComponent implements OnInit {
   closePopin(): void {
     this.changing.next(false);
   }
+
+  // Fonction de fermeture de la popin et remplissage de l'input
+  closePopinWithValue(event:any): void {
+    this.inputVal = this.title;
+    this.changing.next(false);
+  } 
 }

@@ -21,6 +21,9 @@ export class PopinCalendarComponent implements OnInit {
   // Boolean gérant l'affichage de la popin
   @Input() showPopin: boolean = false;
 
+  // Boolean gérant l'affichage de la popin
+  @Input() placeholderValue: string = ""; 
+
   // Subject permettant de gérer le changement de la variable d'affichage de la popin depuis d'autres composants
   changing: Subject<boolean> = new Subject();
 
