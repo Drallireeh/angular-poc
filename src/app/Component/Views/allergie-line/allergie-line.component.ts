@@ -3,6 +3,7 @@ import { AllergieInterface } from '../../../allergie-interface';
 import { faEdit, faRemove } from '@fortawesome/free-solid-svg-icons';
 import { AllergiesService } from 'src/app/services/allergies.service';
 import { SlidingPanelService } from 'src/app/services/sliding-panel.service';
+import { LineIdService } from 'src/app/services/line-id.service';
 
 @Component({
 	selector: 'app-allergie-line',
@@ -28,13 +29,14 @@ export class AllergieLineComponent implements OnInit {
 	faEdit = faEdit;
 	faRemove = faRemove;
 
-	constructor(private allergieSrv: AllergiesService, private spServ: SlidingPanelService) { }
+	constructor(private allergieSrv: AllergiesService, private spServ: SlidingPanelService, private idSrv: LineIdService) { }
 
 	ngOnInit(): void {
 	}
 
 	updateAllergie(): void {
 		this.spServ.emitOpenPanel("updateAllergiePanel");
+		this.idSrv.emitLineId(this.element.data_id);
 	}
 
 	deleteAllergie(): void {

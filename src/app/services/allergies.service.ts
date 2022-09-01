@@ -54,15 +54,10 @@ export class AllergiesService {
 	}
 
 	deleteAllergie(allergieId: string): Observable<AllergiesListInterface[]> {
-		console.log("hey delete")
-		console.log(allergieId)
 		for (let i = 0; i < ALLERGIES.length; i++) {
-			console.log(ALLERGIES[i].elements.findIndex)
 			let allergieIdx = ALLERGIES[i].elements.findIndex(allergie => allergie.data_id === allergieId);
-			console.log(allergieIdx)
 			if (allergieIdx !== -1) {
 				ALLERGIES[i].elements.splice(allergieIdx, 1);
-				console.log(ALLERGIES[i])
 				break;
 			}
 		}
