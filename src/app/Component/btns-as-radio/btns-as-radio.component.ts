@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BtnAsRadioInterface } from 'src/app/btn-as-radio-interface';
 
 @Component({
@@ -10,6 +10,7 @@ export class BtnsAsRadioComponent implements OnInit {
 	@Input() btns: BtnAsRadioInterface[] = [];
 	labelSelected?: string;
 	btnValueSelected?: string;
+	@Output() selectEvent = new EventEmitter<string>();
 
 	constructor() { }
 
@@ -38,5 +39,6 @@ export class BtnsAsRadioComponent implements OnInit {
 	setSelectedValues(label: string | undefined, value: string | undefined): void {
 		this.labelSelected = label;
 		this.btnValueSelected = value;
+		this.selectEvent.emit(label);
 	}
 }

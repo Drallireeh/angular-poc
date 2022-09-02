@@ -24,15 +24,36 @@ export class UpdateAllergieComponent implements OnInit {
 		'selected': false
 	}];
 	dateValue: Date = new Date(2022, 10, 10);
-	allergie?: AllergieInterface;
+	allergie: AllergieInterface = {
+		label: '',
+		date: '',
+		code: '',
+		commentaire: '',
+		data_id: '',
+		data_sejour_id: '',
+		type: '',
+	};
 	destroy$ = new Subject<void>();
 
 	constructor(private allergieSrv: AllergiesService, private idSrv: LineIdService) { }
 
 	ngOnInit(): void {
 		this.idSrv.lineIdListener().pipe(takeUntil(this.destroy$)).subscribe((elementId) => {
-			this.allergieSrv.getAllergie(elementId).subscribe(allergie => this.allergie = allergie);
-			this.getAllergieType();
+			if (!elementId) {
+				this.allergie = {
+					label: '',
+					date: '',
+					code: '',
+					commentaire: '',
+					data_id: '',
+					data_sejour_id: '',
+					type: '',
+				}
+			}
+			else {
+				this.allergieSrv.getAllergie(elementId).subscribe(allergie => this.allergie = allergie);
+				this.getAllergieType();
+			}
 		});
 	}
 
@@ -47,6 +68,10 @@ export class UpdateAllergieComponent implements OnInit {
 				else this.listBtnRadio[i].selected = false;
 			}
 		}
+	}
+
+	changeAllergieType(label: string) {
+		this.allergie.type = label;
 	}
 
 	/**
