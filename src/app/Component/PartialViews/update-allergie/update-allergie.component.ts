@@ -27,13 +27,26 @@ export class UpdateAllergieComponent implements OnInit {
 	allergie?: AllergieInterface;
 	destroy$ = new Subject<void>();
 
-
 	constructor(private allergieSrv: AllergiesService, private idSrv: LineIdService) { }
 
 	ngOnInit(): void {
 		this.idSrv.lineIdListener().pipe(takeUntil(this.destroy$)).subscribe((elementId) => {
 			this.allergieSrv.getAllergie(elementId).subscribe(allergie => this.allergie = allergie);
+			this.getAllergieType();
 		});
+	}
+
+	getAllergieType(): void {
+		if (!this.allergie?.type) {
+			this.listBtnRadio.forEach(element => element.selected = false);
+			this.listBtnRadio[0].selected = true;
+		}
+		else {
+			for (let i = 0; i < this.listBtnRadio.length; i++) {
+				if (this.allergie?.type === this.listBtnRadio[i].label) this.listBtnRadio[i].selected = true;
+				else this.listBtnRadio[i].selected = false;
+			}
+		}
 	}
 
 	/**
