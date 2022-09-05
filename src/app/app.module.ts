@@ -52,6 +52,7 @@ import { CancelSlidingButtonComponent } from './Component/SlidingPanel/cancel-sl
 import { PopinCalendarComponent } from './Component/popin/popin-calendar/popin-calendar.component';
 import { NextCalendarComponent } from './Component/next-calendar/next-calendar.component';
 import { SearchAllergiesComponent } from './Component/Views/search-allergies/search-allergies.component';
+import { PopinDatepickerComponent } from './Component/popin/popin-datepicker/popin-datepicker.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { SearchAllergiesComponent } from './Component/Views/search-allergies/sea
     PopinCalendarComponent,
     NextCalendarComponent,
     SearchAllergiesComponent,
+    PopinDatepickerComponent,
   ],
   imports: [
     BrowserModule,

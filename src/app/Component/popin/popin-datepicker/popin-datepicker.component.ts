@@ -6,11 +6,11 @@ import {formatDate} from '@angular/common';
 
 
 @Component({
-  selector: 'next-popin-double',
-  templateUrl: './popin-double.component.html',
-  styleUrls: ['./popin-double.component.less']
+  selector: 'next-popin-datepicker',
+  templateUrl: './popin-datepicker.component.html',
+  styleUrls: ['./popin-datepicker.component.less']
 })
-export class PopinDoubleComponent implements OnInit {
+export class PopinDatepickerComponent implements OnInit {
   // Variable contenant le nombre et la mesure
   title: any = '';
   // Variable qu'on enverra dans l'input
@@ -42,6 +42,14 @@ export class PopinDoubleComponent implements OnInit {
   // Variable du titre du header
   @Input() titleHeader: string = ""; 
 
+  // Variable qui active / désactive la sélection d'horaire manuelle
+  check: boolean = false;
+  // Variable pour définir si l'on peut modifier la checkbox par clic natif
+  click: boolean = false;
+  // Variable des minutes pour le titre
+  minute: string = "00";
+  // Variable des heures pour le titre
+  heure: string = "00";
   // Subject permettant de gérer le changement de la variable d'affichage de la popin depuis d'autres composants
   changing: Subject<boolean> = new Subject();
 
@@ -131,6 +139,30 @@ export class PopinDoubleComponent implements OnInit {
     this.mesure4 = "forceFocus";
   }
 
+    // Clic sur la ligne de la checkbox pour passer en saisie manuelle
+    selectHoraire(): void {
+      this.check = true;
+    };
+  
+    // Changement de l'heure manuellement
+    selectHeure(event: any): void {
+      this.check = true;
+      this.heure = event.target.value;
+      this.updateTitle();
+    };
+  
+    // Changement des minutes manuellement
+    selectMinute(event: any): void {
+      this.check = true;
+      this.minute = event.target.value;
+      this.updateTitle();
+    };
+  
+    // Reformate le titre
+    updateTitle(): void {
+      this.title = `${this.heure}:${this.minute}`;
+    };
+
   // Clic sur la gomme pour effacer un caractère
   erase(): void {
     if(this.title.slice(-1) == ','){
@@ -154,4 +186,7 @@ export class PopinDoubleComponent implements OnInit {
     this.inputVal = this.title + this.mesureActuelle;
     this.changing.next(false);
   } 
+  date(value:string){
+    this.title = formatDate(new Date(value),'dd/MM/yyyy', 'fr-FR');
+  }
 }
