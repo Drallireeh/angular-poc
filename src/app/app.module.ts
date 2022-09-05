@@ -9,6 +9,7 @@ registerLocaleData(localeFr);
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderModule } from './Component/headerDoss/header/header.module';
@@ -101,7 +102,8 @@ import { SearchAllergiesComponent } from './Component/Views/search-allergies/sea
     MatSelectModule,
     MatDatepickerModule,
     NextPopupModule,
-    BtnsAsRadioModule
+    BtnsAsRadioModule,
+    FormsModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
   bootstrap: [AppComponent]

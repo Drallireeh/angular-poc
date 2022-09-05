@@ -23,16 +23,15 @@ export class UpdateAllergieComponent implements OnInit {
 		'label': 'Hypersensibilité',
 		'selected': false
 	}];
+	id?: string;
+	label: string = "";
 	dateValue: Date = new Date(2022, 10, 10);
-	allergie: AllergieInterface = {
-		label: '',
-		date: '',
-		code: '',
-		commentaire: '',
-		data_id: '',
-		data_sejour_id: '',
-		type: '',
-	};
+	commentary: string = "";
+	date?: string;
+	allergieType?: string;
+	code: string = "";
+	updated_by: string = '';
+
 	destroy$ = new Subject<void>();
 
 	constructor(private allergieSrv: AllergiesService, private idSrv: LineIdService) { }
@@ -40,38 +39,53 @@ export class UpdateAllergieComponent implements OnInit {
 	ngOnInit(): void {
 		this.idSrv.lineIdListener().pipe(takeUntil(this.destroy$)).subscribe((elementId) => {
 			if (!elementId) {
-				this.allergie = {
-					label: '',
-					date: '',
-					code: '',
-					commentaire: '',
-					data_id: '',
-					data_sejour_id: '',
-					type: '',
-				}
+				this.label = "label vide";
+				this.code = '';
+				this.date = '';
+				this.commentary = "";
+				this.allergieType = "";
+				this.updated_by = '';
 			}
 			else {
-				this.allergieSrv.getAllergie(elementId).subscribe(allergie => this.allergie = allergie);
+				this.allergieSrv.getAllergie(elementId).subscribe(allergie => {
+					this.label = allergie.label
+					this.date = allergie.date;
+					this.code = allergie.code;
+					this.commentary = allergie.commentaire
+					this.allergieType = allergie?.type;
+				});
 				this.getAllergieType();
 			}
 		});
 	}
 
 	getAllergieType(): void {
-		if (!this.allergie?.type) {
+		if (!this.allergieType) {
 			this.listBtnRadio.forEach(element => element.selected = false);
 			this.listBtnRadio[0].selected = true;
 		}
 		else {
 			for (let i = 0; i < this.listBtnRadio.length; i++) {
-				if (this.allergie?.type === this.listBtnRadio[i].label) this.listBtnRadio[i].selected = true;
+				if (this.allergieType === this.listBtnRadio[i].label) this.listBtnRadio[i].selected = true;
 				else this.listBtnRadio[i].selected = false;
 			}
 		}
 	}
 
-	changeAllergieType(label: string) {
-		this.allergie.type = label;
+	// changeAllergieType(label: string) {
+	// 	this.allergieType = label;
+	// }
+
+	removeCim10(): void {
+		this.code = '';
+	}
+
+	changeComment(value: string) {
+		this.commentary = value;
+	}
+
+	changeDate(e: Date) {
+		console.log(e)
 	}
 
 	/**
@@ -96,5 +110,8 @@ export class UpdateAllergieComponent implements OnInit {
 	ngOnDestroy(): void {
 		this.destroy$.next();
 		this.destroy$.complete();
+	}
+
+	updateAllergie(): void {
 	}
 }
