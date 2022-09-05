@@ -26,7 +26,10 @@ export class PopinHoraireSimpleComponent implements OnInit {
   @Input() showPopin: boolean = false;
 
   // Subject permettant de gérer le changement de la variable d'affichage de la popin depuis d'autres composants
-	@Input() changing: Subject<boolean> = new Subject();
+  @Input() changing: Subject<boolean> = new Subject();
+  
+  // Variable du titre du header
+  @Input() titleHeader: string = ""; 
 
   constructor() { }
 
@@ -75,7 +78,7 @@ export class PopinHoraireSimpleComponent implements OnInit {
     openPopin(): void {
       this.changing.next(true);
     }
-    
+
   // Fonction de fermeture de la popin
   closePopin(): void {
     this.changing.next(false);
