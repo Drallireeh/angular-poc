@@ -19,6 +19,8 @@ export class PopinHoraireSimpleComponent implements OnInit {
   heure: string = "00";
   // Variable du formatée du titre
   title: any = `${this.heure}:${this.minute}`;
+  // Variable qu'on enverra dans l'input
+  inputVal: any = '';
   // Variable contenant l'icône du bouton
   faEdit = faEdit;
 
@@ -28,6 +30,8 @@ export class PopinHoraireSimpleComponent implements OnInit {
   // Subject permettant de gérer le changement de la variable d'affichage de la popin depuis d'autres composants
   @Input() changing: Subject<boolean> = new Subject();
   
+  // Boolean gérant l'affichage de la popin
+  @Input() placeholderValue: string = ""; 
   // Variable du titre du header
   @Input() titleHeader: string = ""; 
 
@@ -44,9 +48,8 @@ export class PopinHoraireSimpleComponent implements OnInit {
   // Clic sur une case horaire préremplie et fermeture de la popin + remplissage de l'input
   selectFinalNumber(event: any): void {
     let number = event.target.closest('button').textContent;
-    let popin = event.target.closest('next-popin-horaire-simple');
-    this.title = number
-    popin.parentNode.firstChild.value = this.title;
+    this.title = number;
+    this.inputVal = number;
     this.changing.next(false);
   }
 
@@ -83,4 +86,10 @@ export class PopinHoraireSimpleComponent implements OnInit {
   closePopin(): void {
     this.changing.next(false);
   }
+
+  // Fonction de fermeture de la popin et remplissage de l'input
+  closePopinWithValue(event:any): void {
+    this.inputVal = this.title;
+    this.changing.next(false);
+    } 
 }
