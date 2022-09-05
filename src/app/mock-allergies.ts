@@ -11,7 +11,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '0157545',
             data_sejour_id: '1',
-            type: 'pathologie'
+            type: ''
         },
         {
             label: 'DOLIALLERGIE LORATADINE 10 mg cp',
@@ -20,7 +20,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: '',
             data_id: '015845',
             data_sejour_id: '1',
-            type: 'hypersensibilité'
+            type: 'Hypersensibilité'
         },
         {
             label: 'AMOXIBACTIN 250 mg cp chien',
@@ -29,7 +29,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: '',
             data_id: '005545',
             data_sejour_id: '1',
-            type: 'allergie'
+            type: 'Allergie'
         },
         {
             label: 'ACTIMINCYL BIO barre hyperprotéinée caramel',
@@ -38,7 +38,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '01547545',
             data_sejour_id: '1',
-            type: 'hypersensibilité'
+            type: 'Hypersensibilité'
         },
         {
             label: 'ACON test antigénique nasal',
@@ -47,7 +47,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '01551145',
             data_sejour_id: '1',
-            type: 'hypersensibilité'
+            type: 'Hypersensibilité'
         },
         {
             label: 'SPINBRUSH TRULY RADIANCE bros dent électrique',
@@ -56,7 +56,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: '',
             data_id: '1015545',
             data_sejour_id: '1',
-            type: 'allergie'
+            type: 'Allergie'
         },
         {
             label: 'DAYANG OUI TEA Gingembre Citron Bio tis',
@@ -65,7 +65,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '0155245',
             data_sejour_id: '1',
-            type: 'hypersensibilité'
+            type: 'Hypersensibilité'
         },
         {
             label: 'AAZ COVID-VIRO test antigénique',
@@ -74,7 +74,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '015532245',
             data_sejour_id: '1',
-            type: 'allergie'
+            type: 'Allergie'
         },
         ]
     },
@@ -88,7 +88,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: '',
             data_id: '123',
             data_sejour_id: '1',
-            type: 'hypersensibilité'
+            type: 'Hypersensibilité'
         },
         {
             label: 'test de label',
@@ -97,7 +97,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: '',
             data_id: '456',
             data_sejour_id: '1',
-            type: 'allergie'
+            type: 'Allergie'
         },
         {
             label: 'test de label',
@@ -106,7 +106,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '758',
             data_sejour_id: '1',
-            type: 'hypersensibilité'
+            type: 'Hypersensibilité'
         },
         {
             label: 'test de label',
@@ -115,7 +115,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '910',
             data_sejour_id: '1',
-            type: 'hypersensibilité'
+            type: 'Hypersensibilité'
         },
         {
             label: 'test de label',
@@ -124,7 +124,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '911',
             data_sejour_id: '1',
-            type: 'hypersensibilité'
+            type: 'Hypersensibilité'
         },
         {
             label: 'test de label',
@@ -133,7 +133,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '7889',
             data_sejour_id: '1',
-            type: 'allergie'
+            type: 'Allergie'
         },
         {
             label: 'test de label',
@@ -150,7 +150,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '0000',
             data_sejour_id: '1',
-            type: 'pathologie'
+            type: ''
         },
         {
             label: 'test de label',
@@ -159,7 +159,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '1111',
             data_sejour_id: '1',
-            type: 'pathologie'
+            type: ''
         },
         {
             label: 'test de label',
@@ -168,7 +168,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '22222',
             data_sejour_id: '1',
-            type: 'hypersensibilité'
+            type: 'Hypersensibilité'
         },
 
         ]

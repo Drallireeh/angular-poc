@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DropdownOption } from 'src/app/dropdown-option';
+import { LineIdService } from 'src/app/services/line-id.service';
 import { SlidingPanelService } from 'src/app/services/sliding-panel.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class AllergiesPathologiesComponent implements OnInit {
 	@Input() dropdownTypes: Array<DropdownOption> = [{ value: '0', label: 'Toutes les types' }, { value: '1', label: 'Aucun' }, { value: '2', label: 'Classe' }, { value: '3', label: 'Substance' }, { value: '4', label: 'Médicaments' }];
 	@Input() dropdownPopin: Array<DropdownOption> = [{ value: '0', label: 'mg' }, { value: '1', label: 'g' }, { value: '2', label: 'kg' }];
 
-	constructor(private slidingSrv: SlidingPanelService) { }
+	constructor(private slidingSrv: SlidingPanelService, private idSrv: LineIdService) { }
 
 	ngOnInit(): void {
 	}
@@ -30,6 +31,7 @@ export class AllergiesPathologiesComponent implements OnInit {
 	}
 
 	addAllergie(mode: number) {
+		this.idSrv.emitLineId('');
 		this.slidingSrv.emitOpenPanel("addAllergiePanel");
 	}
 }

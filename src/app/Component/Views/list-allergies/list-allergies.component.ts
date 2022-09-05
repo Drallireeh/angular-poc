@@ -30,21 +30,22 @@ export class ListAllergiesComponent implements OnInit {
 
 		// TODO Pareil
 		if (!this.matchingColors) {
-			this.matchingColors = [{
-				value: "allergie",
-				color: "orange",
-				text: "une allergie"
-			},
-			{
-				value: "hypersensibilité",
-				color: "grey",
-				text: "une hypersensibilité"
-			},
-			{
-				value: "pathologie",
-				color: "red",
-				text: "une pathologie"
-			}];
+			this.matchingColors = [
+				{
+					value: "",
+					color: "red",
+					text: "un type non renseigné"
+				},
+				{
+					value: "Allergie",
+					color: "orange",
+					text: "une allergie"
+				},
+				{
+					value: "Hypersensibilité",
+					color: "grey",
+					text: "une hypersensibilité"
+				}];
 		}
 
 		this.borderSrv.BorderEventListener().pipe(takeUntil(this.destroy$)).subscribe(() => {

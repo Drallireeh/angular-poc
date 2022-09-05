@@ -29,6 +29,9 @@ export class ActionsInsideListComponent implements OnInit {
 	faRemove = faRemove;
 	faCode = faCode;
 
+	// Si on doit intéragir avec l'élément de la ligne, alors on a son id pour l'utiliser lors des clics sur les boutons
+	@Input() elementId?: string;
+
 	constructor() { }
 
 	ngOnInit(): void {

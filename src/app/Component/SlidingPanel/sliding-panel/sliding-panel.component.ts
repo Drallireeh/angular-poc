@@ -53,9 +53,7 @@ export class SlidingPanelComponent implements OnInit {
 	}
 
 	openCloseToolbar(open: boolean): void {
-		console.log(open)
 		this.toolbarOpened = open;
-		console.log('test : ',this.toolbarOpened)
 	}
 
 	// Ouverture du panel
