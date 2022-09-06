@@ -13,7 +13,7 @@
           <ng-content></ng-content>
           <ng-container *ngIf="prompt">
             <p></p>
-            <input class="k-textbox" type="text" required [value]="promptValue">
+            <input name="prompt" [ngModel]="promptValue" (ngModelChange)="promptChange($event)" class="k-textbox" type="text" required>
           </ng-container>
         </div>
       </div>
