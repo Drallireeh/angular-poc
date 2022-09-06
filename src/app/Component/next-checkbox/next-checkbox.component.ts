@@ -18,7 +18,6 @@ export class NextCheckboxComponent implements OnInit {
   }
 
   check(): void {
-    console.log(this.isCliquable)
     if(this.isCliquable){
       this.isChecked = !this.isChecked;
     }

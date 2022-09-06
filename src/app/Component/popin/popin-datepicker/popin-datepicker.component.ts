@@ -11,8 +11,7 @@ import {formatDate} from '@angular/common';
   styleUrls: ['./popin-datepicker.component.less']
 })
 export class PopinDatepickerComponent implements OnInit {
-  // Variable contenant le nombre et la mesure
-  title: any = '';
+
   // Variable qu'on enverra dans l'input
   inputVal: any = '';
 
@@ -36,6 +35,12 @@ export class PopinDatepickerComponent implements OnInit {
   minute: string = "00";
   // Variable des heures pour le titre
   heure: string = "00";
+  // titleDate
+  titleDate: any = formatDate(new Date(),'dd/MM/yyyy', 'fr-FR');
+  // title Horaire
+  titleHoraire: string = '';
+  // Variable contenant le nombre et la mesure
+  title: any = this.titleDate + this.titleHoraire;
   // Subject permettant de gérer le changement de la variable d'affichage de la popin depuis d'autres composants
   changing: Subject<boolean> = new Subject();
 
@@ -53,13 +58,6 @@ export class PopinDatepickerComponent implements OnInit {
   selectNumber(event: any): void {
     let number = event.target.closest('button').textContent;
     this.title += number; 
-  }
-
-  // Clic sur un bouton de valeur préconstruite qui ferme la popin et remplit l'input
-  selectDirectValue(event: any): void {
-    let number = event.target.closest('button').textContent;
-    this.inputVal = number;
-    this.changing.next(false);
   }
 
     // Clic sur la ligne de la checkbox pour passer en saisie manuelle
@@ -83,7 +81,8 @@ export class PopinDatepickerComponent implements OnInit {
   
     // Reformate le titre
     updateTitle(): void {
-      this.title = `${this.heure}:${this.minute}`;
+      this.titleHoraire = `${this.heure}:${this.minute}`;
+      this.title = `${this.titleDate} ${this.titleHoraire}`;
     };
   // Fonction de fermeture de la popin
   closePopin(): void {
@@ -99,12 +98,15 @@ export class PopinDatepickerComponent implements OnInit {
   closePopinWithValue(event:any): void {
     this.inputVal = this.title;
     this.changing.next(false);
-  } 
+  }
   date(value:string){
-    this.title = formatDate(new Date(value),'dd/MM/yyyy', 'fr-FR');
+    this.titleDate = formatDate(new Date(value),'dd/MM/yyyy', 'fr-FR');
+    this.title = `${this.titleDate} ${this.titleHoraire}`;
   }
 
   selectFinalHoraire(event:any){
-    console.log('oui')
+    this.title = this.title = `${this.titleDate} ${event.target.innerText}`;
+    this.inputVal = this.title;
+    this.changing.next(false);
   }
 }
