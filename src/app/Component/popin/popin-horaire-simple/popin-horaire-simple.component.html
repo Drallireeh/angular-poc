@@ -1,8 +1,8 @@
-<input type="text">
+<input type="text" [value]="inputVal" [placeholder]="placeholderValue">
 <button class="buttonClick" (click)="openPopin()">
     <fa-icon class="next-icon" [icon]="faEdit"></fa-icon>
 </button>
-<next-popin-base *ngIf="showPopin" (closePopin)="closePopin()">
+<next-popin-base *ngIf="showPopin" (closePopin)="closePopin()" (closePopinWithValue)="closePopinWithValue($event)" [title]='titleHeader'>
     <h1>{{title}}</h1>
     <div class="clavierTactileHoraireSimple">
         <popin-button (click)="selectFinalNumber($event)" type="btn-secondary" value="08:00" type="next-btn next-btn-secondary" widthBtn="140px"></popin-button>

@@ -2,7 +2,7 @@
 <button class="buttonClick" (click)="openPopin()">
     <fa-icon class="next-icon" [icon]="faEdit"></fa-icon>
 </button>
-<next-popin-base *ngIf="showPopin" (closePopin)="closePopin()" (closePopinWithValue)="closePopinWithValue($event)">
+<next-popin-base *ngIf="showPopin" (closePopin)="closePopin()" (closePopinWithValue)="closePopinWithValue($event)" [title]='titleHeader'>
 <h1>{{title}}<span *ngIf="title.length > 0">{{mesureActuelle}}</span></h1>
         <div class="containerClaviers">
             <div class="clavierTactileJSON">

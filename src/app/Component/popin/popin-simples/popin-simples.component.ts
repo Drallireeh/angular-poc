@@ -23,6 +23,9 @@ export class PopinSimplesComponent implements OnInit {
   // Boolean gérant l'affichage de la popin
   @Input() placeholderValue: string = ""; 
 
+  // Variable du titre du header
+  @Input() titleHeader: string = ""; 
+
   // Subject permettant de gérer le changement de la variable d'affichage de la popin depuis d'autres composants
   changing: Subject<boolean> = new Subject();
 

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Type } from '@angular/compiler';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import {formatDate} from '@angular/common';
 
 
 @Component({
@@ -37,6 +38,9 @@ export class PopinDoubleComponent implements OnInit {
 
   // Boolean gérant l'affichage de la popin
   @Input() placeholderValue: string = ""; 
+
+  // Variable du titre du header
+  @Input() titleHeader: string = ""; 
 
   // Subject permettant de gérer le changement de la variable d'affichage de la popin depuis d'autres composants
   changing: Subject<boolean> = new Subject();

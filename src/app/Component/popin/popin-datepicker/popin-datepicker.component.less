@@ -1,0 +1,59 @@
+@import '../../../app.component.less';
+
+input {
+    height: 30px;
+    background-color: white;
+    color: black;
+    border: 1px solid @secondary;
+    padding: 5px;
+}
+.buttonClick {
+    height: 30px;
+    width: 30px;
+    border: 1px solid @secondary;
+    background-color: white;
+}
+h1 {
+    text-align: center;
+    font-size: 11px;
+    color: #707070;
+    margin: 10px 0;
+    height: 10px;
+}
+
+.containeDatepicker {
+    display: flex;
+    align-items: center;
+    > div {
+        margin-left: 20px;
+        .clavierTactileHoraireSimple {
+            padding: 10px;
+            display: flex;
+            width: 360px;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+            input {
+                width: 50px;
+            }
+            
+        }
+        
+        .horaireSimpleSelect {
+            display: flex;
+            align-items: center;
+        }
+        
+        .inputHour {
+            margin-left: 10px;
+        }
+        .inputMin {
+            margin-right: 10px;
+        }
+        
+        span {
+            margin: 0 2.5px
+        }
+    }
+
+}
