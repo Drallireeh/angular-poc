@@ -25,16 +25,11 @@ export class AllergiesService {
 	}
 
 	updateAllergie(allergie: AllergieInterface) {
-		console.log(allergie)
-		debugger;
 		let allergieToUpdate: AllergieInterface | undefined;
 		for (let i = 0; i < ALLERGIES.length; i++) {
 			allergieToUpdate = ALLERGIES[i].elements.find(alrg => alrg.data_id === allergie.data_id);
 			if (allergieToUpdate) {
-				console.log('allergie to update : ', allergie)
-				debugger
 				allergieToUpdate = allergie;
-				console.log("Allergie après avoir enregistrer : ", allergieToUpdate)
 				break;
 			}
 		}

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable, Subject, takeUntil } from 'rxjs';
+import { Observable, Subject, takeUntil, take, tap } from 'rxjs';
 import { AllergieInterface } from 'src/app/allergie-interface';
 import { BtnAsRadioInterface } from 'src/app/btn-as-radio-interface';
 import { AllergiesService } from 'src/app/services/allergies.service';
@@ -12,6 +12,8 @@ import { LineIdService } from 'src/app/services/line-id.service';
 })
 export class UpdateAllergieComponent implements OnInit {
 	@Input() updateEvent = new Observable<void>();
+	@Input() addAllergieEvent = new Observable<void>();
+	@Input() updateMode = false;
 
 	listBtnRadio: BtnAsRadioInterface[] = [{
 		'label': 'Aucune',
@@ -25,14 +27,14 @@ export class UpdateAllergieComponent implements OnInit {
 		'label': 'Hypersensibilité',
 		'selected': false
 	}];
-	id: string = '';
-	label: string = "";
-	dateValue: Date = new Date(2022, 10, 10);
-	commentary: string = "";
+	id = '';
+	label = "";
+	dateValue = new Date(2022, 10, 10);
+	commentary = "";
 	date?: string;
 	allergieType?: string;
-	code: string = "";
-	updated_by: string = '';
+	code = "";
+	updated_by = '';
 
 	// Init allergie
 	allergie: AllergieInterface = {
@@ -51,33 +53,38 @@ export class UpdateAllergieComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.updateEvent.pipe(takeUntil(this.destroy$)).subscribe(() => {
-			// console.log("this.commentary sub : ", this.commentary)
 			this.updateAllergie();
 		});
-		// Ecoute sur la récupération de l'id de la ligne, pour ensuite récupérer l'allergie
-		this.idSrv.lineIdListener().pipe(takeUntil(this.destroy$)).subscribe((elementId) => {
-			if (!elementId) {
-				this.label = "label vide";
-				this.code = '';
-				this.date = '';
-				this.commentary = "";
-				this.allergieType = "";
-				this.updated_by = '';
-				this.id = '';
-			}
-			else {
-				this.allergieSrv.getAllergie(elementId).subscribe(allergie => {
-					this.label = allergie.label
-					this.date = allergie.date;
-					this.code = allergie.code;
-					this.commentary = allergie.commentaire
-					this.allergieType = allergie?.type;
-					// On récupère l'objet allergie pour changer uniquement les champs qui peuvent être modifiés lors de l'update
-					this.allergie = allergie;
-				});
-				this.setAllergieType();
-			}
+		this.addAllergieEvent.pipe(takeUntil(this.destroy$)).subscribe(() => {
+			this.addAllergie();
 		});
+		// Ecoute sur la récupération de l'id de la ligne, pour ensuite récupérer l'allergie
+		if (this.updateMode) {
+			this.idSrv.lineIdListener().pipe(takeUntil(this.destroy$)).subscribe((elementId) => {
+				if (!elementId) {
+					this.label = "label vide";
+					this.code = '';
+					this.date = '';
+					this.commentary = "";
+					this.allergieType = "";
+					this.updated_by = '';
+					this.id = '';
+				}
+				else {
+					this.allergieSrv.getAllergie(elementId).pipe().subscribe(allergie => {
+						// On récupère l'objet allergie pour changer uniquement les champs qui peuvent être modifiés lors de l'update
+						this.allergie = allergie;
+	
+						this.label = allergie.label
+						this.date = allergie.date;
+						this.code = allergie.code;
+						this.commentary = JSON.parse(JSON.stringify(allergie.commentaire));
+						this.allergieType = allergie?.type;
+					});
+					this.setAllergieType();
+				}
+			});
+		}
 	}
 
 	// on set la valeur du type de l'allergie
@@ -103,11 +110,6 @@ export class UpdateAllergieComponent implements OnInit {
 	// Suppression du code cim10 de l'allergie
 	removeCim10(): void {
 		this.code = '';
-	}
-
-	// Event trigger lors du changement du commentaire
-	changeComment(value: string) {
-		this.commentary = value;
 	}
 
 	// Event trigger lor du changement de la date
@@ -139,18 +141,25 @@ export class UpdateAllergieComponent implements OnInit {
 		this.destroy$.complete();
 	}
 
-	updateAllergie(): void {
-		// On attribue toutes les valeurs succeptibles d'avoir changées dans le panel
-		// console.log(this.commentary)
-		// debugger
+	// On attribue toutes les valeurs succeptibles d'avoir changées dans le panel
+	setAllergieInformations(): void {
 		this.allergie.code = this.code;
 		this.allergie.commentaire = this.commentary;
 		this.allergie.date = this.date;
 		this.allergie.updated_by = "Dr Herillard Kenny";
 		this.allergie.type = this.allergieType;
+	}
 
+	updateAllergie(): void {
+		this.setAllergieInformations();
 
 		// Appel au service pour faire l'update de notre data
 		this.allergieSrv.updateAllergie(this.allergie);
+	}
+
+	addAllergie(): void {
+		this.setAllergieInformations();
+		//TODO Le nom de la catégorie est à modifié en focntion du mode d'ajout utilisé
+		this.allergieSrv.addAllergie("Alimentaire", this.allergie);
 	}
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NextOverlayComponent } from '../next-overlay/next-overlay.component';
 import { NextPopupComponent } from './next-popup.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   ],
   imports: [
     CommonModule,
-    DragDropModule
+    DragDropModule,
+    FormsModule
   ],
   exports: [
     NextPopupComponent

@@ -17,6 +17,7 @@ export class AllergiesPathologiesComponent implements OnInit {
 	@Input() dropdownPopin: Array<DropdownOption> = [{ value: '0', label: 'mg' }, { value: '1', label: 'g' }, { value: '2', label: 'kg' }];
 
 	updateAllergieEvent: Subject<void> = new Subject<void>();
+	addAllergieEvent: Subject<void> = new Subject<void>();
 
 	constructor(private slidingSrv: SlidingPanelService, private idSrv: LineIdService) { }
 
@@ -40,5 +41,11 @@ export class AllergiesPathologiesComponent implements OnInit {
 
 	updateAllergie() {
 		this.updateAllergieEvent.next();
+		this.slidingSrv.emitClosePanel();
+	}
+
+	confirmAddAllergie() {
+		this.addAllergieEvent.next();
+		this.slidingSrv.emitClosePanel();
 	}
 }
