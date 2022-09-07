@@ -16,7 +16,7 @@ export class NextInputNumberComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  test(event:any) {
+  validate(event:any) {
     var val: number = +event.target.value
     if(val > this.maxValue || val < this.minValue){
       this.noValid = true;
