@@ -51,10 +51,6 @@ export class NextPopupComponent implements OnInit {
 		this.closeWindow();
 	}
 
-	promptChange(value: string) {
-		this.promptValue = value;
-	}
-
 	// Ferme la fenêtre
 	closeWindow(): void {
 		this.subjectOpen$.next(false);
