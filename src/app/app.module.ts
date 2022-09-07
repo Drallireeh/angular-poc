@@ -54,6 +54,7 @@ import { PopinCalendarComponent } from './Component/popin/popin-calendar/popin-c
 import { NextCalendarComponent } from './Component/next-calendar/next-calendar.component';
 import { SearchAllergiesComponent } from './Component/Views/search-allergies/search-allergies.component';
 import { PopinDatepickerComponent } from './Component/popin/popin-datepicker/popin-datepicker.component';
+import { NextInputNumberComponent } from './Component/next-input-number/next-input-number.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { PopinDatepickerComponent } from './Component/popin/popin-datepicker/pop
     NextCalendarComponent,
     SearchAllergiesComponent,
     PopinDatepickerComponent,
+    NextInputNumberComponent,
   ],
   imports: [
     BrowserModule,
