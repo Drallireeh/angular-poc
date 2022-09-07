@@ -18,6 +18,9 @@ export class PrescriptionBodyComponent implements OnInit {
   faHouseMedicalCircleExclamation = faHouseMedicalCircleExclamation;
   faTextWidth = faTextWidth;
   faEdit = faEdit;
+  
+  max = 30;
+  min = 10;
 
 	ngOnInit(): void {
 	}
