@@ -1,1 +1,2 @@
-<input type="number" [ngClass]="{noValid: noValid}" (change)="validate($event)">
+<span [ngClass]="{noValid: error}">{{errorInput}}</span>
+<input type="number" [ngClass]="{noValid: noValid}" (change)="validate($event)" (mouseenter)="showErr()" (mouseleave)="hideErr()">
