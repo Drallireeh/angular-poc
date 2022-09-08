@@ -1,11 +1,12 @@
-<ng-container *ngIf="mode !== 0">
+<ng-container *ngIf="mode !== 0 || updateMode;else addmed">
     <div class="form-group row">
         <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis" for="Allergie_AllergieLibelle">Libellé</label>
         <div class="col-lg-9 col-md-3 col-sm-9">
-            <span id="allergieLibelle" data-type="Médicament"><span class="label-type">{{labelType}}</span> : {{label}}</span>
+            <span id="allergieLibelle" data-type="Médicament"><span class="label-type">{{labelType}} :</span>
+                {{label}}</span>
         </div>
     </div>
-    
+
     <div class="form-group row">
         <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis"
             for="Allergie_AllergieHypersensibilite">Type</label>
@@ -13,7 +14,7 @@
             <app-btns-as-radio [btns]="listBtnRadio"></app-btns-as-radio>
         </div>
     </div>
-    
+
     <div class="form-group row">
         <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis" for="Allergie_DateDebut">Date de début</label>
         <div class="col-lg-9 col-md-3 col-sm-9 date-picker-ctn">
@@ -21,7 +22,7 @@
                 (valueChange)="changeDate($event)"></kendo-datetimepicker>
         </div>
     </div>
-    
+
     <div class="form-group row cim-10">
         <label class="col-lg-3 col-md-3 col-sm-3 control-label" for="Allergie_CodeCim10">Réaction</label>
         <div class="col-lg-9 col-md-3 col-sm-9 flex flex-align-items-center">
@@ -30,7 +31,7 @@
                 (click)="removeCim10()"><span class="next-icon next-icon-supprimer"></span></button>
         </div>
     </div>
-    
+
     <div class="form-group row start">
         <label class="col-lg-3 col-md-3 col-sm-3 control-label p-top" for="Allergie_Commentaire">Commentaire</label>
         <div class="col-lg-9 col-md-3 col-sm-9">
@@ -40,7 +41,7 @@
             <span class="k-invalid-msg" data-for="Libelle"></span>
         </div>
     </div>
-    
+
     <div *ngIf="updated_by" class="form-group row">
         <label class="col-lg-3 col-md-3 col-sm-3 control-label" for="Allergie_UtilisateurModification"
             style="padding-top:0px">Modifié par</label>
@@ -49,3 +50,20 @@
         </div>
     </div>
 </ng-container>
+<ng-template #addmed>
+    <app-panel-body-filters>
+        <div class="col-md-4 flex-grow-1">
+            <input class="k-textbox" id="allergiesSearchValue" name="allergiesSearchValue" placeholder="Recherche"
+                style="width:100%">
+        </div>
+        <div class="flex-row flex-grow-1">
+            <div class="flex-grow-0">
+                <button id="showClassAllergie" class="push btn btn-secondary">Classe</button>
+                <button id="showSubstance" class="push btn btn-secondary">Substance</button>
+            </div>
+            <div class="flex-grow-1" style="margin-top: 1px; margin-left:2.5px;margin-right:2.5px">
+                <app-dropdown [dropdownOptions]="dropdownAddMed" [selected]="dropdownAddMed[0].label"></app-dropdown>
+            </div>
+        </div>
+    </app-panel-body-filters>
+</ng-template>

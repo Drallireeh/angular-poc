@@ -2,19 +2,27 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Observable, Subject, takeUntil, take, tap } from 'rxjs';
 import { AllergieInterface } from 'src/app/allergie-interface';
 import { BtnAsRadioInterface } from 'src/app/btn-as-radio-interface';
+import { DropdownOption } from 'src/app/dropdown-option';
 import { AllergiesService } from 'src/app/services/allergies.service';
 import { LineIdService } from 'src/app/services/line-id.service';
 
 @Component({
 	selector: 'app-update-allergie',
 	templateUrl: './update-allergie.component.html',
-	styleUrls: ['./update-allergie.component.less']
+	styleUrls: ['./update-allergie.component.less'],
+	host: { 'class': 'padding-around' }
 })
 export class UpdateAllergieComponent implements OnInit {
 	@Input() updateEvent = new Observable<void>();
 	@Input() addAllergieEvent = new Observable<void>();
 	@Input() addingMode = new Observable<number>();
 	@Input() updateMode = false;
+
+	@Input() dropdownAddMed: Array<DropdownOption> = [
+		{ value: '0', label: 'Aucun top inclus' },
+		{ value: '1', label: 'Top Parcours' },
+		{ value: '2', label: 'Top Praticiens' },
+		{ value: '3', label: 'Top Spécialité' }];
 
 	// Mode d'ajout des allergies : Medicaments 0, Alimentaire 1, Environnementale 2
 	mode = 0;
