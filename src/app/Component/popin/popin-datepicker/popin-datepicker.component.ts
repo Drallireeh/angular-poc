@@ -74,7 +74,6 @@ export class PopinDatepickerComponent implements OnInit {
       this.check = true;
       this.heure = event;
       this.updateTitle();
-      console.log(event)
     };
   
     // Changement des minutes manuellement
