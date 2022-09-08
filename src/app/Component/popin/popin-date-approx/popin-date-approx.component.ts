@@ -18,7 +18,7 @@ export class PopinDateApproxComponent implements OnInit {
   // Variable des heures pour le titre
   heure: string = "00";
   // Variable du formatée du titre
-  title: any = `${this.heure}:${this.minute}`;
+  title = "";
   // Variable qu'on enverra dans l'input
   inputVal: any = '';
   // Variable contenant l'icône du bouton
