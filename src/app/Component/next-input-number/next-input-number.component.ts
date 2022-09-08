@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'next-input-number',
@@ -14,12 +14,14 @@ export class NextInputNumberComponent implements OnInit {
   errorInput = "Champs mal renseigné";
   @Input() maxValue!:number; 
   @Input() minValue!:number; 
+  @Output() changeVal = new EventEmitter();
 
   ngOnInit(): void {
   }
 
   validate(event:any) {
-    var val: number = +event.target.value
+    var val: number = +event.target.value;
+    this.changeVal.emit(val);
     if(val > this.maxValue){
       this.noValid = true;
       this.errorInput = `La valeur est trop élevée, elle doit être inéferieure à ${this.maxValue}`;

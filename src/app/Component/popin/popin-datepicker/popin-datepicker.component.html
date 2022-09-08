@@ -20,8 +20,11 @@
         </div>
         <div class="horaireSimpleSelect" (click)="selectHoraire()">
             <next-checkbox [isChecked]="check" [isCliquable]="click"></next-checkbox>
-            <input type="text" class="inputHour" value={{heure}} (change)="selectHeure($event)">
+            <next-input-number [maxValue]="maxValueHour" [minValue]="minValueHourMinute" (changeVal)="selectHeure($event)"></next-input-number>
             <span> : </span>
+            <next-input-number [maxValue]="maxValueMinute" [minValue]="minValueHourMinute" (changeVal)="selectMinute($event)"></next-input-number>
+            <input type="text" class="inputHour" value={{heure}} (change)="selectHeure($event)">
+            
             <input type="text" class="inputMin" value={{minute}} (change)="selectMinute($event)">
         </div>
     </div>
