@@ -64,8 +64,9 @@ export class ListAllergiesComponent implements OnInit {
 	 */
 	getBorderColor(value: string | undefined): string {
 		// On regarde la couleur associée à cette valeur
+		
 		let element = this.matchingColors.find(element => element.value === value);
-		return element ? element.color : "grey";
+		return element ? element.color : "red";
 	}
 
 	/**

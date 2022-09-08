@@ -13,7 +13,11 @@ import { LineIdService } from 'src/app/services/line-id.service';
 export class UpdateAllergieComponent implements OnInit {
 	@Input() updateEvent = new Observable<void>();
 	@Input() addAllergieEvent = new Observable<void>();
+	@Input() addingMode = new Observable<number>();
 	@Input() updateMode = false;
+
+	// Mode d'ajout des allergies : Medicaments 0, Alimentaire 1, Environnementale 2
+	mode = 0;
 
 	listBtnRadio: BtnAsRadioInterface[] = [{
 		'label': 'Aucune',
@@ -29,6 +33,7 @@ export class UpdateAllergieComponent implements OnInit {
 	}];
 	id = '';
 	label = "";
+	labelType = "";
 	dateValue = new Date(2022, 10, 10);
 	commentary = "";
 	date?: string;
@@ -44,7 +49,8 @@ export class UpdateAllergieComponent implements OnInit {
 		commentaire: '',
 		data_id: '',
 		data_sejour_id: '',
-		type: ''
+		type: '',
+		allergieTypeString: ''
 	};
 
 	destroy$ = new Subject<void>();
@@ -58,11 +64,31 @@ export class UpdateAllergieComponent implements OnInit {
 		this.addAllergieEvent.pipe(takeUntil(this.destroy$)).subscribe(() => {
 			this.addAllergie();
 		});
+		this.addingMode.pipe(takeUntil(this.destroy$)).subscribe((mode) => {
+			this.mode = mode;
+			switch (mode) {
+				case 0:
+					this.labelType = "Médicament";
+					break;
+				case 1:
+					this.labelType = "Alimentaire";
+					this.label = "Allergie alimentaire";
+					break;
+				case 2:
+					this.labelType = "Environnementale";
+					this.label = "Allergie environnementale"
+					break;
+				default:
+					break;
+			}
+		})
+
 		// Ecoute sur la récupération de l'id de la ligne, pour ensuite récupérer l'allergie
 		if (this.updateMode) {
 			this.idSrv.lineIdListener().pipe(takeUntil(this.destroy$)).subscribe((elementId) => {
 				if (!elementId) {
 					this.label = "label vide";
+					this.labelType = ""
 					this.code = '';
 					this.date = '';
 					this.commentary = "";
@@ -74,8 +100,9 @@ export class UpdateAllergieComponent implements OnInit {
 					this.allergieSrv.getAllergie(elementId).pipe().subscribe(allergie => {
 						// On récupère l'objet allergie pour changer uniquement les champs qui peuvent être modifiés lors de l'update
 						this.allergie = allergie;
-	
+
 						this.label = allergie.label
+						this.labelType = allergie.allergieTypeString;
 						this.date = allergie.date;
 						this.code = allergie.code;
 						this.commentary = JSON.parse(JSON.stringify(allergie.commentaire));
@@ -150,6 +177,18 @@ export class UpdateAllergieComponent implements OnInit {
 		this.allergie.type = this.allergieType;
 	}
 
+	setAllergieCategory(): string {
+		switch (this.mode) {
+			case 0:
+				return "Médicamenteux";
+			case 1:
+				return "Alimentaire"
+			case 2:
+				return "Environnementale";
+			default: return ""
+		}
+	}
+
 	updateAllergie(): void {
 		this.setAllergieInformations();
 
@@ -159,7 +198,10 @@ export class UpdateAllergieComponent implements OnInit {
 
 	addAllergie(): void {
 		this.setAllergieInformations();
+
+		let allergieCategory = this.setAllergieCategory();
+
 		//TODO Le nom de la catégorie est à modifié en focntion du mode d'ajout utilisé
-		this.allergieSrv.addAllergie("Alimentaire", this.allergie);
+		this.allergieSrv.addAllergie(allergieCategory, this.allergie);
 	}
 }

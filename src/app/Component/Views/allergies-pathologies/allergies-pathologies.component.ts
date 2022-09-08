@@ -18,6 +18,7 @@ export class AllergiesPathologiesComponent implements OnInit {
 
 	updateAllergieEvent: Subject<void> = new Subject<void>();
 	addAllergieEvent: Subject<void> = new Subject<void>();
+	sendAllergieMode = new Subject<number>();
 
 	constructor(private slidingSrv: SlidingPanelService, private idSrv: LineIdService) { }
 
@@ -36,6 +37,7 @@ export class AllergiesPathologiesComponent implements OnInit {
 
 	addAllergie(mode: number) {
 		this.idSrv.emitLineId('');
+		this.sendAllergieMode.next(mode);
 		this.slidingSrv.emitOpenPanel("addAllergiePanel");
 	}
 

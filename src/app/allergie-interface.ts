@@ -6,6 +6,7 @@ export interface AllergieInterface {
   data_id: string,
   data_sejour_id: string,
   type?: string,
+  allergieTypeString: string,
   status?: boolean,
   updated_by?: string
 }

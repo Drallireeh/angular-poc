@@ -11,6 +11,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '0157545',
             data_sejour_id: '1',
+            allergieTypeString: 'Médicament',
             type: ''
         },
         {
@@ -20,6 +21,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: '',
             data_id: '015845',
             data_sejour_id: '1',
+            allergieTypeString: 'Médicament',
             type: 'Hypersensibilité'
         },
         {
@@ -29,6 +31,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: '',
             data_id: '005545',
             data_sejour_id: '1',
+            allergieTypeString: 'Substance',
             type: 'Allergie'
         },
         {
@@ -38,6 +41,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '01547545',
             data_sejour_id: '1',
+            allergieTypeString: 'Médicament',
             type: 'Hypersensibilité'
         },
         {
@@ -47,7 +51,8 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '01551145',
             data_sejour_id: '1',
-            type: 'Hypersensibilité'
+            allergieTypeString: 'Médicament',
+            type: ''
         },
         {
             label: 'SPINBRUSH TRULY RADIANCE bros dent électrique',
@@ -56,6 +61,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: '',
             data_id: '1015545',
             data_sejour_id: '1',
+            allergieTypeString: 'Subtance',
             type: 'Allergie'
         },
         {
@@ -65,6 +71,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '0155245',
             data_sejour_id: '1',
+            allergieTypeString: 'Subtance',
             type: 'Hypersensibilité'
         },
         {
@@ -74,6 +81,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '015532245',
             data_sejour_id: '1',
+            allergieTypeString: 'Substance',
             type: 'Allergie'
         },
         ]
@@ -88,6 +96,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: '',
             data_id: '123',
             data_sejour_id: '1',
+            allergieTypeString: 'Alimentaire',
             type: 'Hypersensibilité'
         },
         {
@@ -97,6 +106,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: '',
             data_id: '456',
             data_sejour_id: '1',
+            allergieTypeString: 'Alimentaire',
             type: 'Allergie'
         },
         {
@@ -106,6 +116,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '758',
             data_sejour_id: '1',
+            allergieTypeString: 'Alimentaire',
             type: 'Hypersensibilité'
         },
         {
@@ -115,6 +126,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '910',
             data_sejour_id: '1',
+            allergieTypeString: 'Alimentaire',
             type: 'Hypersensibilité'
         },
         {
@@ -124,6 +136,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '911',
             data_sejour_id: '1',
+            allergieTypeString: 'Alimentaire',
             type: 'Hypersensibilité'
         },
         {
@@ -133,6 +146,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '7889',
             data_sejour_id: '1',
+            allergieTypeString: 'Alimentaire',
             type: 'Allergie'
         },
         {
@@ -142,6 +156,8 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '120',
             data_sejour_id: '1',
+            allergieTypeString: "Alimentaire",
+            type: ''
         },
         {
             label: 'test de label',
@@ -150,6 +166,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '0000',
             data_sejour_id: '1',
+            allergieTypeString: 'Alimentaire',
             type: ''
         },
         {
@@ -159,6 +176,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '1111',
             data_sejour_id: '1',
+            allergieTypeString: 'Alimentaire',
             type: ''
         },
         {
@@ -168,6 +186,7 @@ export const ALLERGIES: AllergiesListInterface[] = [
             commentaire: 'commentaire',
             data_id: '22222',
             data_sejour_id: '1',
+            allergieTypeString: 'Alimentaire',
             type: 'Hypersensibilité'
         },
 

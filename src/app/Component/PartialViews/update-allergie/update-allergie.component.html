@@ -1,49 +1,51 @@
-<div class="form-group row">
-    <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis" for="Allergie_AllergieLibelle">Libellé</label>
-    <div class="col-lg-9 col-md-3 col-sm-9">
-        <span id="allergieLibelle" data-type="Médicament"><span>Médicament</span> : {{label}}</span>
+<ng-container *ngIf="mode !== 0">
+    <div class="form-group row">
+        <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis" for="Allergie_AllergieLibelle">Libellé</label>
+        <div class="col-lg-9 col-md-3 col-sm-9">
+            <span id="allergieLibelle" data-type="Médicament"><span class="label-type">{{labelType}}</span> : {{label}}</span>
+        </div>
     </div>
-</div>
-
-<div class="form-group row">
-    <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis"
-        for="Allergie_AllergieHypersensibilite">Type</label>
-    <div class=" col-lg-9 col-md-3 col-sm-9 radio-button-container">
-        <app-btns-as-radio [btns]="listBtnRadio"></app-btns-as-radio>
+    
+    <div class="form-group row">
+        <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis"
+            for="Allergie_AllergieHypersensibilite">Type</label>
+        <div class=" col-lg-9 col-md-3 col-sm-9 radio-button-container">
+            <app-btns-as-radio [btns]="listBtnRadio"></app-btns-as-radio>
+        </div>
     </div>
-</div>
-
-<div class="form-group row">
-    <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis" for="Allergie_DateDebut">Date de début</label>
-    <div class="col-lg-9 col-md-3 col-sm-9 date-picker-ctn">
-        <kendo-datetimepicker format="dd/MM/yyyy HH:mm" [value]="CreateDateFromFrenchString(date)"
-            (valueChange)="changeDate($event)"></kendo-datetimepicker>
+    
+    <div class="form-group row">
+        <label class="col-lg-3 col-md-3 col-sm-3 control-label ellipsis" for="Allergie_DateDebut">Date de début</label>
+        <div class="col-lg-9 col-md-3 col-sm-9 date-picker-ctn">
+            <kendo-datetimepicker format="dd/MM/yyyy HH:mm" [value]="CreateDateFromFrenchString(date)"
+                (valueChange)="changeDate($event)"></kendo-datetimepicker>
+        </div>
     </div>
-</div>
-
-<div class="form-group row cim-10">
-    <label class="col-lg-3 col-md-3 col-sm-3 control-label" for="Allergie_CodeCim10">Réaction</label>
-    <div class="col-lg-9 col-md-3 col-sm-9 flex flex-align-items-center">
-        <span id="codeCim10string">{{code ? code : "Aucun"}}</span>
-        <button *ngIf="code" id="btnDeleteCodeCim10" type="button" class="btn btn-secondary check"
-            (click)="removeCim10()"><span class="next-icon next-icon-supprimer"></span></button>
+    
+    <div class="form-group row cim-10">
+        <label class="col-lg-3 col-md-3 col-sm-3 control-label" for="Allergie_CodeCim10">Réaction</label>
+        <div class="col-lg-9 col-md-3 col-sm-9 flex flex-align-items-center">
+            <span id="codeCim10string">{{code ? code : "Aucun"}}</span>
+            <button *ngIf="code" id="btnDeleteCodeCim10" type="button" class="btn btn-secondary check"
+                (click)="removeCim10()"><span class="next-icon next-icon-supprimer"></span></button>
+        </div>
     </div>
-</div>
-
-<div class="form-group row start">
-    <label class="col-lg-3 col-md-3 col-sm-3 control-label p-top" for="Allergie_Commentaire">Commentaire</label>
-    <div class="col-lg-9 col-md-3 col-sm-9">
-        <textarea [(ngModel)]="commentary" class="k-textbox" cols="20" id="Allergie_Commentaire" maxlength="254"
-            name="Allergie.Commentaire" placeholder="Laisser un commentaire" rows="4"
-            style="width : 100%; height : 100%; resize: none"></textarea>
-        <span class="k-invalid-msg" data-for="Libelle"></span>
+    
+    <div class="form-group row start">
+        <label class="col-lg-3 col-md-3 col-sm-3 control-label p-top" for="Allergie_Commentaire">Commentaire</label>
+        <div class="col-lg-9 col-md-3 col-sm-9">
+            <textarea [(ngModel)]="commentary" class="k-textbox" cols="20" id="Allergie_Commentaire" maxlength="254"
+                name="Allergie.Commentaire" placeholder="Laisser un commentaire" rows="4"
+                style="width : 100%; height : 100%; resize: none"></textarea>
+            <span class="k-invalid-msg" data-for="Libelle"></span>
+        </div>
     </div>
-</div>
-
-<div *ngIf="updated_by" class="form-group row">
-    <label class="col-lg-3 col-md-3 col-sm-3 control-label" for="Allergie_UtilisateurModification"
-        style="padding-top:0px">Modifié par</label>
-    <div class="col-lg-9 col-md-3 col-sm-9">
-        {{updated_by}}
+    
+    <div *ngIf="updated_by" class="form-group row">
+        <label class="col-lg-3 col-md-3 col-sm-3 control-label" for="Allergie_UtilisateurModification"
+            style="padding-top:0px">Modifié par</label>
+        <div class="col-lg-9 col-md-3 col-sm-9">
+            {{updated_by}}
+        </div>
     </div>
-</div>
+</ng-container>
