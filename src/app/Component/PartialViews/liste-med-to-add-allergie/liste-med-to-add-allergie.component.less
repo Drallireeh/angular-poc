@@ -1,0 +1,64 @@
+.card-container {
+    display: -moz-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 3px;
+
+    .selected-circle {
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        border-radius: 50%;
+        overflow: hidden;
+        line-height: 44px;
+        margin: 3px;
+        font-weight: bold;
+        color: white;
+
+        span.next-icon {
+            vertical-align: middle;
+            font-size: 28px;
+        }
+
+        .selected-item {
+            display: none;
+        }
+    }
+
+    .selected-circle.IsTop {
+        background-color: red;
+    }
+
+    .med-name {
+        margin: 0px 10px;
+        flex: 1;
+    }
+}
+
+.card-container + .card-container {
+    margin-top: 0.2rem;
+}
+
+.card-container:hover {
+    background-color: #fff6e5;
+}
+
+.empty-med-data {
+    text-align: center;
+    margin: 10px;
+    color: #424242;
+}

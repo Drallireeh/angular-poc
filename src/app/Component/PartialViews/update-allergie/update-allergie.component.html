@@ -50,20 +50,23 @@
         </div>
     </div>
 </ng-container>
-<ng-template #addmed>
+<ng-template #addmed class="add-med-ctn">
     <app-panel-body-filters>
         <div class="col-md-4 flex-grow-1">
             <input class="k-textbox" id="allergiesSearchValue" name="allergiesSearchValue" placeholder="Recherche"
                 style="width:100%">
         </div>
         <div class="flex-row flex-grow-1">
-            <div class="flex-grow-0">
-                <button id="showClassAllergie" class="push btn btn-secondary">Classe</button>
-                <button id="showSubstance" class="push btn btn-secondary">Substance</button>
+            <div class="flex-grow-0 push-btn-ctn">
+                <button id="showClassAllergie" type="button" class="push btn btn-secondary">Classe</button>
+                <button id="showSubstance" type="button" class="push btn btn-secondary">Substance</button>
             </div>
-            <div class="flex-grow-1" style="margin-top: 1px; margin-left:2.5px;margin-right:2.5px">
+            <div class="flex-grow-1 dd-ctn">
                 <app-dropdown [dropdownOptions]="dropdownAddMed" [selected]="dropdownAddMed[0].label"></app-dropdown>
             </div>
         </div>
     </app-panel-body-filters>
+    <div class="flex-grow-1 overflow">
+        <app-liste-med-to-add-allergie></app-liste-med-to-add-allergie>
+    </div>
 </ng-template>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostBinding } from '@angular/core';
 import { Observable, Subject, takeUntil, take, tap } from 'rxjs';
 import { AllergieInterface } from 'src/app/allergie-interface';
 import { BtnAsRadioInterface } from 'src/app/btn-as-radio-interface';
@@ -9,14 +9,15 @@ import { LineIdService } from 'src/app/services/line-id.service';
 @Component({
 	selector: 'app-update-allergie',
 	templateUrl: './update-allergie.component.html',
-	styleUrls: ['./update-allergie.component.less'],
-	host: { 'class': 'padding-around' }
+	styleUrls: ['./update-allergie.component.less']
 })
 export class UpdateAllergieComponent implements OnInit {
 	@Input() updateEvent = new Observable<void>();
 	@Input() addAllergieEvent = new Observable<void>();
 	@Input() addingMode = new Observable<number>();
 	@Input() updateMode = false;
+
+	@HostBinding('class.padding-around') get className() { return this.mode !== 0 || this.updateMode; }
 
 	@Input() dropdownAddMed: Array<DropdownOption> = [
 		{ value: '0', label: 'Aucun top inclus' },

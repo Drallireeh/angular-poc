@@ -1,5 +1,5 @@
 :host {
-	padding: 10px;
+	display: block;
 }
 
 textarea {
@@ -56,4 +56,31 @@ textarea::placeholder {
 	text-decoration: underline;
 	margin-right: 20px;
 	cursor: pointer;
+}
+
+::ng-deep {
+	.panel-body-filters {
+		> div:first-of-type {
+			padding: 0px 2.5px;
+		}
+	}
+
+	.push-btn-ctn {
+		margin: 0 2.5px;
+		padding: 0px;
+
+		> button:first-of-type {
+			margin-right: 5px;
+		}
+	}
+
+	.btn.push {
+		width: 100px;
+		text-align: center;
+		box-shadow: none;;
+	}
+
+	.dd-ctn {
+		margin: auto 2.5px;
+	}
 }

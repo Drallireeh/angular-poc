@@ -1,0 +1,20 @@
+<ng-container *ngIf="listeMedicaments.length;else no_med">
+    <div class="flex-grow-1 overflow">
+        <div *ngFor="let med of listeMedicaments" class="card-container">
+            <div class="flex-col flex-justify-content-center selected-circle IsTop">
+                <span class="circle">TOP</span>
+    
+                <span class="selected-item next-icon next-icon-valider"></span>
+            </div>
+    
+            <div class="flex-grow-6 ellipsis med-name">
+                AAZ COVID-VIRO test antigénique
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-template #no_med>
+    <div class="empty-data-text">
+        Aucune allergie ne correspond à votre recherche
+    </div>
+</ng-template>
