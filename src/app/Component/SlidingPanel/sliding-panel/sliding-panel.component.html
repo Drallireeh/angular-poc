@@ -1,24 +1,20 @@
 <div *ngIf="isOpen" class="sliding-panel-wrapper" [id]="id">
-    <div class="sliding-panel-background" (click)="closePanel()"></div>
-    <div class="sliding-panel" [ngStyle]="{'width': width}" [ngClass]="openClassName">
-        <div *ngIf="toolbar" class="sliding-panel-toolbar" [ngClass]="{opened: toolbarOpened}">
-           <app-sliding-panel-toolbar (showHideToolbar)="openCloseToolbar($event)">
-                <ng-content select="[sp-toolbar]"></ng-content>
-           </app-sliding-panel-toolbar>
-        </div>
-        <div class="sliding-panel-content">
-            <form action="" data-role="validator" novalidate="novalidate">
-                <app-sliding-panel-header [title]="title"></app-sliding-panel-header>
-                <app-sliding-panel-content class="">
-                    <div class="form-horizontal" role="form">
-                        <ng-content select="[sp-content]"></ng-content>
-                    </div>
-                </app-sliding-panel-content>
-                <app-sliding-panel-footer>
-                    <ng-content left select="[sp-actions-left]"></ng-content>
-                    <ng-content right select="[sp-actions-right]"></ng-content>
-                </app-sliding-panel-footer>
-            </form>
-        </div>
-    </div>
+	<div class="sliding-panel-background" (click)="closePanel()"></div>
+	<div class="sliding-panel" [ngStyle]="{'width': width}" [ngClass]="openClassName">
+		<div *ngIf="toolbar" class="sliding-panel-toolbar" [ngClass]="{opened: toolbarOpened}">
+			<app-sliding-panel-toolbar (showHideToolbar)="openCloseToolbar($event)">
+				<ng-content select="[sp-toolbar]"></ng-content>
+			</app-sliding-panel-toolbar>
+		</div>
+		<div class="sliding-panel-content">
+			<app-sliding-panel-header [title]="title"></app-sliding-panel-header>
+			<app-sliding-panel-content class="">
+				<ng-content select="[sp-content]"></ng-content>
+			</app-sliding-panel-content>
+			<app-sliding-panel-footer>
+				<ng-content left select="[sp-actions-left]"></ng-content>
+				<ng-content right select="[sp-actions-right]"></ng-content>
+			</app-sliding-panel-footer>
+		</div>
+	</div>
 </div>

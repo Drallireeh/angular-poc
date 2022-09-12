@@ -1,145 +1,125 @@
 .sliding-panel-wrapper {
-    position: fixed;
-    top: 60px;
-    bottom: 31px;
-    left: 0;
-    right: 0;
-    z-index: 10001;
+	position: fixed;
+	top: 60px;
+	bottom: 31px;
+	left: 0;
+	right: 0;
+	z-index: 10001;
 
-    .sliding-panel-background {
-        width: 100%;
-        height: 100%;
-        float: left;
-        opacity: .4;
-        background-color: #000;
-    }
+	.sliding-panel-background {
+		width: 100%;
+		height: 100%;
+		float: left;
+		opacity: .4;
+		background-color: #000;
+	}
 
-    .sliding-panel {
-        display: -moz-box;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-orient: vertical;
-        -moz-box-orient: vertical;
-        -ms-flex-direction: column;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        position: absolute;
-        opacity: 1;
-        background-color: #fff;
-        height: 100%;
-        right: -100%;
-        float: right;
-        padding: 0;
-        box-shadow: -3px 0 3px -3px #424242;
+	.sliding-panel {
+		display: -moz-box;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-moz-box-orient: vertical;
+		-ms-flex-direction: column;
+		-webkit-flex-direction: column;
+		flex-direction: column;
+		position: absolute;
+		opacity: 1;
+		background-color: #fff;
+		height: 100%;
+		right: -100%;
+		float: right;
+		padding: 0;
+		box-shadow: -3px 0 3px -3px #424242;
 
-        .sliding-panel-toolbar {
-            position: absolute;
-            overflow: hidden;
-            overflow-x: hidden;
-            overflow-y: hidden;
-            top: 40px;
-            bottom: 46px;
-            width: 240px;
-            margin-left: -46px;
-            background-color: transparent;
-            -ms-transition: margin-left ease .5s;
-            -moz-transition: margin-left ease .5s;
-            -o-transition: margin-left ease .5s;
-            -webkit-transition: margin-left ease .5s;
-            transition: margin-left ease .5s;
-        }
+		.sliding-panel-toolbar {
+			position: absolute;
+			overflow: hidden;
+			overflow-x: hidden;
+			overflow-y: hidden;
+			top: 40px;
+			bottom: 46px;
+			width: 240px;
+			margin-left: -46px;
+			background-color: transparent;
+			-ms-transition: margin-left ease .5s;
+			-moz-transition: margin-left ease .5s;
+			-o-transition: margin-left ease .5s;
+			-webkit-transition: margin-left ease .5s;
+			transition: margin-left ease .5s;
+		}
 
-        .sliding-panel-toolbar.opened {
-            margin-left: -243px;
-        }
+		.sliding-panel-toolbar.opened {
+			margin-left: -243px;
+		}
 
-        .sliding-panel-content {
-            position: relative;
-            -ms-flex-positive: 1;
-            -moz-flex-grow: 1;
-            -webkit-box-flex: 1;
-            flex-grow: 1;
-            display: -moz-box;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -moz-box-orient: vertical;
-            -ms-flex-direction: column;
-            -webkit-flex-direction: column;
-            flex-direction: column;
-            z-index: 1;
-            overflow: auto;
-            overflow-x: hidden;
-            overflow-y: auto;
-            -webkit-box-shadow: -3px 0 3px #6e6e6e;
-            -moz-box-shadow: -3px 0 3px #6e6e6e;
-            box-shadow: -3px 0 3px #6e6e6e;
+		.sliding-panel-content {
+			position: relative;
+			-ms-flex-positive: 1;
+			-moz-flex-grow: 1;
+			-webkit-box-flex: 1;
+			flex-grow: 1;
+			display: -moz-box;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-moz-box-orient: vertical;
+			-ms-flex-direction: column;
+			-webkit-flex-direction: column;
+			flex-direction: column;
+			z-index: 1;
+			overflow: auto;
+			overflow-x: hidden;
+			overflow-y: auto;
+			-webkit-box-shadow: -3px 0 3px #6e6e6e;
+			-moz-box-shadow: -3px 0 3px #6e6e6e;
+			box-shadow: -3px 0 3px #6e6e6e;
 
-            >form {
-                -ms-flex-positive: 1;
-                -moz-flex-grow: 1;
-                -webkit-box-flex: 1;
-                flex-grow: 1;
-                display: -moz-box;
-                display: -webkit-box;
-                display: -ms-flexbox;
-                display: -webkit-flex;
-                display: flex;
-                -webkit-box-orient: vertical;
-                -moz-box-orient: vertical;
-                -ms-flex-direction: column;
-                -webkit-flex-direction: column;
-                flex-direction: column;
-                overflow: auto;
-                overflow-x: hidden;
-                overflow-y: auto;
+			::ng-deep .form-group {
+				padding: 5px 0px;
+				align-items: center;
+				margin-right: 0px;
+				margin-left: 0px;
+			}
 
-                ::ng-deep .form-group {
-                    padding: 5px 0px;
-                    align-items: center;
-                    margin-right: 0px;
-                    margin-left: 0px;
-                }
+			::ng-deep .form-group.start {
+				align-items: start;
+			}
+		}
+	}
 
-                ::ng-deep .form-group.start {
-                    align-items: start;
-                }
-            }
-        }
-    }
+	.sliding-panel.open {
+		right: 0%;
+		animation-duration: 1s;
+		animation-name: slidein;
+	}
 
-    .sliding-panel.open {
-        right: 0%;
-        animation-duration: 1s;
-        animation-name: slidein;
-    }
+	.sliding-panel:not(.open) {
+		animation-name: slideout;
+		animation-duration: 1s;
+	}
 
-    .sliding-panel:not(.open) {
-        animation-name: slideout;
-        animation-duration: 1s;
-    }
+	@keyframes slidein {
+		from {
+			right: -100%;
+		}
 
-    @keyframes slidein {
-        from {
-            right: -100%;
-        }
+		to {
+			right: 0%;
+		}
+	}
 
-        to {
-            right: 0%;
-        }
-    }
+	@keyframes slideout {
+		from {
+			right: 0%;
+		}
 
-    @keyframes slideout {
-        from {
-            right: 0%;
-        }
-
-        to {
-            right: -100%;
-        }
-    }
+		to {
+			right: -100%;
+		}
+	}
 }
