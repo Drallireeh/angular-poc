@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MedicamentAllergie } from 'src/app/medicament-allergie-interface';
 
 @Component({
 	selector: 'app-liste-med-to-add-allergie',
@@ -6,7 +7,35 @@ import { Component, OnInit, Input } from '@angular/core';
 	styleUrls: ['./liste-med-to-add-allergie.component.less']
 })
 export class ListeMedToAddAllergieComponent implements OnInit {
-	@Input() listeMedicaments = [1, 2, 3, 4, 5, 6, 7, 8, 9, 7, 8, 1, 4, 5, 5];
+	@Input() listeMedicaments: MedicamentAllergie[] = [
+		{
+			label: 'AAZ COVID-VIRO test antigénique'
+		},
+		{
+			label: 'AAZ COVID-VIRO test antigénique'
+		},
+		{
+			label: 'AAZ COVID-VIRO test antigénique'
+		},
+		{
+			label: 'AAZ COVID-VIRO test antigénique'
+		},
+		{
+			label: 'AAZ COVID-VIRO test antigénique'
+		},
+		{
+			label: 'AAZ COVID-VIRO test antigénique'
+		},
+		{
+			label: 'AAZ COVID-VIRO test antigénique'
+		},
+		{
+			label: 'AAZ COVID-VIRO test antigénique'
+		},
+		{
+			label: 'AAZ COVID-VIRO test antigénique'
+		}
+	]
 
 	constructor() { }
 
@@ -15,6 +44,7 @@ export class ListeMedToAddAllergieComponent implements OnInit {
 
 	selectLine(medicament: any) {
 		console.log(medicament)
+		medicament.selected = !medicament.selected
 		// TODO set med selected
 	}
 }

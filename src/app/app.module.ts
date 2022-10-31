@@ -57,6 +57,7 @@ import { PopinDatepickerComponent } from './Component/popin/popin-datepicker/pop
 import { NextInputNumberComponent } from './Component/next-input-number/next-input-number.component';
 import { ListeMedToAddAllergieComponent } from './Component/PartialViews/liste-med-to-add-allergie/liste-med-to-add-allergie.component';
 import { PopinDateApproxComponent } from './Component/popin/popin-date-approx/popin-date-approx.component';
+import { AddLineComponent } from './Component/PartialViews/AddAllergies/add-line/add-line.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +92,7 @@ import { PopinDateApproxComponent } from './Component/popin/popin-date-approx/po
     NextInputNumberComponent,
     ListeMedToAddAllergieComponent,
     PopinDateApproxComponent,
+    AddLineComponent,
   ],
   imports: [
     BrowserModule,

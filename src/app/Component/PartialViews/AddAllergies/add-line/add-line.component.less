@@ -1,0 +1,52 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    flex-align: center;
+    align-items: center;
+}
+
+.selected-circle {
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 44px;
+    margin: 3px;
+    font-weight: bold;
+    color: white;
+
+    span.next-icon {
+        vertical-align: middle;
+        font-size: 28px;
+    }
+
+    .selected-item {
+        display: none;
+    }
+}
+
+.selected-circle.IsTop {
+    background-color: red;
+}
+
+.med-name {
+    margin: 0px 10px;
+    flex: 1;
+}
+
+.selected-circle.selected {
+    background-color: #6e6e6e;
+
+    .circle {
+        display: none;
+    }
+
+    .selected-item {
+        display: block
+    }
+
+    .selected-item:before {
+        content: "\b1"
+    }
+}
