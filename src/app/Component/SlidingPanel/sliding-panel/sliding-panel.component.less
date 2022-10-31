@@ -72,13 +72,12 @@
 			-webkit-flex-direction: column;
 			flex-direction: column;
 			z-index: 1;
-			overflow: auto;
-			overflow-x: hidden;
-			overflow-y: auto;
+			height: 100%;
 			-webkit-box-shadow: -3px 0 3px #6e6e6e;
 			-moz-box-shadow: -3px 0 3px #6e6e6e;
 			box-shadow: -3px 0 3px #6e6e6e;
 
+			// Styles sur les form group présent dans le content du panel
 			::ng-deep .form-group {
 				padding: 5px 0px;
 				align-items: center;
@@ -88,6 +87,43 @@
 
 			::ng-deep .form-group.start {
 				align-items: start;
+			}
+
+			.content {
+				flex:3;
+				width: 100%;
+				position: relative;
+				background-color: #fff;
+				overflow-y: auto;
+				overflow-x: hidden;
+			
+				::ng-deep .padding-around {
+					padding: 10px;
+				}
+			
+				::ng-deep .header {
+					display: -moz-box;
+					display: -webkit-box;
+					display: -ms-flexbox;
+					display: -webkit-flex;
+					display: flex;
+					-webkit-box-orient: horizontal;
+					-moz-box-orient: horizontal;
+					-ms-flex-direction: row;
+					-webkit-flex-direction: row;
+					flex-direction: row;
+					-ms-flex-negative: 0;
+					-moz-flex-shrink: 0;
+					-webkit-box-shrink: 0;
+					flex-shrink: 0;
+					position: relative;
+					height: 30px;
+					min-height: 30px;
+					line-height: 20px;
+					padding: 5px;
+					background-color: var(--secondary-color);
+					color: #424242;
+				}
 			}
 		}
 	}

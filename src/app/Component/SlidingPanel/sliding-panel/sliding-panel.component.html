@@ -8,9 +8,9 @@
 		</div>
 		<div class="sliding-panel-content">
 			<app-sliding-panel-header [title]="title"></app-sliding-panel-header>
-			<app-sliding-panel-content class="">
+			<div class="content flex-col overflow">
 				<ng-content select="[sp-content]"></ng-content>
-			</app-sliding-panel-content>
+			</div>
 			<app-sliding-panel-footer>
 				<ng-content left select="[sp-actions-left]"></ng-content>
 				<ng-content right select="[sp-actions-right]"></ng-content>
