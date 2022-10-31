@@ -1,0 +1,61 @@
+<input type="text" [value]="inputVal" [placeholder]="placeholderValue">
+<button class="buttonClick" (click)="openPopin()">
+    <fa-icon class="next-icon" [icon]="faEdit"></fa-icon>
+</button>
+<next-popin-base *ngIf="showPopin" (closePopin)="closePopin()" (closePopinWithValue)="closePopinWithValue($event)" [title]='titleHeader'>
+    <h1>{{title}}</h1>
+    <div>
+        <popin-button value="Date non connue" type="next-btn next-btn-secondary" widthBtn="110px"></popin-button>
+        <popin-button value="DÉBUT" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="MI" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="FIN" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="COURANT" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+    </div>
+    <div>
+        <popin-button value="JANVIER" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="FÉVRIER" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="MARS" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="AVRIL" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="MAI" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="JUIN" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+    </div>
+    <div>
+        <popin-button value="JUILLET" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="AOÛT" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="SEPTEMBRE" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="OCTOBRE" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="NOVEMBRE" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+        <popin-button value="DÉCEMBRE" type="next-btn next-btn-primary" widthBtn="110px"></popin-button>
+    </div>
+    <div>
+        <popin-button value="1900" type="next-btn next-btn-primary" widthBtn="80px"></popin-button>
+        <popin-button value="2000" type="next-btn next-btn-primary" widthBtn="80px"></popin-button>
+        <popin-button value="2020" type="next-btn next-btn-secondary" widthBtn="80px"></popin-button>
+        <popin-button value="2021" type="next-btn next-btn-secondary" widthBtn="80px"></popin-button>
+        <popin-button value="2022" type="next-btn next-btn-secondary" widthBtn="80px"></popin-button>
+        <popin-button value="2023" type="next-btn next-btn-secondary" widthBtn="80px"></popin-button>
+        <popin-button value="2024" type="next-btn next-btn-secondary" widthBtn="80px"></popin-button>
+    </div>
+    <div>
+        <popin-button value="10" type="next-btn next-btn-primary" widthBtn="45px"></popin-button>
+        <popin-button value="20" type="next-btn next-btn-primary" widthBtn="45px"></popin-button>
+        <popin-button value="30" type="next-btn next-btn-primary" widthBtn="45px"></popin-button>
+        <popin-button value="40" type="next-btn next-btn-primary" widthBtn="45px"></popin-button>
+        <popin-button value="50" type="next-btn next-btn-primary" widthBtn="45px"></popin-button>
+        <popin-button value="60" type="next-btn next-btn-primary" widthBtn="45px"></popin-button>
+        <popin-button value="70" type="next-btn next-btn-primary" widthBtn="45px"></popin-button>
+        <popin-button value="80" type="next-btn next-btn-primary" widthBtn="45px"></popin-button>
+        <popin-button value="90" type="next-btn next-btn-primary" widthBtn="45px"></popin-button>
+    </div>
+    <div>
+        <popin-button value="1" type="next-btn next-btn-secondary" widthBtn="45px"></popin-button>
+        <popin-button value="2" type="next-btn next-btn-secondary" widthBtn="45px"></popin-button>
+        <popin-button value="3" type="next-btn next-btn-secondary" widthBtn="45px"></popin-button>
+        <popin-button value="4" type="next-btn next-btn-secondary" widthBtn="45px"></popin-button>
+        <popin-button value="5" type="next-btn next-btn-secondary" widthBtn="45px"></popin-button>
+        <popin-button value="6" type="next-btn next-btn-secondary" widthBtn="45px"></popin-button>
+        <popin-button value="7" type="next-btn next-btn-secondary" widthBtn="45px"></popin-button>
+        <popin-button value="8" type="next-btn next-btn-secondary" widthBtn="45px"></popin-button>
+        <popin-button value="9" type="next-btn next-btn-secondary" widthBtn="45px"></popin-button>
+    </div>
+</next-popin-base>

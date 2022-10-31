@@ -56,6 +56,7 @@ import { SearchAllergiesComponent } from './Component/Views/search-allergies/sea
 import { PopinDatepickerComponent } from './Component/popin/popin-datepicker/popin-datepicker.component';
 import { NextInputNumberComponent } from './Component/next-input-number/next-input-number.component';
 import { ListeMedToAddAllergieComponent } from './Component/PartialViews/liste-med-to-add-allergie/liste-med-to-add-allergie.component';
+import { PopinDateApproxComponent } from './Component/popin/popin-date-approx/popin-date-approx.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { ListeMedToAddAllergieComponent } from './Component/PartialViews/liste-m
     PopinDatepickerComponent,
     NextInputNumberComponent,
     ListeMedToAddAllergieComponent,
+    PopinDateApproxComponent,
   ],
   imports: [
     BrowserModule,

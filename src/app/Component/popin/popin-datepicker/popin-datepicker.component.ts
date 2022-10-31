@@ -44,6 +44,10 @@ export class PopinDatepickerComponent implements OnInit {
   // Subject permettant de gérer le changement de la variable d'affichage de la popin depuis d'autres composants
   changing: Subject<boolean> = new Subject();
 
+  maxValueMinute = 59;
+  maxValueHour = 23;
+  minValueHourMinute = 0;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -68,14 +72,14 @@ export class PopinDatepickerComponent implements OnInit {
     // Changement de l'heure manuellement
     selectHeure(event: any): void {
       this.check = true;
-      this.heure = event.target.value;
+      this.heure = event;
       this.updateTitle();
     };
   
     // Changement des minutes manuellement
     selectMinute(event: any): void {
       this.check = true;
-      this.minute = event.target.value;
+      this.minute = event;
       this.updateTitle();
     };
   
